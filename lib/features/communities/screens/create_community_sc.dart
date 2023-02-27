@@ -24,6 +24,7 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
         .read(communityControllerProvider.notifier)
         .createCommunity(communityNameController.text.trim(), context);
   }
+
   @override
   Widget build(BuildContext context) {
     final isLoading = ref.watch(communityControllerProvider);
@@ -66,7 +67,7 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                             borderRadius:
                                 BorderRadiusDirectional.circular(20))),
                     child: const Text('Create Community'),
-                  )
+                  ),
                 ],
               ),
             ),
