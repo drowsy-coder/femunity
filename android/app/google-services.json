@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "346212515172",
+    "project_id": "femunity-b818c",
+    "storage_bucket": "femunity-b818c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346212515172:android:f7f19cad80edc7f0388e71",
+        "android_client_info": {
+          "package_name": "com.example.femunity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346212515172-i049dv2kte878fav2o2aki5s46r36257.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.femunity",
+            "certificate_hash": "74c20757fac245f1a997abda3e503edcbd172ae2"
+          }
+        },
+        {
+          "client_id": "346212515172-mnlkage79qgskt2unpp88oqoqdtvgcr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA58_C0bCdRSPLzOY7fBvO_XwpJaMMvW6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346212515172-0ugeavn428vni9kla00dav1t1pa2tkr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "346212515172-nel712a7i3v2h6bocdvv7tcqc4166c1g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.redditTutorial"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
