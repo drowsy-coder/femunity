@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:femunity/core/constants/constants.dart';
+import 'package:femunity/core/providers/firebase_providers.dart';
+import 'package:femunity/core/providers/storage_repository_provider.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/repository/community_repository.dart';
@@ -16,8 +20,11 @@ final userCommunitiesProvider = StreamProvider((ref) {
 final communityControllerProvider =
     StateNotifierProvider<CommunityController, bool>((ref) {
   final communityRepository = ref.watch(communityRepositoryProvider);
+  final storageRepository = ref.watch(storageRepositoryProvider);
   return CommunityController(
-      communityRepository: communityRepository, ref: ref);
+      communityRepository: communityRepository,
+      ref: ref,
+      storageRepository: storageRepository);
 });
 
 final getCommunityByNameProvider = StreamProvider.family((ref, String name) {
@@ -29,10 +36,14 @@ final getCommunityByNameProvider = StreamProvider.family((ref, String name) {
 class CommunityController extends StateNotifier<bool> {
   final CommunityRepository _communityRepository;
   final Ref _ref;
-  CommunityController(
-      {required CommunityRepository communityRepository, required Ref ref})
-      : _communityRepository = communityRepository,
+  final StorageRepository _storageRepository;
+  CommunityController({
+    required CommunityRepository communityRepository,
+    required Ref ref,
+    required StorageRepository storageRepository,
+  })  : _communityRepository = communityRepository,
         _ref = ref,
+        _storageRepository = storageRepository,
         super(false);
 
   void createCommunity(String name, BuildContext context) async {
@@ -61,5 +72,20 @@ class CommunityController extends StateNotifier<bool> {
 
   Stream<Community> getCommunityByName(String name) {
     return _communityRepository.getCommunityByName(name);
+  }
+
+  void editCommunity({
+    required File? profileFile,
+    required File? bannerFile,
+    required BuildContext context,
+    required Community community,
+  }) async {
+    if (profileFile != null) {
+      _storageRepository.storeFile(
+        path: 'communities/profile',
+        id: community.name,
+        file: profileFile,
+      );
+    }
   }
 }
