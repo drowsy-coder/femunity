@@ -6,6 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class ProfileDrawer extends ConsumerWidget {
   const ProfileDrawer({Key? key}) : super(key: key);
 
+  void logOut(WidgetRef ref) {
+    ref.read(authControllerProvider.notifier).logout();
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(userProvider)!;
@@ -43,7 +47,7 @@ class ProfileDrawer extends ConsumerWidget {
                 Icons.logout_outlined,
                 color: Pallete.redColor,
               ),
-              onTap: () => {},
+              onTap: () => logOut(ref),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
