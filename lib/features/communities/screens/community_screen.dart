@@ -68,17 +68,17 @@ class CommunityScreen extends ConsumerWidget {
                                           onPressed: () {
                                             navigateToModTools(context);
                                           },
-                                          child: const Text('Mod Tools'),
                                           style: ElevatedButton.styleFrom(
                                               padding:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 25),
                                               foregroundColor:
-                                                  Color(0xffFEB2B2),
+                                                  const Color(0xffFEB2B2),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadiusDirectional
                                                           .circular(20))),
+                                          child: const Text('Mod Tools'),
                                         )
                                       : OutlinedButton(
                                           onPressed: () {},
@@ -87,7 +87,7 @@ class CommunityScreen extends ConsumerWidget {
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 25),
                                               foregroundColor:
-                                                  Color(0xffFEB2B2),
+                                                  const Color(0xffFEB2B2),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadiusDirectional
