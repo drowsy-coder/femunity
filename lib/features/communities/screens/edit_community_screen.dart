@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/constants/constants.dart';
@@ -10,7 +9,6 @@ import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'dart:io';
 
 class EditCommunityScreen extends ConsumerStatefulWidget {
   final String name;
