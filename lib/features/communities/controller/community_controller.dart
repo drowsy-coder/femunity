@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:femunity/core/constants/constants.dart';
+import 'package:femunity/core/faliures.dart';
 import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/providers/storage_repository_provider.dart';
 import 'package:femunity/core/utils.dart';
@@ -9,6 +10,7 @@ import 'package:femunity/features/communities/screens/create_community_sc.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:routemaster/routemaster.dart';
 
 final userCommunitiesProvider = StreamProvider((ref) {
@@ -65,6 +67,25 @@ class CommunityController extends StateNotifier<bool> {
     res.fold((l) => showSnackBar(context, 'Community created Succesfully'),
         (r) {
       Routemaster.of(context).pop();
+    });
+  }
+
+  void joinCommunity(Community community, BuildContext context) async {
+    final user = _ref.read(userProvider)!;
+
+    Either<Failure, void> res;
+
+    if (community.members.contains(user.uid)) {
+      res = await _communityRepository.leaveCommunity(community.name, user.uid);
+    } else {
+      res = await _communityRepository.joinCommunity(community.name, user.uid);
+    }
+    res.fold((l) => showSnackBar(context, l.message), (r) {
+      if (community.members.contains(user.uid)) {
+        showSnackBar(context, 'You are no longer a part of ${community.name}!');
+      } else {
+        showSnackBar(context, 'You are now a part of ${community.name}!');
+      }
     });
   }
 
