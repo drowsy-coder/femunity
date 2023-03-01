@@ -20,7 +20,7 @@ class AddPostsScreen extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GestureDetector(
-          onTap: () => navigateToType(context, 'image'),
+          onTap: () => navigateToType(context, 'Image'),
           child: SizedBox(
             height: cardHeightWidth,
             width: cardHeightWidth,
@@ -35,7 +35,7 @@ class AddPostsScreen extends ConsumerWidget {
           ),
         ),
         GestureDetector(
-          onTap: () => navigateToType(context, 'text'),
+          onTap: () => navigateToType(context, 'Text'),
           child: SizedBox(
             height: cardHeightWidth,
             width: cardHeightWidth,
@@ -50,7 +50,7 @@ class AddPostsScreen extends ConsumerWidget {
           ),
         ),
         GestureDetector(
-          onTap: () => navigateToType(context, 'link'),
+          onTap: () => navigateToType(context, 'Link'),
           child: SizedBox(
             height: cardHeightWidth,
             width: cardHeightWidth,

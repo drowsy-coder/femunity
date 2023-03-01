@@ -15,7 +15,17 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [TextButton(onPressed: () {}, child: Text('Share'))],
+        title: Text('Post ${widget.type}'),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: Text('Share'),
+            style: ButtonStyle(
+              foregroundColor:
+                  MaterialStateProperty.all<Color>(const Color(0xFFFEB2B2)),
+            ),
+          )
+        ],
       ),
     );
   }
