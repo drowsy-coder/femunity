@@ -22,7 +22,7 @@ class StorageRepository {
   FutureEither<String> storeFile(
       {required String path, required String id, required File? file}) async {
     try {
-      final ref = _firebaseStorage.ref().child(path).child('id');
+      final ref = _firebaseStorage.ref().child(path).child(id);
 
       UploadTask uploadTask = ref.putFile(file!);
 

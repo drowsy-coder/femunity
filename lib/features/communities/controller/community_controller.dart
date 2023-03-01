@@ -107,7 +107,7 @@ class CommunityController extends StateNotifier<bool> {
     state = true;
     if (profileFile != null) {
       final res = await _storageRepository.storeFile(
-        path: 'communities/profile/${community.name}}',
+        path: 'communities/profile/',
         id: community.name,
         file: profileFile,
       );
@@ -119,7 +119,7 @@ class CommunityController extends StateNotifier<bool> {
     if (bannerFile != null) {
       final res = await _storageRepository.storeFile(
         id: community.name,
-        path: 'communities/banner/${community.name}',
+        path: 'communities/banner/',
         file: bannerFile,
       );
       res.fold(
@@ -136,5 +136,14 @@ class CommunityController extends StateNotifier<bool> {
 
   Stream<List<Community>> searchCommunity(String query) {
     return _communityRepository.searchCommunity(query);
+  }
+
+  void addMods(
+      String communityName, List<String> uids, BuildContext context) async {
+    final res = await _communityRepository.addMods(communityName, uids);
+    res.fold(
+      (l) => showSnackBar(context, l.message),
+      (r) => Routemaster.of(context).pop(),
+    );
   }
 }
