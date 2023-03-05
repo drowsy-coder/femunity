@@ -12,55 +12,53 @@ class AddPostsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    double cardHeightWidth = 120;
-    double iconSize = 40;
     final currentTheme = ref.watch(themeNotifierProvider);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         GestureDetector(
           onTap: () => navigateToType(context, 'Image'),
-          child: SizedBox(
-            height: cardHeightWidth,
-            width: cardHeightWidth,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              color: currentTheme.backgroundColor,
-              elevation: 16,
-              child: Icon(Icons.image_outlined, size: iconSize),
+          child: Card(
+            margin: EdgeInsets.all(16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            color: currentTheme.backgroundColor,
+            elevation: 16,
+            child: const SizedBox(
+              height: 120,
+              child: Icon(Icons.image_outlined, size: 40),
             ),
           ),
         ),
         GestureDetector(
           onTap: () => navigateToType(context, 'Text'),
-          child: SizedBox(
-            height: cardHeightWidth,
-            width: cardHeightWidth,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              color: currentTheme.backgroundColor,
-              elevation: 16,
-              child: Icon(Icons.text_fields_outlined, size: iconSize),
+          child: Card(
+            margin: EdgeInsets.all(16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            color: currentTheme.backgroundColor,
+            elevation: 16,
+            child: const SizedBox(
+              height: 120,
+              child: Icon(Icons.text_fields_outlined, size: 40),
             ),
           ),
         ),
         GestureDetector(
           onTap: () => navigateToType(context, 'Link'),
-          child: SizedBox(
-            height: cardHeightWidth,
-            width: cardHeightWidth,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              color: currentTheme.backgroundColor,
-              elevation: 16,
-              child: Icon(Icons.link_outlined, size: iconSize),
+          child: Card(
+            margin: EdgeInsets.all(16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            color: currentTheme.backgroundColor,
+            elevation: 16,
+            child: const SizedBox(
+              height: 120,
+              child: Icon(Icons.link_outlined, size: 40),
             ),
           ),
         )

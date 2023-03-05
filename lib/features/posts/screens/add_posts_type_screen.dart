@@ -6,6 +6,7 @@ import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
+import 'package:femunity/features/posts/controller/posts_controller.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
@@ -46,18 +47,49 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
     }
   }
 
+  void sharePost() {
+    if (widget.type == 'Image' &&
+        bannerFile != null &&
+        titleController.text.isNotEmpty) {
+      ref.read(postControllerProvider.notifier).shareImagePost(
+          context: context,
+          title: titleController.text.trim(),
+          selectedCommunity: selectedCommunity ?? communities[0],
+          file: bannerFile);
+    } else if (widget.type == 'Text' && titleController.text.isNotEmpty) {
+      ref.read(postControllerProvider.notifier).shareTextPost(
+            context: context,
+            title: titleController.text.trim(),
+            selectedCommunity: selectedCommunity ?? communities[0],
+            description: descriptionController.text.trim(),
+          );
+    } else if (widget.type == 'Link' &&
+        linkController.text.isNotEmpty &&
+        titleController.text.isNotEmpty) {
+      ref.read(postControllerProvider.notifier).shareLinkPost(
+            context: context,
+            title: titleController.text.trim(),
+            selectedCommunity: selectedCommunity ?? communities[0],
+            link: linkController.text.trim(),
+          );
+    } else {
+      showSnackBar(context, 'Please input all the fields');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final currentTheme = ref.watch(themeNotifierProvider);
     final isTypeImage = widget.type == 'Image';
     final isTypeText = widget.type == 'Text';
     final isTypeLink = widget.type == 'Link';
+    final isLoading = ref.watch(postControllerProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text('Post ${widget.type}'),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: sharePost,
             style: ButtonStyle(
               foregroundColor:
                   MaterialStateProperty.all<Color>(const Color(0xFFFEB2B2)),
@@ -66,108 +98,110 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: titleController,
-              decoration: const InputDecoration(
-                hintText: 'What should the title be?',
-                filled: true,
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.all(18),
-              ),
-              maxLength: 30,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            if (isTypeImage)
-              GestureDetector(
-                onTap: selectBannerImage,
-                child: DottedBorder(
-                  borderType: BorderType.RRect,
-                  radius: const Radius.circular(10),
-                  dashPattern: const [10, 4],
-                  strokeCap: StrokeCap.round,
-                  color: currentTheme.textTheme.bodyText2!.color!,
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+      body: isLoading
+          ? const Loader()
+          : Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  TextField(
+                    controller: titleController,
+                    decoration: const InputDecoration(
+                      hintText: 'What should the title be?',
+                      filled: true,
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(18),
+                    ),
+                    maxLength: 30,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  if (isTypeImage)
+                    GestureDetector(
+                      onTap: selectBannerImage,
+                      child: DottedBorder(
+                        borderType: BorderType.RRect,
+                        radius: const Radius.circular(10),
+                        dashPattern: const [10, 4],
+                        strokeCap: StrokeCap.round,
+                        color: currentTheme.textTheme.bodyText2!.color!,
+                        child: Container(
+                            width: double.infinity,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: bannerFile != null
+                                ? Image.file(bannerFile!)
+                                : const Center(
+                                    child: Icon(
+                                      Icons.camera_alt_outlined,
+                                      size: 40,
+                                    ),
+                                  )),
                       ),
-                      child: bannerFile != null
-                          ? Image.file(bannerFile!)
-                          : const Center(
-                              child: Icon(
-                                Icons.camera_alt_outlined,
-                                size: 40,
-                              ),
-                            )),
-                ),
-              ),
-            if (isTypeText)
-              TextField(
-                controller: descriptionController,
-                decoration: const InputDecoration(
-                  hintText: 'Voice your thoughts!',
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    ),
+                  if (isTypeText)
+                    TextField(
+                      controller: descriptionController,
+                      decoration: const InputDecoration(
+                        hintText: 'Voice your thoughts!',
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        filled: true,
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.all(18),
+                      ),
+                      maxLines: 5,
+                    ),
+                  if (isTypeLink)
+                    TextField(
+                      controller: linkController,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter link here',
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        filled: true,
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.all(18),
+                      ),
+                      maxLines: 2,
+                    ),
+                  const SizedBox(height: 20),
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Select Community'),
                   ),
-                  filled: true,
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(18),
-                ),
-                maxLines: 5,
-              ),
-            if (isTypeLink)
-              TextField(
-                controller: linkController,
-                decoration: const InputDecoration(
-                  hintText: 'Enter link here',
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
-                  ),
-                  filled: true,
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(18),
-                ),
-                maxLines: 2,
-              ),
-            const SizedBox(height: 20),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text('Select Community'),
-            ),
-            ref.watch(userCommunitiesProvider).when(
-                  data: (data) {
-                    communities = data;
+                  ref.watch(userCommunitiesProvider).when(
+                        data: (data) {
+                          communities = data;
 
-                    if (data.isEmpty) {
-                      return const SizedBox();
-                    }
-                    return DropdownButton(
-                        value: selectedCommunity ?? data[0],
-                        items: data
-                            .map((e) =>
-                                DropdownMenuItem(value: e, child: Text(e.name)))
-                            .toList(),
-                        onChanged: (val) {
-                          setState(() {
-                            selectedCommunity = val;
-                          });
-                        });
-                  },
-                  error: (error, StackTrace) => ErrorText(
-                    error: error.toString(),
-                  ),
-                  loading: () => const Loader(),
-                ),
-          ],
-        ),
-      ),
+                          if (data.isEmpty) {
+                            return const SizedBox();
+                          }
+                          return DropdownButton(
+                              value: selectedCommunity ?? data[0],
+                              items: data
+                                  .map((e) => DropdownMenuItem(
+                                      value: e, child: Text(e.name)))
+                                  .toList(),
+                              onChanged: (val) {
+                                setState(() {
+                                  selectedCommunity = val;
+                                });
+                              });
+                        },
+                        error: (error, StackTrace) => ErrorText(
+                          error: error.toString(),
+                        ),
+                        loading: () => const Loader(),
+                      ),
+                ],
+              ),
+            ),
     );
   }
 }

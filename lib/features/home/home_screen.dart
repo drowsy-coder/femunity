@@ -19,6 +19,7 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _page = 0;
+  String _title = 'Home';
 
   void displayDrawer(BuildContext context) {
     Scaffold.of(context).openDrawer();
@@ -31,6 +32,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void onPageChanged(int page) {
     setState(() {
       _page = page;
+      if (page == 1) {
+        _title = 'Add Post';
+      } else {
+        _title = 'Home';
+      }
     });
   }
 
@@ -38,9 +44,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final user = ref.watch(userProvider)!;
     final currentTheme = ref.watch(themeNotifierProvider);
+
+    // Determine the text color based on the current theme's brightness
+    final textColor = currentTheme.brightness == Brightness.dark
+        ? Colors.white
+        : Colors.black;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text(
+          _title,
+          style: TextStyle(color: textColor),
+        ),
         centerTitle: false,
         leading: Builder(builder: (context) {
           return IconButton(
