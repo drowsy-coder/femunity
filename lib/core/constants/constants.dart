@@ -1,5 +1,6 @@
 import 'package:femunity/features/feed/feed_screen.dart';
 import 'package:femunity/features/posts/screens/add_posts_screen.dart';
+import 'package:flutter/material.dart';
 
 class Constants {
   static const textPath = 'assets/images/text.png';
@@ -16,4 +17,22 @@ class Constants {
     FeedScreen(),
     AddPostsScreen(),
   ];
+
+  static const IconData up =
+      IconData(0xe800, fontFamily: 'femFont', fontPackage: null);
+  static const IconData down =
+      IconData(0xe801, fontFamily: 'femFont', fontPackage: null);
+
+  static const awardsPath = 'assets/images/awards';
+
+  static const awards = {
+    'awesomeAns': '${Constants.awardsPath}/awesomeanswer.png',
+    'gold': '${Constants.awardsPath}/gold.png',
+    'platinum': '${Constants.awardsPath}/platinum.png',
+    'helpful': '${Constants.awardsPath}/helpful.png',
+    'plusone': '${Constants.awardsPath}/plusone.png',
+    'rocket': '${Constants.awardsPath}/rocket.png',
+    'thankyou': '${Constants.awardsPath}/thankyou.png',
+    'til': '${Constants.awardsPath}/til.png',
+  };
 }
