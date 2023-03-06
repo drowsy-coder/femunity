@@ -2,8 +2,6 @@ import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
-import 'package:femunity/models/community_model.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,7 +41,7 @@ class _AddModScreenState extends ConsumerState<AddModScreen> {
         actions: [
           IconButton(
             onPressed: saveMods,
-            icon: Icon(Icons.done),
+            icon: const Icon(Icons.done),
           ),
         ],
       ),

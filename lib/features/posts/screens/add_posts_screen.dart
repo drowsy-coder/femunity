@@ -20,11 +20,11 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Image'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: currentTheme.colorScheme.background,
             elevation: 16,
             child: const SizedBox(
               height: 120,
@@ -35,11 +35,11 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Text'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: currentTheme.colorScheme.background,
             elevation: 16,
             child: const SizedBox(
               height: 120,
@@ -50,11 +50,11 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Link'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: currentTheme.colorScheme.background,
             elevation: 16,
             child: const SizedBox(
               height: 120,

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
-import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/posts/controller/posts_controller.dart';
@@ -125,7 +124,7 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                         radius: const Radius.circular(10),
                         dashPattern: const [10, 4],
                         strokeCap: StrokeCap.round,
-                        color: currentTheme.textTheme.bodyText2!.color!,
+                        color: currentTheme.textTheme.bodyMedium!.color!,
                         child: Container(
                             width: double.infinity,
                             height: 150,
@@ -194,7 +193,7 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                                 });
                               });
                         },
-                        error: (error, StackTrace) => ErrorText(
+                        error: (error, stackTrace) => ErrorText(
                           error: error.toString(),
                         ),
                         loading: () => const Loader(),

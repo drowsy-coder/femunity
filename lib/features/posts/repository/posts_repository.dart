@@ -3,7 +3,6 @@ import 'package:femunity/core/constants/firebase_constants.dart';
 import 'package:femunity/core/faliures.dart';
 import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/type_defs.dart';
-import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

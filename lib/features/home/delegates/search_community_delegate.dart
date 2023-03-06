@@ -45,7 +45,7 @@ class SearchCommunityDelegate extends SearchDelegate {
                 onTap: () => navigateToCommunity(context, community.name),
               );
             }),
-        error: (error, StackTrace) => ErrorText(error: error.toString()),
+        error: (error, stackTrace) => ErrorText(error: error.toString()),
         loading: () => const Loader());
   }
 

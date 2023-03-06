@@ -5,7 +5,6 @@ import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/posts/controller/posts_controller.dart';
-import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';

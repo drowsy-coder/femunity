@@ -1,10 +1,8 @@
-import 'dart:convert';
 
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/common/post_card.dart';
 import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';

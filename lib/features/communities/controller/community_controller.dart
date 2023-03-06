@@ -1,12 +1,10 @@
 import 'dart:io';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/faliures.dart';
-import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/providers/storage_repository_provider.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/repository/community_repository.dart';
-import 'package:femunity/features/communities/screens/create_community_sc.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
