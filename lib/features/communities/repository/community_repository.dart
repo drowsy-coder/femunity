@@ -3,6 +3,7 @@ import 'package:femunity/core/constants/firebase_constants.dart';
 import 'package:femunity/core/faliures.dart';
 import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/type_defs.dart';
+import 'package:femunity/models/post_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
@@ -119,6 +120,24 @@ class CommunityRepository {
     }
   }
 
+  Stream<List<Post>> getCommunityPosts(String name) {
+    return _posts
+        .where('CommunityName', isEqualTo: name)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map(
+          (event) => event.docs
+              .map(
+                (e) => Post.fromMap(
+                  e.data() as Map<String, dynamic>,
+                ),
+              )
+              .toList(),
+        );
+  }
+
+  CollectionReference get _posts =>
+      _firestore.collection(FirebaseConstants.postsCollection);
   CollectionReference get _communities =>
       _firestore.collection(FirebaseConstants.communitiesCollection);
 }

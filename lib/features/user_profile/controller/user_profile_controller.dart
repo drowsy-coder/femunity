@@ -6,6 +6,7 @@ import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/repository/community_repository.dart';
 import 'package:femunity/features/user_profile/repository/user_profile_repository.dart';
 import 'package:femunity/models/community_model.dart';
+import 'package:femunity/models/post_model.dart';
 import 'package:femunity/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,7 +21,9 @@ final userProfileControllerProvider =
       ref: ref,
       userProfileRepository: userProfileRepository);
 });
-
+  final getUserPostsProvider = StreamProvider.family((ref, String uid) {
+    return ref.read(userProfileControllerProvider.notifier).getUserPosts(uid);
+});
 class UserProfileController extends StateNotifier<bool> {
   final UserProfileRepository _userProfileRepository;
   final Ref _ref;
@@ -71,4 +74,8 @@ class UserProfileController extends StateNotifier<bool> {
       Routemaster.of(context).pop();
     });
   }
+   Stream<List<Post>> getUserPosts(String uid) {
+    return _userProfileRepository.getUserPosts(uid);
+  }
+  
 }

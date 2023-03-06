@@ -4,6 +4,7 @@ import 'package:femunity/core/providers/storage_repository_provider.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/repository/posts_repository.dart';
+import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:flutter/material.dart';
@@ -149,5 +150,21 @@ class PostController extends StateNotifier<bool> {
       return _postRepository.fetchUserPosts(communities);
     }
     return Stream.value([]);
+  }
+
+  void deletePost(Post post, BuildContext context) async {
+    final res = await _postRepository.deletePost(post);
+    res.fold((l) => null, (r) => showSnackBar(context, 'Post Deleted successfully!'));
+  }
+
+  void upvote(Post post) async {
+    final uid = _ref.read(userProvider)!.uid;
+    _postRepository.upvote(post, uid);
+  }
+
+  
+  void downvote(Post post) async {
+    final uid = _ref.read(userProvider)!.uid;
+    _postRepository.downvote(post, uid);
   }
 }
