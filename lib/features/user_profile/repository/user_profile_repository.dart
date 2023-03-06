@@ -3,8 +3,10 @@ import 'package:femunity/core/constants/firebase_constants.dart';
 import 'package:femunity/core/faliures.dart';
 import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/type_defs.dart';
+import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:femunity/models/user_model.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
 

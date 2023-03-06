@@ -6,8 +6,10 @@ import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
+import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
 import 'package:femunity/theme/pallate.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -73,7 +75,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
     return ref.watch(getUserDataProvider(widget.uid)).when(
           data: (user) => Scaffold(
-            backgroundColor: currentTheme.colorScheme.background,
+            backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
               title: const Text('Edit Profile'),
               centerTitle: false,
@@ -102,7 +104,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                   dashPattern: const [10, 4],
                                   strokeCap: StrokeCap.round,
                                   color:
-                                      currentTheme.textTheme.bodyMedium!.color!,
+                                      currentTheme.textTheme.bodyText2!.color!,
                                   child: Container(
                                     width: double.infinity,
                                     height: 150,
@@ -152,7 +154,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                             filled: true,
                             hintText: 'Enter Your Username',
                             focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.blue),
+                              borderSide: BorderSide(color: Colors.blue),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             border: InputBorder.none,

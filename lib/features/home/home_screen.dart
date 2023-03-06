@@ -1,4 +1,5 @@
 import 'package:femunity/features/auth/controller/auth_controller.dart';
+import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/home/delegates/search_community_delegate.dart';
 import 'package:femunity/features/home/drawer/list_of_communities.dart';
 import 'package:femunity/features/home/drawer/profile_drawer.dart';
@@ -73,7 +74,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           Builder(builder: (context) {
             return IconButton(
               icon: CircleAvatar(
-                backgroundImage: NetworkImage(user.profilePic),
+                backgroundImage: NetworkImage(user!.profilePic),
               ),
               onPressed: () => displayEndDrawer(context),
             );
@@ -85,7 +86,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       endDrawer: const ProfileDrawer(),
       bottomNavigationBar: CupertinoTabBar(
         activeColor: currentTheme.iconTheme.color,
-        backgroundColor: currentTheme.colorScheme.background,
+        backgroundColor: currentTheme.backgroundColor,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),

@@ -60,7 +60,7 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
     final currentTheme = ref.watch(themeNotifierProvider);
     return ref.watch(getCommunityByNameProvider(widget.name)).when(
           data: (community) => Scaffold(
-            backgroundColor: currentTheme.colorScheme.background,
+            backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
               title: const Text('Edit Community'),
               centerTitle: false,
@@ -89,7 +89,7 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
                                   dashPattern: const [10, 4],
                                   strokeCap: StrokeCap.round,
                                   color: currentTheme.textTheme
-                                      .bodyMedium!.color!,
+                                      .bodyText2!.color!,
                                   child: Container(
                                     width: double.infinity,
                                     height: 150,

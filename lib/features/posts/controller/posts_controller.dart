@@ -1,11 +1,14 @@
 import 'dart:io';
+import 'package:femunity/core/providers/firebase_providers.dart';
 import 'package:femunity/core/providers/storage_repository_provider.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/repository/posts_repository.dart';
+import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
 import 'package:uuid/uuid.dart';
