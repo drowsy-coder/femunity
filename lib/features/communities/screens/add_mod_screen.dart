@@ -42,7 +42,7 @@ class _AddModScreenState extends ConsumerState<AddModScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900]
-            : Color(0xffFEB2B2),
+            : Color(0xffffe9ec),
         title: Text(
           'Add Moderators',
           style: Theme.of(context).textTheme.headline6?.copyWith(

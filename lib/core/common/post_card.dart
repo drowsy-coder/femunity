@@ -149,28 +149,45 @@ class PostCard extends ConsumerWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                IconButton(
-                                  onPressed: () => upvotePost(ref),
-                                  icon: Icon(
-                                    Constants.up,
-                                    size: 30,
-                                    color: post.upvotes.contains(user.uid)
-                                        ? Pallete.redColor
-                                        : null,
+                                AnimatedContainer(
+                                  duration: Duration(milliseconds: 200),
+                                  curve: Curves.easeOut,
+                                  transform: Matrix4.translationValues(
+                                    0.0,
+                                    post.upvotes.contains(user.uid)
+                                        ? -7.0
+                                        : 0.0,
+                                    0.0,
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () => upvotePost(ref),
+                                    icon: Icon(
+                                      Constants.up,
+                                      size: 30,
+                                      color: post.upvotes.contains(user.uid)
+                                          ? Pallete.redColor
+                                          : null,
+                                    ),
                                   ),
                                 ),
                                 Text(
                                   '${post.upvotes.length - post.downvotes.length == 0 ? 'Vote' : post.upvotes.length - post.downvotes.length}',
                                   style: const TextStyle(fontSize: 17),
                                 ),
-                                IconButton(
-                                  onPressed: () => downvotePost(ref),
-                                  icon: Icon(
-                                    Constants.down,
-                                    size: 30,
-                                    color: post.downvotes.contains(user.uid)
-                                        ? Pallete.blueColor
-                                        : null,
+                                AnimatedContainer(
+                                  duration: Duration(milliseconds: 300),
+                                  height: post.downvotes.contains(user.uid)
+                                      ? 38
+                                      : 45,
+                                  child: IconButton(
+                                    onPressed: () => downvotePost(ref),
+                                    icon: Icon(
+                                      Constants.down,
+                                      size: 30,
+                                      color: post.downvotes.contains(user.uid)
+                                          ? Pallete.blueColor
+                                          : null,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -182,6 +199,7 @@ class PostCard extends ConsumerWidget {
                                   IconButton(
                                     onPressed: () {},
                                     icon: const Icon(Icons.comment),
+                                    color: Colors.blue, // set the color to blue
                                   ),
                                   Text(
                                     '${post.commentCount == 0 ? 'Comment' : post.commentCount}',

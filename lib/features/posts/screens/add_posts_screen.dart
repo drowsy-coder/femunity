@@ -24,7 +24,9 @@ class AddPostsScreen extends ConsumerWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.grey[900] // set color for dark mode
+                : Color(0xFFFAC898),
             elevation: 16,
             child: const SizedBox(
               height: 120,
@@ -39,11 +41,16 @@ class AddPostsScreen extends ConsumerWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.grey[900] // set color for dark mode
+                : Color.fromARGB(255, 254, 254, 254),
             elevation: 16,
             child: const SizedBox(
               height: 120,
-              child: Icon(Icons.text_fields_outlined, size: 40),
+              child: Icon(
+                Icons.text_fields_outlined,
+                size: 40,
+              ),
             ),
           ),
         ),
@@ -54,7 +61,9 @@ class AddPostsScreen extends ConsumerWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            color: currentTheme.backgroundColor,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.grey[900] // set color for dark mode
+                : Color(0xFF77DD77),
             elevation: 16,
             child: const SizedBox(
               height: 120,

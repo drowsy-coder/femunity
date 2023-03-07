@@ -24,13 +24,14 @@ class ModToolsScreen extends StatelessWidget {
         title: const Text(
           'Mod Tools',
           style: TextStyle(
-            color: Colors.black, // default color for light mode
+            color: Color.fromARGB(
+                255, 103, 100, 100), // default color for light mode
           ),
         ),
         centerTitle: false,
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900]
-            : Color(0xffFEB2B2),
+            : Color(0xffffe9ec),
         // set the background color according to the current theme mode
         brightness: Theme.of(context).brightness,
         // set the brightness according to the current theme mode

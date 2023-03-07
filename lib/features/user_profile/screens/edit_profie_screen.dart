@@ -81,13 +81,13 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                 'Edit Profile',
                 style: TextStyle(
                   color: Color.fromARGB(
-                      255, 0, 0, 0), // default color for light mode
+                      255, 100, 97, 97), // default color for light mode
                 ),
               ),
               centerTitle: false,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
-                  : Color(0xffFEB2B2),
+                  : Color(0xffffe9ec),
               // set the background color according to the current theme mode
               brightness: Theme.of(context).brightness,
               // set the brightness according to the current theme mode

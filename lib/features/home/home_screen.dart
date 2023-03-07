@@ -54,7 +54,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color.fromARGB(255, 255, 209, 215),
+            : Color(0xFFffe9ec),
         title: Text(
           _title,
           style: TextStyle(color: textColor),
@@ -85,13 +85,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ],
       ),
       body: Constants.tabWidgets[_page],
-      drawer: CommunityListDrawer(),
+      drawer: const CommunityListDrawer(),
       endDrawer: const ProfileDrawer(),
       bottomNavigationBar: CupertinoTabBar(
         activeColor: currentTheme.iconTheme.color,
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color.fromARGB(255, 255, 209, 215),
+            : Color(0xFFffe9ec),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
