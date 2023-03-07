@@ -8,6 +8,7 @@ import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/repository/community_repository.dart';
 import 'package:femunity/features/communities/screens/create_community_sc.dart';
 import 'package:femunity/models/community_model.dart';
+import 'package:femunity/models/post_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
@@ -16,6 +17,10 @@ import 'package:routemaster/routemaster.dart';
 final userCommunitiesProvider = StreamProvider((ref) {
   final communityController = ref.watch(communityControllerProvider.notifier);
   return communityController.getUserCommunities();
+});
+
+final getCommunityPostsProvider = StreamProvider.family((ref, String name) {
+  return ref.read(communityControllerProvider.notifier).getCommunityPosts(name);
 });
 
 final communityControllerProvider =
@@ -152,5 +157,9 @@ class CommunityController extends StateNotifier<bool> {
       (l) => showSnackBar(context, l.message),
       (r) => Routemaster.of(context).pop(),
     );
+  }
+
+  Stream<List<Post>> getCommunityPosts(String name) {
+    return _communityRepository.getCommunityPosts(name);
   }
 }

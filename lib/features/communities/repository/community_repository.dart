@@ -122,7 +122,7 @@ class CommunityRepository {
 
   Stream<List<Post>> getCommunityPosts(String name) {
     return _posts
-        .where('CommunityName', isEqualTo: name)
+        .where('communityName', isEqualTo: name)
         .orderBy('createdAt', descending: true)
         .snapshots()
         .map(
