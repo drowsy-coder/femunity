@@ -40,6 +40,15 @@ class _AddModScreenState extends ConsumerState<AddModScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Colors.grey[900]
+            : Color(0xffFEB2B2),
+        title: Text(
+          'Add Moderators',
+          style: Theme.of(context).textTheme.headline6?.copyWith(
+                color: Theme.of(context).textTheme.headline6?.color,
+              ),
+        ),
         actions: [
           IconButton(
             onPressed: saveMods,

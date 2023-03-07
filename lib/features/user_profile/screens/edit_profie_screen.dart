@@ -77,14 +77,26 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
           data: (user) => Scaffold(
             backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
-              title: const Text('Edit Profile'),
-              centerTitle: false,
-              actions: [
-                TextButton(
-                  onPressed: save,
-                  child: const Text("Save"),
+              title: const Text(
+                'Edit Profile',
+                style: TextStyle(
+                  color: Color.fromARGB(
+                      255, 0, 0, 0), // default color for light mode
                 ),
-              ],
+              ),
+              centerTitle: false,
+              backgroundColor: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey[900]
+                  : Color(0xffFEB2B2),
+              // set the background color according to the current theme mode
+              brightness: Theme.of(context).brightness,
+              // set the brightness according to the current theme mode
+              iconTheme: IconThemeData(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+              ),
+              // set the icon color according to the current theme mode
             ),
             body: isLoading
                 ? const Loader()

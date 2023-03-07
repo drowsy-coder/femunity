@@ -62,12 +62,20 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
           data: (community) => Scaffold(
             backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
-              title: const Text('Edit Community'),
+              backgroundColor: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey[900]
+                  : Color(0xffFEB2B2),
+              title: Text(
+                'Edit Community',
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: Theme.of(context).textTheme.headline6?.color,
+                    ),
+              ),
               centerTitle: false,
               actions: [
                 TextButton(
                   onPressed: () => save(community),
-                  child: const Text("Save"),
+                  child: const Text('Save'),
                 ),
               ],
             ),
@@ -88,8 +96,8 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
                                   radius: const Radius.circular(10),
                                   dashPattern: const [10, 4],
                                   strokeCap: StrokeCap.round,
-                                  color: currentTheme.textTheme
-                                      .bodyText2!.color!,
+                                  color:
+                                      currentTheme.textTheme.bodyText2!.color!,
                                   child: Container(
                                     width: double.infinity,
                                     height: 150,

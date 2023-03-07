@@ -86,7 +86,7 @@ class CommunityScreen extends ConsumerWidget {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 25),
+                                        horizontal: 20),
                                     foregroundColor: const Color(0xffFEB2B2),
                                     shape: RoundedRectangleBorder(
                                       borderRadius:
@@ -101,7 +101,7 @@ class CommunityScreen extends ConsumerWidget {
                                       joinCommunity(ref, community, context),
                                   style: ElevatedButton.styleFrom(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 25),
+                                        horizontal: 20),
                                     foregroundColor: const Color(0xffFEB2B2),
                                     shape: RoundedRectangleBorder(
                                       borderRadius:

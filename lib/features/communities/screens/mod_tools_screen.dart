@@ -3,6 +3,7 @@ import 'package:routemaster/routemaster.dart';
 
 class ModToolsScreen extends StatelessWidget {
   final String name;
+
   const ModToolsScreen({
     Key? key,
     required this.name,
@@ -20,20 +21,51 @@ class ModToolsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mod Tools'),
+        title: const Text(
+          'Mod Tools',
+          style: TextStyle(
+            color: Colors.black, // default color for light mode
+          ),
+        ),
+        centerTitle: false,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Colors.grey[900]
+            : Color(0xffFEB2B2),
+        // set the background color according to the current theme mode
+        brightness: Theme.of(context).brightness,
+        // set the brightness according to the current theme mode
+        iconTheme: IconThemeData(
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.white
+              : Colors.black,
+        ),
+        // set the icon color according to the current theme mode
       ),
-      body: Column(children: [
-        ListTile(
-          leading: const Icon(Icons.add_moderator),
-          title: const Text('Add Moderators'),
-          onTap: () => navigateToAddMods(context),
-        ),
-        ListTile(
-          leading: const Icon(Icons.edit),
-          title: const Text('Edit Community'),
-          onTap: () => navigateToModTools(context),
-        ),
-      ]),
+      body: Column(
+        children: [
+          ListTile(
+            leading: const Icon(Icons.add_moderator),
+            title: const Text(
+              'Add Moderators',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            onTap: () => navigateToAddMods(context),
+          ),
+          ListTile(
+            leading: const Icon(Icons.edit),
+            title: Text(
+              'Edit Community',
+              style: TextStyle(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () => navigateToModTools(context),
+          ),
+        ],
+      ),
     );
   }
 }
