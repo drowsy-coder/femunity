@@ -52,11 +52,11 @@ final loggedInRoute = RouteMap(routes: {
       ),
   '/add-posts/:type': (routeData) => MaterialPage(
         child: AddPostsTypeScreen(
-          type: routeData.pathParameters['type']!, 
+          type: routeData.pathParameters['type']!,
         ),
       ),
   '/post/:postId/comments': (route) => MaterialPage(
-        child: CommentScreen(
+        child: CommentsScreen(
           postId: route.pathParameters['postId']!,
         ),
       )

@@ -5,6 +5,7 @@ import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/repository/posts_repository.dart';
 import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
+import 'package:femunity/models/comment_model.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,10 @@ final userPostsProvider =
 final getPostByIdProvider = StreamProvider.family((ref, String postId) {
   final postController = ref.watch(postControllerProvider.notifier);
   return postController.getPostById(postId);
+});
+final getPostCommentsProvider = StreamProvider.family((ref, String postId) {
+  final postController = ref.watch(postControllerProvider.notifier);
+  return postController.fetchPostComments(postId);
 });
 
 class PostController extends StateNotifier<bool> {
@@ -174,5 +179,32 @@ class PostController extends StateNotifier<bool> {
 
   Stream<Post> getPostById(String postId) {
     return _postRepository.getPostById(postId);
+  }
+
+  void addComment({
+    required BuildContext context,
+    required String text,
+    required Post post,
+  }) async {
+    if (text.trim().isEmpty) {
+      showSnackBar(context, 'Comment cannot be empty');
+      return;
+    }
+    final user = _ref.read(userProvider)!;
+    String commentId = const Uuid().v1();
+    Comment comment = Comment(
+      id: commentId,
+      text: text,
+      createdAt: DateTime.now(),
+      postId: post.id,
+      username: user.name,
+      profilePic: user.profilePic,
+    );
+    final res = await _postRepository.addComment(comment);
+    res.fold((l) => showSnackBar(context, l.message), (r) => null);
+  }
+
+  Stream<List<Comment>> fetchPostComments(String postId) {
+    return _postRepository.getCommentsOfPost(postId);
   }
 }
