@@ -54,8 +54,6 @@ class PostRepository {
     }
   }
 
-
-
   void upvote(Post post, String userId) async {
     if (post.downvotes.contains(userId)) {
       _posts.doc(post.id).update({
@@ -73,7 +71,6 @@ class PostRepository {
       });
     }
   }
-
 
   void downvote(Post post, String userId) async {
     if (post.upvotes.contains(userId)) {
@@ -93,5 +90,10 @@ class PostRepository {
     }
   }
 
-
+  Stream<Post> getPostById(String postId) {
+    return _posts
+        .doc(postId)
+        .snapshots()
+        .map((event) => Post.fromMap(event.data() as Map<String, dynamic>));
+  }
 }

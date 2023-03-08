@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
@@ -41,44 +42,44 @@ class LoginScreen extends ConsumerWidget {
                     const SizedBox(
                       height: 15, // Adjust the height to reduce the spacing
                     ),
-                    const Text(
-                      'Unleash your power',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.5,
+                    SizedBox(
+                      height: 30, // Fixed height for the flicker animation
+                      child: DefaultTextStyle(
+                        style: const TextStyle(
+                          fontFamily: 'FutureLight',
+                          fontSize: 29,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 7.0,
+                              color: Colors.white,
+                              offset: Offset(0, 0),
+                            ),
+                          ],
+                        ),
+                        child: AnimatedTextKit(
+                          repeatForever: true,
+                          animatedTexts: [
+                            FlickerAnimatedText('Unleash your power'),
+                            FlickerAnimatedText('Connect with your community'),
+                          ],
+                        ),
                       ),
                     ),
-                    const Text(
-                      'Connect with your community',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.5,
+                    SizedBox(
+                      width: 400.0,
+                      child: TextLiquidFill(
+                        text: 'Femunity',
+                        waveColor: Color(0xFFff48a5),
+                        textStyle: TextStyle(
+                          fontFamily: 'AlBrush',
+                          fontSize: 100.0,
+                        ),
+                        boxHeight: 150.0,
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        Constants.textPath,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
                     ),
                     const SignInButton(),
                   ],
-                ),
-                Positioned(
-                  bottom: 15,
-                  left: 0,
-                  right: 0,
-                  child: Image.asset(
-                    'assets/images/gdsc.png',
-                    height: 70,
-                    alignment: Alignment.bottomCenter,
-                  ),
                 ),
               ],
             ),

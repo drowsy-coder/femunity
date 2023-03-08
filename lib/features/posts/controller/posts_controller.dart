@@ -28,6 +28,10 @@ final userPostsProvider =
   final postController = ref.watch(postControllerProvider.notifier);
   return postController.fetchUserPosts(communities);
 });
+final getPostByIdProvider = StreamProvider.family((ref, String postId) {
+  final postController = ref.watch(postControllerProvider.notifier);
+  return postController.getPostById(postId);
+});
 
 class PostController extends StateNotifier<bool> {
   final PostRepository _postRepository;
@@ -154,7 +158,8 @@ class PostController extends StateNotifier<bool> {
 
   void deletePost(Post post, BuildContext context) async {
     final res = await _postRepository.deletePost(post);
-    res.fold((l) => null, (r) => showSnackBar(context, 'Post Deleted successfully!'));
+    res.fold((l) => null,
+        (r) => showSnackBar(context, 'Post Deleted successfully!'));
   }
 
   void upvote(Post post) async {
@@ -162,9 +167,12 @@ class PostController extends StateNotifier<bool> {
     _postRepository.upvote(post, uid);
   }
 
-  
   void downvote(Post post) async {
     final uid = _ref.read(userProvider)!.uid;
     _postRepository.downvote(post, uid);
+  }
+
+  Stream<Post> getPostById(String postId) {
+    return _postRepository.getPostById(postId);
   }
 }

@@ -6,6 +6,7 @@ import 'package:femunity/features/communities/screens/edit_community_screen.dart
 import 'package:femunity/features/communities/screens/mod_tools_screen.dart';
 import 'package:femunity/features/home/home_screen.dart';
 import 'package:femunity/features/posts/screens/add_posts_type_screen.dart';
+import 'package:femunity/features/posts/screens/comment_screen.dart';
 import 'package:femunity/features/user_profile/screens/edit_profie_screen.dart';
 import 'package:femunity/features/user_profile/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,12 @@ final loggedInRoute = RouteMap(routes: {
       ),
   '/add-posts/:type': (routeData) => MaterialPage(
         child: AddPostsTypeScreen(
-          type: routeData.pathParameters['type']!,
+          type: routeData.pathParameters['type']!, 
         ),
       ),
+  '/post/:postId/comments': (route) => MaterialPage(
+        child: CommentScreen(
+          postId: route.pathParameters['postId']!,
+        ),
+      )
 });
