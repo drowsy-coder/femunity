@@ -57,6 +57,7 @@ dependencies:
   flutter_animations: ^0.0.1+10
   animated_text_kit: ^4.2.2
   liquid_swipe: ^3.0.0
+  flutter_keyboard_visibility: ^5.4.0
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

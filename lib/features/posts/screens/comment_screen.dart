@@ -48,46 +48,52 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
 
     return Scaffold(
       appBar: AppBar(),
-      body: ref.watch(getPostByIdProvider(widget.postId)).when(
-            data: (data) {
-              return Column(
-                children: [
-                  PostCard(post: data),
-                  if (!isGuest)
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? Colors.grey[900] // set color for dark mode
-                              : Color(0xFFffe9ec),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                controller: commentController,
-                                decoration: const InputDecoration(
-                                  hintText: 'What\'s your take?',
-                                  border: InputBorder.none,
-                                  contentPadding:
-                                      EdgeInsets.symmetric(horizontal: 16),
+      body: SingleChildScrollView(
+        // Wrap the body inside a SingleChildScrollView
+        child: ref.watch(getPostByIdProvider(widget.postId)).when(
+              data: (data) {
+                return Column(
+                  children: [
+                    PostCard(post: data),
+                    if (!isGuest)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Theme.of(context).brightness ==
+                                    Brightness.dark
+                                ? Colors.grey[900] // set color for dark mode
+                                : Color(0xFFffe9ec),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  controller: commentController,
+                                  decoration: const InputDecoration(
+                                    hintText: 'What\'s your take?',
+                                    border: InputBorder.none,
+                                    contentPadding:
+                                        EdgeInsets.symmetric(horizontal: 16),
+                                  ),
                                 ),
                               ),
-                            ),
-                            IconButton(
-                              onPressed: () => addComment(data),
-                              icon: const Icon(Icons.send),
-                            ),
-                          ],
+                              IconButton(
+                                onPressed: () => addComment(data),
+                                icon: const Icon(Icons.send),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ref.watch(getPostCommentsProvider(widget.postId)).when(
-                        data: (data) {
-                          return Expanded(
-                            child: ListView.separated(
+                    ref.watch(getPostCommentsProvider(widget.postId)).when(
+                          data: (data) {
+                            return ListView.separated(
+                                // Remove the Expanded widget
+                                shrinkWrap: true, // Set shrinkWrap to true
+                                physics:
+                                    NeverScrollableScrollPhysics(), // Disable scrolling of the ListView
                                 itemCount: data.length,
                                 separatorBuilder:
                                     (BuildContext context, int index) =>
@@ -97,24 +103,24 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                                   return DelayedDisplay(
                                       delay: Duration(milliseconds: 5 * index),
                                       child: CommentCard(comment: comment));
-                                }),
-                          );
-                        },
-                        error: (error, stackTrace) {
-                          return ErrorText(
-                            error: error.toString(),
-                          );
-                        },
-                        loading: () => const Loader(),
-                      ),
-                ],
-              );
-            },
-            error: (error, stackTrace) => ErrorText(
-              error: error.toString(),
+                                });
+                          },
+                          error: (error, stackTrace) {
+                            return ErrorText(
+                              error: error.toString(),
+                            );
+                          },
+                          loading: () => const Loader(),
+                        ),
+                  ],
+                );
+              },
+              error: (error, stackTrace) => ErrorText(
+                error: error.toString(),
+              ),
+              loading: () => const Loader(),
             ),
-            loading: () => const Loader(),
-          ),
+      ),
     );
   }
 }
