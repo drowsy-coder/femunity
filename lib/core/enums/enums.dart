@@ -3,12 +3,13 @@ enum ThemeMode {
   dark,
 }
 
-// enum UserKarma {
-//   comment,
-//   textPost,
-//   linkPost,
-//   imagePost,
-//   deletePost,
+enum UserKarma {
+  comment(2),
+  textPost(3),
+  linkPost(4),
+  imagePost(5),
+  deletePost(-1);
 
-//   final int karma
-// }
+  final int karma;
+  const UserKarma(this.karma);
+}

@@ -94,8 +94,19 @@ class UserProfileScreen extends ConsumerWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
-                            child: Text(
-                              '${user.karma} karma',
+                            child: TweenAnimationBuilder<double>(
+                              tween: Tween<double>(begin: 0, end: 1),
+                              duration: const Duration(milliseconds: 250),
+                              builder: (BuildContext context, double value,
+                                  Widget? child) {
+                                return Opacity(
+                                  opacity: value,
+                                  child: child,
+                                );
+                              },
+                              child: Text(
+                                '${user.karma} Radiance',
+                              ),
                             ),
                           ),
                           const SizedBox(height: 10),

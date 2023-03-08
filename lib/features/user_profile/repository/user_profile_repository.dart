@@ -16,10 +16,14 @@ final userProfileRepositoryProvider = Provider((ref) {
 
 class UserProfileRepository {
   final FirebaseFirestore _firestore;
-  UserProfileRepository({required FirebaseFirestore firestore}):_firestore=firestore;
-  CollectionReference get _posts => _firestore.collection(FirebaseConstants.postsCollection);
-  CollectionReference get _users => _firestore.collection(FirebaseConstants.usersCollection);
-      FutureVoid editProfile(UserModel user) async {
+  UserProfileRepository({required FirebaseFirestore firestore})
+      : _firestore = firestore;
+  CollectionReference get _posts =>
+      _firestore.collection(FirebaseConstants.postsCollection);
+  CollectionReference get _users =>
+      _firestore.collection(FirebaseConstants.usersCollection);
+
+  FutureVoid editProfile(UserModel user) async {
     try {
       return right(_users.doc(user.uid).update(user.toMap()));
     } on FirebaseException catch (e) {
@@ -28,8 +32,13 @@ class UserProfileRepository {
       return left(Failure(e.toString()));
     }
   }
+
   Stream<List<Post>> getUserPosts(String uid) {
-    return _posts.where('uid', isEqualTo: uid).orderBy('createdAt', descending: true).snapshots().map(
+    return _posts
+        .where('uid', isEqualTo: uid)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map(
           (event) => event.docs
               .map(
                 (e) => Post.fromMap(
@@ -38,5 +47,15 @@ class UserProfileRepository {
               )
               .toList(),
         );
+  }
+
+  FutureVoid updateUserKarma(UserModel user) async {
+    try {
+      return right(_users.doc(user.uid).update({'karma': user.karma}));
+    } on FirebaseException catch (e) {
+      throw e.message!;
+    } catch (e) {
+      return left(Failure(e.toString()));
+    }
   }
 }
