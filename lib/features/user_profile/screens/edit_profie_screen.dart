@@ -96,6 +96,12 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     ? Colors.white
                     : Colors.black,
               ),
+              actions: [
+                TextButton(
+                  onPressed: save,
+                  child: const Text("Save"),
+                ),
+              ],
               // set the icon color according to the current theme mode
             ),
             body: isLoading

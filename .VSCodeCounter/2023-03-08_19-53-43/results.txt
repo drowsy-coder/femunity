@@ -1,0 +1,196 @@
+Date : 2023-03-08 19:53:43
+Directory : c:\Users\amrit\Documents\femunity-v2
+Total : 91 files,  5173 codes, 298 comments, 602 blanks, all 6073 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Dart       |         46 |      3,604 |         34 |        333 |      3,971 |
+| C++        |         16 |        536 |        118 |        181 |        835 |
+| XML        |         10 |        466 |         48 |         12 |        526 |
+| JSON       |          5 |        302 |          0 |          4 |        306 |
+| Groovy     |          3 |         90 |          5 |         22 |        117 |
+| YAML       |          2 |         67 |         74 |         20 |        161 |
+| Swift      |          4 |         48 |          3 |         12 |         63 |
+| HTML       |          1 |         39 |         16 |          7 |         62 |
+| Markdown   |          2 |         13 |          0 |          9 |         22 |
+| Properties |          2 |          8 |          0 |          2 |         10 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                   | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                      |         91 |      5,173 |        298 |        602 |      6,073 |
+| . (Files)                                                                                              |          3 |         77 |         74 |         27 |        178 |
+| android                                                                                                |         13 |        214 |         51 |         33 |        298 |
+| android (Files)                                                                                        |          3 |         38 |          0 |         10 |         48 |
+| android\app                                                                                            |          9 |        171 |         51 |         22 |        244 |
+| android\app (Files)                                                                                    |          2 |        109 |          5 |         13 |        127 |
+| android\app\src                                                                                        |          7 |         62 |         46 |          9 |        117 |
+| android\app\src\debug                                                                                  |          1 |          4 |          4 |          1 |          9 |
+| android\app\src\main                                                                                   |          5 |         54 |         38 |          7 |         99 |
+| android\app\src\main (Files)                                                                           |          1 |         28 |          6 |          1 |         35 |
+| android\app\src\main\res                                                                               |          4 |         26 |         32 |          6 |         64 |
+| android\app\src\main\res\drawable                                                                      |          1 |          4 |          7 |          2 |         13 |
+| android\app\src\main\res\drawable-v21                                                                  |          1 |          4 |          7 |          2 |         13 |
+| android\app\src\main\res\values                                                                        |          1 |          9 |          9 |          1 |         19 |
+| android\app\src\main\res\values-night                                                                  |          1 |          9 |          9 |          1 |         19 |
+| android\app\src\profile                                                                                |          1 |          4 |          4 |          1 |          9 |
+| android\gradle                                                                                         |          1 |          5 |          0 |          1 |          6 |
+| android\gradle\wrapper                                                                                 |          1 |          5 |          0 |          1 |          6 |
+| ios                                                                                                    |          7 |        222 |          2 |          9 |        233 |
+| ios\Runner                                                                                             |          7 |        222 |          2 |          9 |        233 |
+| ios\Runner (Files)                                                                                     |          2 |         13 |          0 |          3 |         16 |
+| ios\Runner\Assets.xcassets                                                                             |          3 |        148 |          0 |          4 |        152 |
+| ios\Runner\Assets.xcassets\AppIcon.appiconset                                                          |          1 |        122 |          0 |          1 |        123 |
+| ios\Runner\Assets.xcassets\LaunchImage.imageset                                                        |          2 |         26 |          0 |          3 |         29 |
+| ios\Runner\Base.lproj                                                                                  |          2 |         61 |          2 |          2 |         65 |
+| lib                                                                                                    |         45 |      3,590 |         24 |        326 |      3,940 |
+| lib (Files)                                                                                            |          3 |        177 |         12 |         13 |        202 |
+| lib\core                                                                                               |         12 |        405 |          0 |         47 |        452 |
+| lib\core (Files)                                                                                       |          3 |         22 |          0 |          7 |         29 |
+| lib\core\common                                                                                        |          4 |        294 |          0 |         19 |        313 |
+| lib\core\constants                                                                                     |          2 |         38 |          0 |          8 |         46 |
+| lib\core\enums                                                                                         |          1 |         13 |          0 |          3 |         16 |
+| lib\core\providers                                                                                     |          2 |         38 |          0 |         10 |         48 |
+| lib\features                                                                                           |         25 |      2,546 |         10 |        221 |      2,777 |
+| lib\features\auth                                                                                      |          3 |        199 |          0 |         26 |        225 |
+| lib\features\auth\controller                                                                           |          1 |         42 |          0 |         10 |         52 |
+| lib\features\auth\repository                                                                           |          1 |         72 |          0 |         12 |         84 |
+| lib\features\auth\screens                                                                              |          1 |         85 |          0 |          4 |         89 |
+| lib\features\communities                                                                               |          7 |        780 |          4 |         68 |        852 |
+| lib\features\communities\controller                                                                    |          1 |        146 |          0 |         20 |        166 |
+| lib\features\communities\repository                                                                    |          1 |        130 |          0 |         14 |        144 |
+| lib\features\communities\screens                                                                       |          5 |        504 |          4 |         34 |        542 |
+| lib\features\feed                                                                                      |          1 |         28 |          0 |          3 |         31 |
+| lib\features\home                                                                                      |          4 |        330 |          1 |         28 |        359 |
+| lib\features\home (Files)                                                                              |          1 |         93 |          1 |         11 |        105 |
+| lib\features\home\delegates                                                                            |          1 |         50 |          0 |          6 |         56 |
+| lib\features\home\drawer                                                                               |          2 |        187 |          0 |         11 |        198 |
+| lib\features\posts                                                                                     |          6 |        764 |          2 |         62 |        828 |
+| lib\features\posts\controller                                                                          |          1 |        207 |          0 |         20 |        227 |
+| lib\features\posts\repository                                                                          |          1 |        118 |          0 |         16 |        134 |
+| lib\features\posts\screens                                                                             |          3 |        388 |          2 |         23 |        413 |
+| lib\features\posts\widget                                                                              |          1 |         51 |          0 |          3 |         54 |
+| lib\features\user_profile                                                                              |          4 |        445 |          3 |         34 |        482 |
+| lib\features\user_profile\controller                                                                   |          1 |         86 |          0 |          7 |         93 |
+| lib\features\user_profile\repository                                                                   |          1 |         56 |          0 |          6 |         62 |
+| lib\features\user_profile\screens                                                                      |          2 |        303 |          3 |         21 |        327 |
+| lib\models                                                                                             |          4 |        383 |          0 |         35 |        418 |
+| lib\theme                                                                                              |          1 |         79 |          2 |         10 |         91 |
+| linux                                                                                                  |          5 |         98 |         27 |         38 |        163 |
+| linux (Files)                                                                                          |          3 |         86 |         18 |         27 |        131 |
+| linux\flutter                                                                                          |          2 |         12 |          9 |         11 |         32 |
+| macos                                                                                                  |          5 |        447 |          3 |         12 |        462 |
+| macos\Flutter                                                                                          |          1 |         16 |          3 |          4 |         23 |
+| macos\Runner                                                                                           |          4 |        431 |          0 |          8 |        439 |
+| macos\Runner (Files)                                                                                   |          2 |         20 |          0 |          6 |         26 |
+| macos\Runner\Assets.xcassets                                                                           |          1 |         68 |          0 |          1 |         69 |
+| macos\Runner\Assets.xcassets\AppIcon.appiconset                                                        |          1 |         68 |          0 |          1 |         69 |
+| macos\Runner\Base.lproj                                                                                |          1 |        343 |          0 |          1 |        344 |
+| test                                                                                                   |          1 |         14 |         10 |          7 |         31 |
+| web                                                                                                    |          2 |         74 |         16 |          8 |         98 |
+| windows                                                                                                |         10 |        437 |         91 |        142 |        670 |
+| windows\flutter                                                                                        |          2 |         11 |          9 |         11 |         31 |
+| windows\runner                                                                                         |          8 |        426 |         82 |        131 |        639 |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                               | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\amrit\Documents\femunity-v2\README.md                                                         | Markdown   |         10 |          0 |          7 |         17 |
+| c:\Users\amrit\Documents\femunity-v2\analysis_options.yaml                                             | YAML       |          3 |         23 |          4 |         30 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\build.gradle                                          | Groovy     |         55 |          5 |         13 |         73 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\google-services.json                                  | JSON       |         54 |          0 |          0 |         54 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\debug\AndroidManifest.xml                         | XML        |          4 |          4 |          1 |          9 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\main\AndroidManifest.xml                          | XML        |         28 |          6 |          1 |         35 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\main\res\drawable-v21\launch_background.xml       | XML        |          4 |          7 |          2 |         13 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\main\res\drawable\launch_background.xml           | XML        |          4 |          7 |          2 |         13 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\main\res\values-night\styles.xml                  | XML        |          9 |          9 |          1 |         19 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\main\res\values\styles.xml                        | XML        |          9 |          9 |          1 |         19 |
+| c:\Users\amrit\Documents\femunity-v2\android\app\src\profile\AndroidManifest.xml                       | XML        |          4 |          4 |          1 |          9 |
+| c:\Users\amrit\Documents\femunity-v2\android\build.gradle                                              | Groovy     |         27 |          0 |          5 |         32 |
+| c:\Users\amrit\Documents\femunity-v2\android\gradle.properties                                         | Properties |          3 |          0 |          1 |          4 |
+| c:\Users\amrit\Documents\femunity-v2\android\gradle\wrapper\gradle-wrapper.properties                  | Properties |          5 |          0 |          1 |          6 |
+| c:\Users\amrit\Documents\femunity-v2\android\settings.gradle                                           | Groovy     |          8 |          0 |          4 |         12 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\AppDelegate.swift                                      | Swift      |         12 |          0 |          2 |         14 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json       | JSON       |        122 |          0 |          1 |        123 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json     | JSON       |         23 |          0 |          1 |         24 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md         | Markdown   |          3 |          0 |          2 |          5 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Base.lproj\LaunchScreen.storyboard                     | XML        |         36 |          1 |          1 |         38 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Base.lproj\Main.storyboard                             | XML        |         25 |          1 |          1 |         27 |
+| c:\Users\amrit\Documents\femunity-v2\ios\Runner\Runner-Bridging-Header.h                               | C++        |          1 |          0 |          1 |          2 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\common\error_text.dart                                   | Dart       |         11 |          0 |          3 |         14 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\common\loader.dart                                       | Dart       |         10 |          0 |          3 |         13 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\common\post_card.dart                                    | Dart       |        238 |          0 |          9 |        247 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\common\sign_in_button.dart                               | Dart       |         35 |          0 |          4 |         39 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\constants\constants.dart                                 | Dart       |         32 |          0 |          7 |         39 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\constants\firebase_constants.dart                        | Dart       |          6 |          0 |          1 |          7 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\enums\enums.dart                                         | Dart       |         13 |          0 |          3 |         16 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\faliures.dart                                            | Dart       |          4 |          0 |          1 |          5 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\providers\firebase_providers.dart                        | Dart       |          9 |          0 |          2 |         11 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\providers\storage_repository_provider.dart               | Dart       |         29 |          0 |          8 |         37 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\type_defs.dart                                           | Dart       |          4 |          0 |          1 |          5 |
+| c:\Users\amrit\Documents\femunity-v2\lib\core\utils.dart                                               | Dart       |         14 |          0 |          5 |         19 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\auth\controller\auth_controller.dart                 | Dart       |         42 |          0 |         10 |         52 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\auth\repository\auth.repository.dart                 | Dart       |         72 |          0 |         12 |         84 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\auth\screens\login_screen.dart                       | Dart       |         85 |          0 |          4 |         89 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\controller\community_controller.dart     | Dart       |        146 |          0 |         20 |        166 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\repository\community_repository.dart     | Dart       |        130 |          0 |         14 |        144 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\screens\add_mod_screen.dart              | Dart       |         84 |          1 |          7 |         92 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\screens\community_screen.dart            | Dart       |        142 |          0 |          5 |        147 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\screens\create_community_sc.dart         | Dart       |         71 |          0 |          6 |         77 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\screens\edit_community_screen.dart       | Dart       |        143 |          0 |         10 |        153 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\communities\screens\mod_tools_screen.dart            | Dart       |         64 |          3 |          6 |         73 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\feed\feed_screen.dart                                | Dart       |         28 |          0 |          3 |         31 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\home\delegates\search_community_delegate.dart        | Dart       |         50 |          0 |          6 |         56 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\home\drawer\list_of_communities.dart                 | Dart       |         63 |          0 |          5 |         68 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\home\drawer\profile_drawer.dart                      | Dart       |        124 |          0 |          6 |        130 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\home\home_screen.dart                                | Dart       |         93 |          1 |         11 |        105 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\controller\posts_controller.dart               | Dart       |        207 |          0 |         20 |        227 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\repository\posts_repository.dart               | Dart       |        118 |          0 |         16 |        134 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\screens\add_posts_screen.dart                  | Dart       |         74 |          0 |          4 |         78 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\screens\add_posts_type_screen.dart             | Dart       |        197 |          0 |         11 |        208 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\screens\comment_screen.dart                    | Dart       |        117 |          2 |          8 |        127 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\posts\widget\comment_card.dart                       | Dart       |         51 |          0 |          3 |         54 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\user_profile\controller\user_profile_controller.dart | Dart       |         86 |          0 |          7 |         93 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\user_profile\repository\user_profile_repository.dart | Dart       |         56 |          0 |          6 |         62 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\user_profile\screens\edit_profie_screen.dart         | Dart       |        167 |          3 |         15 |        185 |
+| c:\Users\amrit\Documents\femunity-v2\lib\features\user_profile\screens\user_profile_screen.dart        | Dart       |        136 |          0 |          6 |        142 |
+| c:\Users\amrit\Documents\femunity-v2\lib\firebase_options.dart                                         | Dart       |         54 |         12 |          4 |         70 |
+| c:\Users\amrit\Documents\femunity-v2\lib\main.dart                                                     | Dart       |         62 |          0 |          6 |         68 |
+| c:\Users\amrit\Documents\femunity-v2\lib\models\comment_model.dart                                     | Dart       |         77 |          0 |          8 |         85 |
+| c:\Users\amrit\Documents\femunity-v2\lib\models\community_model.dart                                   | Dart       |         78 |          0 |          9 |         87 |
+| c:\Users\amrit\Documents\femunity-v2\lib\models\post_model.dart                                        | Dart       |        142 |          0 |          9 |        151 |
+| c:\Users\amrit\Documents\femunity-v2\lib\models\user_model.dart                                        | Dart       |         86 |          0 |          9 |         95 |
+| c:\Users\amrit\Documents\femunity-v2\lib\router.dart                                                   | Dart       |         61 |          0 |          3 |         64 |
+| c:\Users\amrit\Documents\femunity-v2\lib\theme\pallate.dart                                            | Dart       |         79 |          2 |         10 |         91 |
+| c:\Users\amrit\Documents\femunity-v2\linux\flutter\generated_plugin_registrant.cc                      | C++        |          7 |          4 |          5 |         16 |
+| c:\Users\amrit\Documents\femunity-v2\linux\flutter\generated_plugin_registrant.h                       | C++        |          5 |          5 |          6 |         16 |
+| c:\Users\amrit\Documents\femunity-v2\linux\main.cc                                                     | C++        |          5 |          0 |          2 |          7 |
+| c:\Users\amrit\Documents\femunity-v2\linux\my_application.cc                                           | C++        |         74 |         11 |         20 |        105 |
+| c:\Users\amrit\Documents\femunity-v2\linux\my_application.h                                            | C++        |          7 |          7 |          5 |         19 |
+| c:\Users\amrit\Documents\femunity-v2\macos\Flutter\GeneratedPluginRegistrant.swift                     | Swift      |         16 |          3 |          4 |         23 |
+| c:\Users\amrit\Documents\femunity-v2\macos\Runner\AppDelegate.swift                                    | Swift      |          8 |          0 |          2 |         10 |
+| c:\Users\amrit\Documents\femunity-v2\macos\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json     | JSON       |         68 |          0 |          1 |         69 |
+| c:\Users\amrit\Documents\femunity-v2\macos\Runner\Base.lproj\MainMenu.xib                              | XML        |        343 |          0 |          1 |        344 |
+| c:\Users\amrit\Documents\femunity-v2\macos\Runner\MainFlutterWindow.swift                              | Swift      |         12 |          0 |          4 |         16 |
+| c:\Users\amrit\Documents\femunity-v2\pubspec.yaml                                                      | YAML       |         64 |         51 |         16 |        131 |
+| c:\Users\amrit\Documents\femunity-v2\test\widget_test.dart                                             | Dart       |         14 |         10 |          7 |         31 |
+| c:\Users\amrit\Documents\femunity-v2\web\index.html                                                    | HTML       |         39 |         16 |          7 |         62 |
+| c:\Users\amrit\Documents\femunity-v2\web\manifest.json                                                 | JSON       |         35 |          0 |          1 |         36 |
+| c:\Users\amrit\Documents\femunity-v2\windows\flutter\generated_plugin_registrant.cc                    | C++        |          6 |          4 |          5 |         15 |
+| c:\Users\amrit\Documents\femunity-v2\windows\flutter\generated_plugin_registrant.h                     | C++        |          5 |          5 |          6 |         16 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\flutter_window.cpp                                 | C++        |         48 |          4 |         15 |         67 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\flutter_window.h                                   | C++        |         20 |          5 |          9 |         34 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\main.cpp                                           | C++        |         30 |          4 |         10 |         44 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\resource.h                                         | C++        |          9 |          6 |          2 |         17 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\utils.cpp                                          | C++        |         53 |          2 |         10 |         65 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\utils.h                                            | C++        |          8 |          6 |          6 |         20 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\win32_window.cpp                                   | C++        |        210 |         24 |         55 |        289 |
+| c:\Users\amrit\Documents\femunity-v2\windows\runner\win32_window.h                                     | C++        |         48 |         31 |         24 |        103 |
+| Total                                                                                                  |            |      5,173 |        298 |        602 |      6,073 |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
