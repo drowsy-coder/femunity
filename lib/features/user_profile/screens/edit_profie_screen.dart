@@ -99,7 +99,14 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               actions: [
                 TextButton(
                   onPressed: save,
-                  child: const Text("Save"),
+                  child: Text(
+                    "Save",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Color.fromARGB(255, 255, 94, 255)
+                            : Color(0xFFffe9ec)),
+                  ),
                 ),
               ],
               // set the icon color according to the current theme mode

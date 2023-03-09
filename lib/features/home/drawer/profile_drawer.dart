@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
+import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -79,6 +80,20 @@ class ProfileDrawer extends ConsumerWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => ResourceCentrePage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Period Tracker'),
+              leading: const Icon(
+                Icons.bloodtype_outlined,
+                color: Color.fromARGB(255, 235, 25, 25),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PeriodTrackerScreen()),
                 );
               },
             ),
