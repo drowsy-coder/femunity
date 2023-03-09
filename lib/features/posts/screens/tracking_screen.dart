@@ -125,7 +125,10 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                     const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   'Enter your period details:',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(
+                      fontFamily: 'DancingScript',
+                      fontSize: 24.0,
+                      color: Colors.pink),
                 ),
               ),
               Padding(
@@ -137,6 +140,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                     labelText: 'Cycle length (in days)',
                     border: OutlineInputBorder(),
                   ),
+                  style: TextStyle(fontFamily: 'Roboto'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter cycle length';
@@ -154,6 +158,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                     labelText: 'Period length (in days)',
                     border: OutlineInputBorder(),
                   ),
+                  style: TextStyle(fontFamily: 'Roboto'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter period length';
@@ -168,22 +173,25 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                   children: [
                     Text(
                       'Period started on: ',
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: TextStyle(
+                          fontFamily: 'DancingScript', fontSize: 18.0),
                     ),
                     Text(
                       _selectedDate == null
                           ? 'Please select a date'
                           : DateFormat('dd MMM yyyy').format(_selectedDate!),
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                            color: Colors.pink,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 18.0,
+                        color: Colors.pink,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     IconButton(
                       onPressed: () {
                         _selectDate(context);
                       },
-                      icon: Icon(Icons.calendar_today),
+                      icon: Icon(Icons.calendar_today, color: Colors.pink),
                     ),
                   ],
                 ),
@@ -195,7 +203,8 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                   children: [
                     Text(
                       'Period on: ',
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: TextStyle(
+                          fontFamily: 'DancingScript', fontSize: 18.0),
                     ),
                     Switch(
                       value: _periodOn,
@@ -204,6 +213,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                           _periodOn = value;
                         });
                       },
+                      activeColor: Colors.pink,
                     ),
                   ],
                 ),
@@ -217,7 +227,13 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       _calculatePeriod();
                     }
                   },
-                  child: Text('Calculate'),
+                  child: Text('Calculate',
+                      style: TextStyle(
+                          fontFamily: 'DancingScript', fontSize: 24.0)),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.pink),
+                  ),
                 ),
               ),
               if (_nextPeriodDate != null)

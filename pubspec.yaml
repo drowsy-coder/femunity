@@ -124,6 +124,9 @@ flutter:
     - family: AlBrush
       fonts:
         - asset: assets/fonts/AlexBrush-Regular.ttf
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
 
   #         weight: 700
   #
