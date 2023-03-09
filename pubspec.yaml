@@ -59,8 +59,6 @@ dependencies:
   liquid_swipe: ^3.0.0
   flutter_keyboard_visibility: ^5.4.0
   transparent_image: ^2.0.1
-  google_maps_flutter: ^2.2.5
-  geolocator: ^9.0.2
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
