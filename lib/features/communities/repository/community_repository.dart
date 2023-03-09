@@ -89,12 +89,12 @@ class CommunityRepository {
     return _communities
         .where(
           'name',
-          isGreaterThanOrEqualTo: query.isEmpty ? 0 : query,
+          isGreaterThanOrEqualTo: query.isEmpty ? '' : query.toLowerCase(),
           isLessThan: query.isEmpty
               ? null
               : query.substring(0, query.length - 1) +
                   String.fromCharCode(
-                    query.codeUnitAt(query.length - 1) + 1,
+                    query.toLowerCase().codeUnitAt(query.length - 1) + 1,
                   ),
         )
         .snapshots()
