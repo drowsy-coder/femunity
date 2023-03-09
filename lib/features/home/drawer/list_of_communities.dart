@@ -1,5 +1,7 @@
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
+import 'package:femunity/core/common/sign_in_button.dart';
+import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/models/community_model.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,8 @@ class CommunityListDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(userProvider)!;
+    final isGuest = !user.isAuthenticated;
     return Drawer(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
           ? Colors.grey[900] // set color for dark mode
@@ -27,11 +31,13 @@ class CommunityListDrawer extends ConsumerWidget {
       child: SafeArea(
         child: Column(
           children: [
+            isGuest? const SignInButton():
             ListTile(
               title: const Text('Create a Community'),
               leading: const Icon(Icons.add),
               onTap: () => navigateToCreateCommunity(context),
             ),
+            if(!isGuest)
             ref.watch(userCommunitiesProvider).when(
                   data: (communities) => Expanded(
                     child: ListView.separated(
