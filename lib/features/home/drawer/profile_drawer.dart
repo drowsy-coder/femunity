@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
@@ -68,6 +69,19 @@ class ProfileDrawer extends ConsumerWidget {
               ),
               onTap: () => logOut(ref),
             ),
+            ListTile(
+              title: const Text('Resource Centre'),
+              leading: const Icon(
+                Icons.help_center_outlined,
+                color: Color.fromARGB(255, 25, 235, 25),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ResourceCentrePage()),
+                );
+              },
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -84,43 +98,6 @@ class ProfileDrawer extends ConsumerWidget {
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TweenAnimationBuilder<double>(
-                duration: const Duration(milliseconds: 600),
-                tween: Tween<double>(begin: 0, end: 1),
-                builder: (context, value, child) {
-                  return Opacity(
-                    opacity: value,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                          size: 30,
-                        ),
-                        const SizedBox(width: 24),
-                        Expanded(
-                          child: Text(
-                            'Made with Love by Amritansh and Arin',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? Colors.white // set color for dark mode
-                                  : Colors
-                                      .grey[900], // set color for light mode
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            )
           ],
         ),
       ),
