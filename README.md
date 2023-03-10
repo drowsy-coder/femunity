@@ -17,7 +17,7 @@ Femunity is a forum and discussion app that aims to empower young women by provi
 
 ## Getting Started
 
-Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity-v2). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
+Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ Before you start, make sure you have installed the following on your system:
 
 ### Installation
 
-1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity-RP.git
+1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity.git
 
 2. Open the project folder in VS Code.
 
@@ -46,15 +46,15 @@ Once you have created an account or logged in as a Guest, you can start explorin
 
 ### Creating Communities
 
-To create a community, click on the "Create Community" button on the home screen. You will be prompted to enter a name and description for your community. You can also choose to make your community public or private.
+To create a community, click on the "Create Community" button in the navigation bar. The communities are customisable with their own banner and profile picture.
 
 ### Sharing Posts
 
-To share a post, click on the "Share" button on the home screen. You can then choose whether to share a link, text, or image-based post. You can also choose which community to share your post with.
+To share a post, click on the "+" button on the screen. You can then choose whether to share a link, text, or image-based post. You can also choose which community to share your post with.
 
 ### Upvoting and Commenting
 
-To upvote a post, simply click on the up arrow next to the post. To comment on a post, click on the comment button and enter your comment.
+To upvote or downvote a post, simply click on the arrows next to the post. To comment on a post, click on the comment button and enter your comment.
 
 ### Radiance Points System
 
@@ -62,11 +62,11 @@ Femunity uses a Radiance points system to reward users for their activity on the
 
 ### Resource Center
 
-Femunity's Resource Center provides links to support groups and harassment reporting. You can access the Resource Center by clicking on the "Resources" button on the home screen.
+Femunity's Resource Center provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away.
 
 ### Menstrual Tracker
 
-Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. To use the Menstrual Tracker, click on the "Period Tracker" button on the home screen.
+Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. To use the Menstrual Tracker, click on the "Period Tracker" button present in the navigation bar.
 
 ## Contributing
 
