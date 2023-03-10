@@ -17,7 +17,7 @@ Femunity is a forum and discussion app that aims to empower young women by provi
 
 ## Getting Started
 
-Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity-v2). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
+Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ Before you start, make sure you have installed the following on your system:
 
 ### Installation
 
-1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity-RP.git
+1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity.git
 
 2. Open the project folder in VS Code.
 
