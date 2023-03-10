@@ -21,13 +21,12 @@ class ModToolsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Mod Tools',
-          style: TextStyle(
-            color: Color.fromARGB(
-                255, 103, 100, 100), // default color for light mode
-          ),
-        ),
+        title: Text('Mod Tools',
+            style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : Colors.black,
+                )),
         centerTitle: false,
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900]

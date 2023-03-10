@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:profanity_filter/profanity_filter.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
@@ -48,32 +48,46 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
   }
 
   void sharePost() {
+    final title = titleController.text.trim();
+    final description = descriptionController.text.trim();
+    final link = linkController.text.trim();
+
+    // Check for profanity in title, description, and link
+    final hasProfanity = ProfanityFilter().hasProfanity(title) ||
+        ProfanityFilter().hasProfanity(description) ||
+        ProfanityFilter().hasProfanity(link);
+
     if (widget.type == 'Image' &&
         bannerFile != null &&
-        titleController.text.isNotEmpty) {
+        title.isNotEmpty &&
+        !hasProfanity) {
       ref.read(postControllerProvider.notifier).shareImagePost(
           context: context,
-          title: titleController.text.trim(),
+          title: title,
           selectedCommunity: selectedCommunity ?? communities[0],
           file: bannerFile);
-    } else if (widget.type == 'Text' && titleController.text.isNotEmpty) {
+    } else if (widget.type == 'Text' && title.isNotEmpty && !hasProfanity) {
       ref.read(postControllerProvider.notifier).shareTextPost(
             context: context,
-            title: titleController.text.trim(),
+            title: title,
             selectedCommunity: selectedCommunity ?? communities[0],
-            description: descriptionController.text.trim(),
+            description: description,
           );
     } else if (widget.type == 'Link' &&
-        linkController.text.isNotEmpty &&
-        titleController.text.isNotEmpty) {
+        link.isNotEmpty &&
+        title.isNotEmpty &&
+        !hasProfanity) {
       ref.read(postControllerProvider.notifier).shareLinkPost(
             context: context,
-            title: titleController.text.trim(),
+            title: title,
             selectedCommunity: selectedCommunity ?? communities[0],
-            link: linkController.text.trim(),
+            link: link,
           );
     } else {
-      showSnackBar(context, 'Please input all the fields');
+      showSnackBar(
+        context,
+        'Please input all the fields or remove any profanity.',
+      );
     }
   }
 
@@ -94,8 +108,15 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
               foregroundColor:
                   MaterialStateProperty.all<Color>(const Color(0xFFFEB2B2)),
             ),
-            child: const Text('Share'),
-          )
+            child: Text(
+              'Share',
+              style: TextStyle(
+                  fontSize: 18,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Color(0xffFEB2B2)
+                      : Color.fromARGB(255, 0, 0, 0)),
+            ),
+          ),
         ],
       ),
       body: isLoading

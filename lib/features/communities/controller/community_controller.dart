@@ -62,6 +62,7 @@ class CommunityController extends StateNotifier<bool> {
 
     if (name.contains(' ')) {
       showSnackBar(context, 'Community name cannot contain a space!');
+      
       state = false;
       return;
     }

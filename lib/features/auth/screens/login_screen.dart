@@ -24,13 +24,14 @@ class LoginScreen extends ConsumerWidget {
         ),
         actions: [
           TextButton(
-            onPressed: ()=>signInAsGuest(ref, context),
-            child: const Text(
+            onPressed: () => signInAsGuest(ref, context),
+            child: Text(
               'Skip',
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+                  fontSize: 18,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Color(0xffFEB2B2)
+                      : Color.fromARGB(255, 0, 0, 0)),
             ),
           ),
         ],

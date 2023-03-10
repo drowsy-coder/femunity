@@ -77,12 +77,13 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
           data: (user) => Scaffold(
             backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
-              title: const Text(
+              title: Text(
                 'Edit Profile',
-                style: TextStyle(
-                  color: Color.fromARGB(
-                      255, 100, 97, 97), // default color for light mode
-                ),
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    ),
               ),
               centerTitle: false,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
@@ -104,8 +105,8 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         color: Theme.of(context).brightness == Brightness.dark
-                            ? Color.fromARGB(255, 255, 94, 255)
-                            : Color(0xFFffe9ec)),
+                            ? Color(0xffFEB2B2)
+                            : Color.fromARGB(255, 0, 0, 0)),
                   ),
                 ),
               ],

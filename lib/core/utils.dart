@@ -8,6 +8,7 @@ void showSnackBar(BuildContext context, String text) {
     ..hideCurrentSnackBar()
     ..showSnackBar(SnackBar(
       content: Text(text),
+      backgroundColor: const Color(0xFFffe9ec),
     ));
 }
 
@@ -15,4 +16,4 @@ Future<FilePickerResult?> pickImage() async {
   final image = await FilePicker.platform.pickFiles(type: FileType.image);
 
   return image;
-  }
+}

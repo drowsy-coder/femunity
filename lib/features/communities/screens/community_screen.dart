@@ -70,7 +70,6 @@ class CommunityScreen extends ConsumerWidget {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
                                       child: Text(
@@ -81,42 +80,44 @@ class CommunityScreen extends ConsumerWidget {
                                 ),
                               ),
                               const SizedBox(width: 10),
-                              if(!isGuest)
-                              if (community.mods.contains(user.uid))
-                                OutlinedButton(
-                                  onPressed: () {
-                                    navigateToModTools(context);
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
-                                    foregroundColor: const Color(0xffFEB2B2),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadiusDirectional.circular(20),
+                              if (!isGuest)
+                                if (community.mods.contains(user.uid))
+                                  OutlinedButton(
+                                    onPressed: () {
+                                      navigateToModTools(context);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20),
+                                      foregroundColor: const Color(0xffFEB2B2),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadiusDirectional.circular(
+                                                20),
+                                      ),
+                                    ),
+                                    child: const Text('Mod Tools'),
+                                  )
+                                else
+                                  OutlinedButton(
+                                    onPressed: () =>
+                                        joinCommunity(ref, community, context),
+                                    style: ElevatedButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20),
+                                      foregroundColor: const Color(0xffFEB2B2),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadiusDirectional.circular(
+                                                20),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      community.members.contains(user.uid)
+                                          ? 'Leave'
+                                          : 'Join',
                                     ),
                                   ),
-                                  child: const Text('Mod Tools'),
-                                )
-                              else
-                                OutlinedButton(
-                                  onPressed: () =>
-                                      joinCommunity(ref, community, context),
-                                  style: ElevatedButton.styleFrom(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
-                                    foregroundColor: const Color(0xffFEB2B2),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadiusDirectional.circular(20),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    community.members.contains(user.uid)
-                                        ? 'Leave'
-                                        : 'Join',
-                                  ),
-                                ),
                             ],
                           ),
                         ],

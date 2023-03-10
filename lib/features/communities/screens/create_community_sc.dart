@@ -1,10 +1,12 @@
 import 'package:femunity/core/common/loader.dart';
+import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:profanity_filter/profanity_filter.dart';
 
 class CreateCommunityScreen extends ConsumerStatefulWidget {
-  const CreateCommunityScreen({super.key});
+  const CreateCommunityScreen({Key? key}) : super(key: key);
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -13,16 +15,23 @@ class CreateCommunityScreen extends ConsumerStatefulWidget {
 
 class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
   final communityNameController = TextEditingController();
+
   @override
   void dispose() {
     super.dispose();
     communityNameController.dispose();
   }
 
-  void createcommunity() {
-    ref
-        .read(communityControllerProvider.notifier)
-        .createCommunity(communityNameController.text.trim(), context);
+  void createCommunity() {
+    final profanityFilter = ProfanityFilter();
+    final communityName = communityNameController.text.trim();
+    if (profanityFilter.hasProfanity(communityName)) {
+      showSnackBar(context, 'Community name contains profanity');
+    } else {
+      ref
+          .read(communityControllerProvider.notifier)
+          .createCommunity(communityName, context);
+    }
   }
 
   @override
@@ -60,7 +69,7 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                     height: 30,
                   ),
                   ElevatedButton(
-                    onPressed: createcommunity,
+                    onPressed: createCommunity,
                     style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(

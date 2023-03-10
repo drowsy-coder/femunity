@@ -9,6 +9,7 @@ import 'package:femunity/features/posts/widget/comment_card.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:profanity_filter/profanity_filter.dart';
 
 class CommentsScreen extends ConsumerStatefulWidget {
   final String postId;
@@ -23,6 +24,7 @@ class CommentsScreen extends ConsumerStatefulWidget {
 
 class _CommentsScreenState extends ConsumerState<CommentsScreen> {
   final commentController = TextEditingController();
+  final filter = ProfanityFilter();
 
   @override
   void dispose() {
@@ -31,14 +33,23 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
   }
 
   void addComment(Post post) {
-    ref.read(postControllerProvider.notifier).addComment(
-          context: context,
-          text: commentController.text.trim(),
-          post: post,
-        );
-    setState(() {
-      commentController.text = '';
-    });
+    String commentText = commentController.text.trim();
+    if (filter.hasProfanity(commentText)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text("Your comment contains inappropriate language!"),
+            backgroundColor: Color(0xFFffe9ec)),
+      );
+    } else {
+      ref.read(postControllerProvider.notifier).addComment(
+            context: context,
+            text: commentText,
+            post: post,
+          );
+      setState(() {
+        commentController.text = '';
+      });
+    }
   }
 
   @override

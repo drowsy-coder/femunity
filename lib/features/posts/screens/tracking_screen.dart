@@ -82,13 +82,13 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Data saved successfully'),
-                backgroundColor: Colors.green,
+                backgroundColor: Color(0xFFffe9ec),
               ),
             ))
         .catchError((error) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Failed to save data: $error'),
-                backgroundColor: Colors.red,
+                backgroundColor: Color(0xFFffe9ec),
               ),
             ));
   }
@@ -100,10 +100,40 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HistoryScreen()),
+            MaterialPageRoute(builder: (context) => HealthTipsScreen()),
           );
         },
-        child: Text('Health Tips'),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.pink),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+              side: BorderSide(color: Colors.pink),
+            ),
+          ),
+          elevation: MaterialStateProperty.all<double>(5),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.favorite,
+                color: Colors.white,
+              ),
+              SizedBox(width: 8.0),
+              Text(
+                'Health Tips',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -112,7 +142,28 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Period Tracker'),
+        title: Text(
+          'Period Tracking',
+          style: Theme.of(context).textTheme.headline6?.copyWith(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+              ),
+        ),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Colors.grey[900] // set color for dark mode
+            : Color(0xFFffe9ec),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.history),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HistoryScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -183,7 +234,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 18.0,
-                        color: Colors.pink,
+                        color: Colors.green,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -191,7 +242,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       onPressed: () {
                         _selectDate(context);
                       },
-                      icon: Icon(Icons.calendar_today, color: Colors.pink),
+                      icon: Icon(Icons.calendar_today, color: Colors.green),
                     ),
                   ],
                 ),
@@ -202,7 +253,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                 child: Row(
                   children: [
                     Text(
-                      'Period on: ',
+                      'Are you on your period? ',
                       style: TextStyle(
                           fontFamily: 'DancingScript', fontSize: 18.0),
                     ),
@@ -213,26 +264,32 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                           _periodOn = value;
                         });
                       },
-                      activeColor: Colors.pink,
+                      activeColor: Colors.yellow,
+                      inactiveTrackColor: Colors.grey[400],
+                      inactiveThumbColor: Colors.white,
+                      activeTrackColor: Colors.pink[100],
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
                     ),
                   ],
                 ),
               ),
               if (_periodOn) _buildHealthTipsButton(),
               Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _calculatePeriod();
-                    }
-                  },
-                  child: Text('Calculate',
-                      style: TextStyle(
-                          fontFamily: 'DancingScript', fontSize: 24.0)),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.pink),
+                padding: const EdgeInsets.only(top: 30.0),
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _calculatePeriod();
+                      }
+                    },
+                    child: Text('Calculate',
+                        style: TextStyle(
+                            fontFamily: 'DancingScript', fontSize: 24.0)),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
                   ),
                 ),
               ),
@@ -260,12 +317,165 @@ class HealthTipsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Health Tips'),
+        title: Text('Female Health Tips'),
       ),
-      body: Center(
-        child: Text(
-          'Here are some health tips!',
-          style: Theme.of(context).textTheme.headline4,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildPermanentFactsCard(),
+            SizedBox(height: 16),
+            _buildHealthGuideCard(
+              title: 'Healthy eating',
+              imageUrl:
+                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
+              onTap: () {
+                // TODO: Navigate to healthy eating guide
+              },
+            ),
+            SizedBox(height: 16),
+            _buildHealthGuideCard(
+              title: 'Fitness exercises',
+              imageUrl:
+                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
+              onTap: () {
+                // TODO: Navigate to fitness exercises guide
+              },
+            ),
+            SizedBox(height: 16),
+            _buildHealthGuideCard(
+              title: 'Stress management',
+              imageUrl:
+                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
+              onTap: () {
+                // TODO: Navigate to stress management guide
+              },
+            ),
+            SizedBox(height: 16),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPermanentFactsCard() {
+    return Card(
+      margin: const EdgeInsets.all(16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Permanent Facts',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.purpleAccent,
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Here are some permanent facts about women health and hygiene that you should always keep in mind:',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey[200],
+              ),
+            ),
+            SizedBox(height: 24),
+            _buildFactItem(
+              '- Drink plenty of water to stay hydrated',
+              Icons.local_drink,
+            ),
+            SizedBox(height: 16),
+            _buildFactItem(
+              '- Eat a healthy and balanced diet',
+              Icons.food_bank,
+            ),
+            SizedBox(height: 16),
+            _buildFactItem(
+              '- Exercise regularly to maintain good health',
+              Icons.fitness_center,
+            ),
+            SizedBox(height: 16),
+            _buildFactItem(
+              '- Manage stress through relaxation techniques',
+              Icons.spa,
+            ),
+            SizedBox(height: 16),
+            _buildFactItem(
+              '- Get enough sleep to recharge your body and mind',
+              Icons.nightlight_round,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFactItem(String text, IconData icon) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: Colors.purpleAccent,
+        ),
+        SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.grey[200],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildHealthGuideCard({
+    required String title,
+    required String imageUrl,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        margin: const EdgeInsets.symmetric(horizontal: 16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        elevation: 8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+              child: Image.network(
+                imageUrl,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Colors.purpleAccent,
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
+          ],
         ),
       ),
     );

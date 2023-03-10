@@ -113,6 +113,14 @@ class ProfileDrawer extends ConsumerWidget {
                 ],
               ),
             ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                'Version 0.80.0',
+                style: Theme.of(context).textTheme.caption,
+              ),
+            ),
           ],
         ),
       ),

@@ -35,6 +35,7 @@ class PostCard extends ConsumerWidget {
   void navigateToCommunity(BuildContext context) {
     Routemaster.of(context).push(post.communityName);
   }
+
   void navigateToComments(BuildContext context) {
     Routemaster.of(context).push('/post/${post.id}/comments');
   }
@@ -46,6 +47,7 @@ class PostCard extends ConsumerWidget {
     final isTypeLink = post.type == 'Link';
     final currentTheme = ref.watch(themeNotifierProvider);
     final user = ref.watch(userProvider)!;
+    final isGuest = !user.isAuthenticated;
 
     return Column(
       children: [
@@ -103,7 +105,9 @@ class PostCard extends ConsumerWidget {
                             ),
                             if (post.uid == user.uid)
                               IconButton(
-                                  onPressed: () => deletePost(ref, context),
+                                  onPressed: isGuest
+                                      ? () {}
+                                      : () => deletePost(ref, context),
                                   icon: Icon(
                                     Icons.delete,
                                     color: Pallete.redColor,
@@ -200,7 +204,8 @@ class PostCard extends ConsumerWidget {
                               child: Row(
                                 children: [
                                   IconButton(
-                                    onPressed: ()=>navigateToComments(context),
+                                    onPressed: () =>
+                                        navigateToComments(context),
                                     icon: const Icon(Icons.comment),
                                     color: Colors.blue, // set the color to blue
                                   ),
