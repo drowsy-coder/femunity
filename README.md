@@ -30,7 +30,7 @@ Before you start, make sure you have installed the following on your system:
 
 ### Installation
 
-1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity-v2.git
+1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity-RP.git
 
 2. Open the project folder in VS Code.
 
