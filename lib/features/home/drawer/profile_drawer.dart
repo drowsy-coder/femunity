@@ -66,15 +66,15 @@ class ProfileDrawer extends ConsumerWidget {
               title: const Text('Log Me Out'),
               leading: Icon(
                 Icons.logout_outlined,
-                color: Pallete.redColor,
+                color: Colors.orange,
               ),
               onTap: () => logOut(ref),
             ),
             ListTile(
               title: const Text('Resource Centre'),
               leading: const Icon(
-                Icons.help_center_outlined,
-                color: Color.fromARGB(255, 25, 235, 25),
+                Icons.sos_outlined,
+                color: Colors.yellow,
               ),
               onTap: () {
                 Navigator.push(
