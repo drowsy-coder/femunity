@@ -11,6 +11,7 @@ import 'package:femunity/features/user_profile/screens/edit_profie_screen.dart';
 import 'package:femunity/features/user_profile/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:routemaster/routemaster.dart';
+import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 
 final loggedOutRoute = RouteMap(routes: {
   '/': (_) => const MaterialPage(child: LoginScreen()),
@@ -36,7 +37,7 @@ final loggedInRoute = RouteMap(routes: {
         ),
       ),
   '/add-mods/:name': (routeData) => MaterialPage(
-        child: AddModScreen(
+        child: AddModsScreen(
           name: routeData.pathParameters['name']!,
         ),
       ),
@@ -59,5 +60,6 @@ final loggedInRoute = RouteMap(routes: {
         child: CommentsScreen(
           postId: route.pathParameters['postId']!,
         ),
-      )
+      ),
+  '/resource-centre': (_) => MaterialPage(child: ResourceCentrePage()),
 });

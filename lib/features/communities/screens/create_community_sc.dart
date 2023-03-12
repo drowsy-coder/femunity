@@ -27,6 +27,10 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
     final communityName = communityNameController.text.trim();
     if (profanityFilter.hasProfanity(communityName)) {
       showSnackBar(context, 'Community name contains profanity');
+    } else if (communityName.isNotEmpty &&
+        communityName[0] == communityName[0].toUpperCase()) {
+      showSnackBar(
+          context, 'Community name can\'t start with an uppercase letter');
     } else {
       ref
           .read(communityControllerProvider.notifier)

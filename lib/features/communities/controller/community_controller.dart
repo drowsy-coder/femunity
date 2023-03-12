@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/faliures.dart';
 import 'package:femunity/core/providers/firebase_providers.dart';
@@ -13,6 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:routemaster/routemaster.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 final userCommunitiesProvider = StreamProvider((ref) {
   final communityController = ref.watch(communityControllerProvider.notifier);
@@ -62,7 +66,7 @@ class CommunityController extends StateNotifier<bool> {
 
     if (name.contains(' ')) {
       showSnackBar(context, 'Community name cannot contain a space!');
-      
+
       state = false;
       return;
     }
@@ -151,13 +155,44 @@ class CommunityController extends StateNotifier<bool> {
     return _communityRepository.searchCommunity(query);
   }
 
-  void addMods(
+  Future<void> addMods(
       String communityName, List<String> uids, BuildContext context) async {
-    final res = await _communityRepository.addMods(communityName, uids);
-    res.fold(
-      (l) => showSnackBar(context, l.message),
-      (r) => Routemaster.of(context).pop(),
-    );
+    try {
+      final communityRef = FirebaseFirestore.instance
+          .collection('communities')
+          .doc(communityName);
+      final communityDoc = await communityRef.get();
+
+      if (!communityDoc.exists) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Community does not exist.'),
+          ),
+        );
+        return;
+      }
+
+
+      final currentMods = List<String>.from(communityDoc['mods'] ?? []);
+      final newMods = uids.where((uid) => !currentMods.contains(uid)).toList();
+      currentMods.addAll(newMods);
+
+      await communityRef.update({
+        'mods': currentMods,
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Moderators added successfully.'),
+        ),
+      );
+    } catch (error) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error adding moderators: $error'),
+        ),
+      );
+    }
   }
 
   Stream<List<Post>> getCommunityPosts(String name) {

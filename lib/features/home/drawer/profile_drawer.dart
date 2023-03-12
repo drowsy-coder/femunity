@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:femunity/features/communities/screens/financial_tracking.dart';
 import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
@@ -16,6 +17,10 @@ class ProfileDrawer extends ConsumerWidget {
 
   void navigateToUserProfile(BuildContext context, String uid) {
     Routemaster.of(context).push('/u/$uid');
+  }
+
+  void navigateToResourceCentre(BuildContext context) {
+    Routemaster.of(context).push('/resource-centre');
   }
 
   void toggleTheme(WidgetRef ref) {
@@ -74,7 +79,7 @@ class ProfileDrawer extends ConsumerWidget {
               title: const Text('Resource Centre'),
               leading: const Icon(
                 Icons.sos_outlined,
-                color: Colors.yellow,
+                color: Colors.amber,
               ),
               onTap: () {
                 Navigator.push(
@@ -94,6 +99,20 @@ class ProfileDrawer extends ConsumerWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => PeriodTrackerScreen()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Financial Tracker'),
+              leading: const Icon(
+                Icons.currency_rupee_outlined,
+                color: Colors.green,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => FinancialTrackerScreen()),
                 );
               },
             ),
@@ -117,7 +136,7 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Version 0.80.0',
+                'Version 0.90.0',
                 style: Theme.of(context).textTheme.caption,
               ),
             ),

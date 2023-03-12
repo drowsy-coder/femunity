@@ -7,17 +7,21 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AddModScreen extends ConsumerStatefulWidget {
+class AddModsScreen extends ConsumerStatefulWidget {
   final String name;
-  const AddModScreen({super.key, required this.name});
+  const AddModsScreen({
+    Key? key,
+    required this.name,
+  }) : super(key: key);
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _AddModScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _AddModsScreenState();
 }
 
-class _AddModScreenState extends ConsumerState<AddModScreen> {
+class _AddModsScreenState extends ConsumerState<AddModsScreen> {
   Set<String> uids = {};
   int ctr = 0;
+
   void addUid(String uid) {
     setState(() {
       uids.add(uid);
@@ -31,61 +35,58 @@ class _AddModScreenState extends ConsumerState<AddModScreen> {
   }
 
   void saveMods() {
-    ref
-        .read(communityControllerProvider.notifier)
-        .addMods(widget.name, uids.toList(), context);
+    ref.read(communityControllerProvider.notifier).addMods(
+          widget.name,
+          uids.toList(),
+          context,
+        );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).brightness == Brightness.dark
-            ? Colors.grey[900]
-            : Color(0xffffe9ec),
-        title: Text(
-          'Add Moderators',
-          style: Theme.of(context).textTheme.headline6?.copyWith(
-                color: Theme.of(context).textTheme.headline6?.color,
-              ),
-        ),
         actions: [
           IconButton(
             onPressed: saveMods,
-            icon: Icon(Icons.done),
+            icon: const Icon(Icons.done),
           ),
         ],
       ),
       body: ref.watch(getCommunityByNameProvider(widget.name)).when(
-          data: (community) => ListView.builder(
+            data: (Community community) => ListView.builder(
               itemCount: community.members.length,
               itemBuilder: (BuildContext context, int index) {
                 final member = community.members[index];
+                final isChecked =
+                    uids.contains(member) || community.mods.contains(member);
+
                 return ref.watch(getUserDataProvider(member)).when(
-                    data: (user) {
-                      // here member and user.uid are the same thing in case dosent work change it to member
-                      if (community.mods.contains(user.uid) && ctr == 0) {
-                        uids.add(user.uid);
-                      }
-                      ctr++;
-                      return CheckboxListTile(
-                        value: uids.contains(user.uid),
-                        onChanged: (val) {
-                          if (val!) {
-                            addUid(user.uid);
-                          } else {
-                            removeUid(user.uid);
-                          }
-                        },
-                        title: Text(user.name),
-                      );
-                    },
-                    error: ((error, stackTrace) =>
-                        ErrorText(error: error.toString())),
-                    loading: () => (const Loader()));
-              }),
-          error: ((error, stackTrace) => ErrorText(error: error.toString())),
-          loading: () => (const Loader())),
+                      data: (userData) {
+                        return CheckboxListTile(
+                          value: isChecked,
+                          onChanged: (val) {
+                            if (val!) {
+                              addUid(member);
+                            } else {
+                              removeUid(member);
+                            }
+                          },
+                          title: Text(userData.name),
+                        );
+                      },
+                      error: (error, stackTrace) => ErrorText(
+                        error: error.toString(),
+                      ),
+                      loading: () => const Loader(),
+                    );
+              },
+            ),
+            error: (error, stackTrace) => ErrorText(
+              error: error.toString(),
+            ),
+            loading: () => const Loader(),
+          ),
     );
   }
 }

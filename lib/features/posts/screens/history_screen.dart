@@ -42,16 +42,55 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     (documents[index].get('nextPeriodDate') as Timestamp)
                         .toDate();
 
-                return ListTile(
-                  leading: Icon(Icons.calendar_today),
-                  title: Text(
-                      '${DateFormat.yMMMMd().format(periodStartDate)} - ${DateFormat.yMMMMd().format(periodEndDate)}'),
-                  subtitle: Text(
-                      'Cycle length: $cycleLength days, Period length: $periodLength days'),
-                  trailing: Text(periodOn ? 'On' : 'Off'),
-                  onTap: () {
-                    // do something on tap
-                  },
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 16.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    elevation: 8,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16.0),
+                      onTap: () {
+                        // do something on tap
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${DateFormat.yMMMMd().format(periodStartDate)} - ${DateFormat.yMMMMd().format(periodEndDate)}',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.purpleAccent,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Cycle length: $cycleLength days, Period length: $periodLength days',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              periodOn ? 'Currently On' : 'Not On',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: periodOn
+                                    ? Colors.pink[400]
+                                    : Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 );
               },
             );
