@@ -88,6 +88,11 @@ Femunity's Menstrual Tracker allows you to track your menstrual cycle and view y
 
 If you would like to contribute to Femunity, please fork the project on GitHub and submit a pull request.
 
+## Credits
+
+All the responders to out survey who gave us suggestions.
+[Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
+
 ## License
 
 Femunity is licensed under the MIT license. See LICENSE.txt for more information.
