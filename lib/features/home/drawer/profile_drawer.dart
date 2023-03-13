@@ -1,5 +1,4 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:femunity/features/communities/screens/financial_tracking.dart';
 import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
@@ -99,20 +98,6 @@ class ProfileDrawer extends ConsumerWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => PeriodTrackerScreen()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Financial Tracker'),
-              leading: const Icon(
-                Icons.currency_rupee_outlined,
-                color: Colors.green,
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => FinancialTrackerScreen()),
                 );
               },
             ),

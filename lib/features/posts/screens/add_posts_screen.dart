@@ -45,11 +45,14 @@ class AddPostsScreen extends ConsumerWidget {
                 ? Colors.grey[900] // set color for dark mode
                 : Color.fromARGB(255, 254, 254, 254),
             elevation: 16,
-            child: const SizedBox(
+            child: SizedBox(
               height: 120,
               child: Icon(
                 Icons.text_fields_outlined,
                 size: 40,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? null // keep the default color for dark mode
+                    : Colors.blue, // set color to blue in light mode
               ),
             ),
           ),

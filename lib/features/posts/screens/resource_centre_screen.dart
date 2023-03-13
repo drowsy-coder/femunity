@@ -32,11 +32,12 @@ class ResourceCentrePage extends StatelessWidget {
           'https://vajiramandravi.s3.us-east-1.amazonaws.com/media/2018/12/16/11/56/10/4.jpg',
     ),
     Resource(
-      title: 'RAINN (Rape, Abuse & Incest National Network)',
+      title: 'National Consumer Helpline',
       description:
-          'RAINN is the nation’s largest anti-sexual violence organization. They provide counseling and support for victims of sexual assault and abuse, and work to prevent sexual violence.',
-      url: 'https://www.rainn.org/',
-      thumbnailUrl: 'https://www.epw.in/system/files/sm-feminismDK.png',
+          'Consumers can reach out to the helpline through a toll-free number, email, or by registering their complaint online through the NCH website. The helpline also provides consumers with information on various consumer-related issues such as product safety, consumer awareness, consumer rights, and the provisions of the Consumer Protection Act, among others.',
+      url: 'https://consumerhelpline.gov.in/',
+      thumbnailUrl:
+          'https://voxya.com/stories/wp-content/uploads/2021/09/national-consumer-helpline-1024x576.jpg',
     ),
   ];
 

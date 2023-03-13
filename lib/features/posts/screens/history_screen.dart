@@ -12,7 +12,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Period Tracker History'),
+        title: Text(
+          'Period Tracker History',
+          style: TextStyle(
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white // set text color for dark mode
+                : Colors.black, // set text color for light mode
+          ),
+        ),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Colors.grey[900] // set color for dark mode
+            : Color(0xFFffe9ec),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -50,6 +60,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     elevation: 8,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.grey[900] // set color for dark mode
+                        : Color(0xFFffe9ec),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(16.0),
                       onTap: () {
@@ -65,7 +78,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                color: Colors.purpleAccent,
+                                color: Theme.of(context).brightness ==
+                                        Brightness.dark
+                                    ? Colors
+                                        .purpleAccent // set text color for dark mode
+                                    : Colors
+                                        .purpleAccent, // set text color for light mode
                               ),
                             ),
                             SizedBox(height: 8),
@@ -73,19 +91,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
                               'Cycle length: $cycleLength days, Period length: $periodLength days',
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.grey[600],
+                                color: Theme.of(context).brightness ==
+                                        Brightness.dark
+                                    ? Colors
+                                        .white // set text color for dark mode
+                                    : Colors
+                                        .black, // set text color for light mode
                               ),
                             ),
                             SizedBox(height: 8),
-                            Text(
-                              periodOn ? 'Currently On' : 'Not On',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: periodOn
-                                    ? Colors.pink[400]
-                                    : Colors.grey[600],
-                              ),
-                            ),
                           ],
                         ),
                       ),

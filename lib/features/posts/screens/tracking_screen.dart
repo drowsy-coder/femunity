@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PeriodTrackerScreen extends StatefulWidget {
   @override
@@ -54,10 +55,11 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
       final Duration periodDuration = Duration(days: periodLength);
       final DateTime periodStartDate = _selectedDate!;
       final DateTime periodEndDate =
-          periodStartDate.add(periodDuration).subtract(Duration(days: 1));
+          periodStartDate.add(periodDuration).subtract(const Duration(days: 1));
       final DateTime nextPeriodStartDate = periodStartDate.add(cycleDuration);
-      final DateTime nextPeriodEndDate =
-          nextPeriodStartDate.add(periodDuration).subtract(Duration(days: 1));
+      final DateTime nextPeriodEndDate = nextPeriodStartDate
+          .add(periodDuration)
+          .subtract(const Duration(days: 1));
       setState(() {
         _nextPeriodDate = nextPeriodStartDate;
       });
@@ -80,7 +82,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           'nextPeriodDate': _nextPeriodDate,
         })
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text('Data saved successfully'),
                 backgroundColor: Color(0xFFffe9ec),
               ),
@@ -88,7 +90,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         .catchError((error) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Failed to save data: $error'),
-                backgroundColor: Color(0xFFffe9ec),
+                backgroundColor: const Color(0xFFffe9ec),
               ),
             ));
   }
@@ -108,22 +110,22 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
-              side: BorderSide(color: Colors.pink),
+              side: const BorderSide(color: Colors.pink),
             ),
           ),
           elevation: MaterialStateProperty.all<double>(5),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.favorite,
                 color: Colors.white,
               ),
-              SizedBox(width: 8.0),
-              Text(
+              const SizedBox(width: 8.0),
+              const Text(
                 'Health Tips',
                 style: TextStyle(
                   color: Colors.white,
@@ -152,10 +154,10 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFffe9ec),
+            : const Color(0xFFffe9ec),
         actions: [
           IconButton(
-            icon: Icon(Icons.history),
+            icon: const Icon(Icons.history),
             onPressed: () {
               Navigator.push(
                 context,
@@ -171,9 +173,8 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   'Enter your period details:',
                   style: TextStyle(
@@ -187,11 +188,11 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                 child: TextFormField(
                   controller: _cycleController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Cycle length (in days)',
                     border: OutlineInputBorder(),
                   ),
-                  style: TextStyle(fontFamily: 'Roboto'),
+                  style: const TextStyle(fontFamily: 'Roboto'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter cycle length';
@@ -205,11 +206,11 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                 child: TextFormField(
                   controller: _periodController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Period length (in days)',
                     border: OutlineInputBorder(),
                   ),
-                  style: TextStyle(fontFamily: 'Roboto'),
+                  style: const TextStyle(fontFamily: 'Roboto'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter period length';
@@ -222,7 +223,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'Period started on: ',
                       style: TextStyle(
                           fontFamily: 'DancingScript', fontSize: 18.0),
@@ -231,7 +232,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       _selectedDate == null
                           ? 'Please select a date'
                           : DateFormat('dd MMM yyyy').format(_selectedDate!),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 18.0,
                         color: Colors.green,
@@ -242,7 +243,8 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       onPressed: () {
                         _selectDate(context);
                       },
-                      icon: Icon(Icons.calendar_today, color: Colors.green),
+                      icon:
+                          const Icon(Icons.calendar_today, color: Colors.green),
                     ),
                   ],
                 ),
@@ -252,7 +254,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                     const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'Are you on your period? ',
                       style: TextStyle(
                           fontFamily: 'DancingScript', fontSize: 18.0),
@@ -283,7 +285,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                         _calculatePeriod();
                       }
                     },
-                    child: Text('Calculate',
+                    child: const Text('Calculate',
                         style: TextStyle(
                             fontFamily: 'DancingScript', fontSize: 24.0)),
                     style: ButtonStyle(
@@ -317,40 +319,37 @@ class HealthTipsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Female Health Tips'),
+        title: const Text('Female Health Tips'),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             _buildPermanentFactsCard(),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Healthy eating',
               imageUrl:
-                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
-              onTap: () {
-                // TODO: Navigate to healthy eating guide
-              },
+                  'https://flo.health/uploads/media/sulu-1000x-inset/09/929-foods%20periods%202.jpg',
+              onTap: () => launch(
+                  'https://www.healthline.com/health/womens-health/what-to-eat-during-period'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Fitness exercises',
               imageUrl:
-                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
-              onTap: () {
-                // TODO: Navigate to fitness exercises guide
-              },
+                  'https://www.pinkvilla.com/files/styles/large/public/exercises.jpg',
+              onTap: () => launch(
+                  'https://www.healthline.com/health/exercise-during-period'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Stress management',
               imageUrl:
-                  'https://images.everydayhealth.com/images/ces-trends-to-watch-2022-1440x810.jpg',
-              onTap: () {
-                // TODO: Navigate to stress management guide
-              },
+                  'https://www.wikihow.com/images/thumb/a/a8/Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg/v4-460px-Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg',
+              onTap: () => launch(
+                  'https://voxapod.com/blogs/journal/7-natural-ways-to-deal-with-stress-during-your-period'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
           ],
         ),
       ),
@@ -368,15 +367,15 @@ class HealthTipsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Permanent Facts',
+            const Text(
+              'General Advice',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.purpleAccent,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Here are some permanent facts about women health and hygiene that you should always keep in mind:',
               style: TextStyle(
@@ -384,27 +383,27 @@ class HealthTipsScreen extends StatelessWidget {
                 color: Colors.grey[200],
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             _buildFactItem(
               '- Drink plenty of water to stay hydrated',
               Icons.local_drink,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildFactItem(
               '- Eat a healthy and balanced diet',
               Icons.food_bank,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildFactItem(
               '- Exercise regularly to maintain good health',
               Icons.fitness_center,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildFactItem(
               '- Manage stress through relaxation techniques',
               Icons.spa,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             _buildFactItem(
               '- Get enough sleep to recharge your body and mind',
               Icons.nightlight_round,
@@ -423,7 +422,7 @@ class HealthTipsScreen extends StatelessWidget {
           icon,
           color: Colors.purpleAccent,
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Expanded(
           child: Text(
             text,
@@ -454,7 +453,8 @@ class HealthTipsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(24)),
               child: Image.network(
                 imageUrl,
                 height: 200,
@@ -462,19 +462,19 @@ class HealthTipsScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Colors.purpleAccent,
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
           ],
         ),
       ),
