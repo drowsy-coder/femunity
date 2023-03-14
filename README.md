@@ -94,11 +94,11 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 ## Credits
 
--All the responders to out survey who gave us suggestions.
+- All the responders to out survey who gave us suggestions.
 
--Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
+- Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
 
--[Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
+- [Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
 
 ## License
 
