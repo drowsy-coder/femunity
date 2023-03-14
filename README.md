@@ -2,7 +2,7 @@
 
 <div style="display: flex;">
   
-  <img src="https://i.imgur.com/nlWp1bm.png" alt="Femuunity Logo" width="619" height="487">
+  <img src="https://i.imgur.com/nlWp1bm.png" alt="Femuunity Logo" width="310" height="244">
 
 </div>
 
