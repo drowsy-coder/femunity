@@ -86,19 +86,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       body: Constants.tabWidgets[_page],
       drawer: const CommunityListDrawer(),
-      endDrawer: isGuest?null:const ProfileDrawer(),
-      bottomNavigationBar: isGuest?null:CupertinoTabBar(
-        activeColor: currentTheme.iconTheme.color,
-        backgroundColor: Theme.of(context).brightness == Brightness.dark
-            ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFffe9ec),
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
-        ],
-        onTap: onPageChanged,
-        currentIndex: _page,
-      ),
+      endDrawer: isGuest ? null : const ProfileDrawer(),
+      bottomNavigationBar: isGuest
+          ? null
+          : CupertinoTabBar(
+              activeColor: currentTheme.iconTheme.color,
+              backgroundColor: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey[900] // set color for dark mode
+                  : Color(0xFFffe9ec),
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+                BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+              ],
+              onTap: onPageChanged,
+              currentIndex: _page,
+            ),
     );
   }
 }

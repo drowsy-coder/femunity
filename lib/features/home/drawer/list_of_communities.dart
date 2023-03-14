@@ -31,40 +31,51 @@ class CommunityListDrawer extends ConsumerWidget {
       child: SafeArea(
         child: Column(
           children: [
-            isGuest? const SignInButton():
-            ListTile(
-              title: const Text('Create a Community'),
-              leading: const Icon(Icons.add),
-              onTap: () => navigateToCreateCommunity(context),
-            ),
-            if(!isGuest)
-            ref.watch(userCommunitiesProvider).when(
-                  data: (communities) => Expanded(
-                    child: ListView.separated(
-                      itemCount: communities.length,
-                      separatorBuilder: (BuildContext context, int index) =>
-                          const SizedBox(),
-                      itemBuilder: (BuildContext context, int index) {
-                        final community = communities[index];
-                        return DelayedDisplay(
-                          delay: Duration(milliseconds: 10 * index),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage: NetworkImage(community.avatar),
-                            ),
-                            title: Text(community.name),
-                            onTap: () {
-                              navigateToCommunity(context, community);
-                            },
-                          ),
-                        );
-                      },
+            isGuest
+                ? const SignInButton()
+                : ListTile(
+                    title: Text(
+                      'Create a Community',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
                     ),
+                    leading: Icon(
+                      Icons.add_box,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                    onTap: () => navigateToCreateCommunity(context),
                   ),
-                  error: (error, stackTrace) =>
-                      ErrorText(error: error.toString()),
-                  loading: () => const Loader(),
-                )
+            if (!isGuest)
+              ref.watch(userCommunitiesProvider).when(
+                    data: (communities) => Expanded(
+                      child: ListView.separated(
+                        itemCount: communities.length,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const SizedBox(),
+                        itemBuilder: (BuildContext context, int index) {
+                          final community = communities[index];
+                          return DelayedDisplay(
+                            delay: Duration(milliseconds: 10 * index),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: NetworkImage(community.avatar),
+                              ),
+                              title: Text(community.name),
+                              onTap: () {
+                                navigateToCommunity(context, community);
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    error: (error, stackTrace) =>
+                        ErrorText(error: error.toString()),
+                    loading: () => const Loader(),
+                  )
           ],
         ),
       ),

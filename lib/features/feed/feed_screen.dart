@@ -6,9 +6,10 @@ import 'package:femunity/features/communities/controller/community_controller.da
 import 'package:femunity/features/posts/controller/posts_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FeedScreen extends ConsumerWidget {
-  const FeedScreen({super.key});
+  const FeedScreen({Key? key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,50 +18,148 @@ class FeedScreen extends ConsumerWidget {
 
     if (!isGuest) {
       return ref.watch(userCommunitiesProvider).when(
-            data: (communities) => ref.watch(userPostsProvider(communities)).when(
-                  data: (data) {
-                    return ListView.builder(
-                      itemCount: data.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        final post = data[index];
-                        return PostCard(post: post);
-                      },
-                    );
-                  },
-                  error: (error, stackTrace) {
-                    return ErrorText(
-                      error: error.toString(),
-                    );
-                  },
-                  loading: () => const Loader(),
-                ),
+            data: (communities) {
+              if (communities.isEmpty) {
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30),
+                      Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        elevation: 8,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[900]
+                            : Color(0xFFffe9ec),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 16),
+                              child: Text(
+                                'How to use this app',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                  color: Colors.purpleAccent,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                'To use the Femunity app, follow these simple steps:\n',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                '- Tap the search bar above to search and join communities.\n\n- Press the "+" button on the home screen to add posts.\n\n- Go to the community drawer to access your communities.',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        elevation: 8,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[900]
+                            : Color(0xFFffe9ec),
+                        child: InkWell(
+                          onTap: () => launch('https://youtube.com/'),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(24)),
+                                child: Image.network(
+                                  'https://1000logos.net/wp-content/uploads/2017/05/Color-YouTube-logo.jpg',
+                                  height: 200,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(height: 16),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                child: Text(
+                                  'Watch this video to learn more!',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    color: Colors.purpleAccent,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                              ),
+                              SizedBox(height: 16),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+              return ref.watch(userPostsProvider(communities)).when(
+                    data: (data) {
+                      return ListView.builder(
+                        itemCount: data.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final post = data[index];
+                          return PostCard(post: post);
+                        },
+                      );
+                    },
+                    error: (error, stackTrace) {
+                      return ErrorText(
+                        error: error.toString(),
+                      );
+                    },
+                    loading: () => const Loader(),
+                  );
+            },
             error: (error, stackTrace) => ErrorText(
               error: error.toString(),
             ),
             loading: () => const Loader(),
           );
     }
-    return ref.watch(userCommunitiesProvider).when(
-          data: (communities) => ref.watch(GuestPostsProvider).when(
-                data: (data) {
-                  return ListView.builder(
-                    itemCount: data.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final post = data[index];
-                      return PostCard(post: post);
-                    },
-                  );
-                },
-                error: (error, stackTrace) {
-                  return ErrorText(
-                    error: error.toString(),
-                  );
-                },
-                loading: () => const Loader(),
-              ),
-          error: (error, stackTrace) => ErrorText(
-            error: error.toString(),
-          ),
+    return ref.watch(GuestPostsProvider).when(
+          data: (data) {
+            return ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
+                final post = data[index];
+                return PostCard(post: post);
+              },
+            );
+          },
+          error: (error, stackTrace) {
+            return ErrorText(
+              error: error.toString(),
+            );
+          },
           loading: () => const Loader(),
         );
   }
