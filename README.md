@@ -1,6 +1,6 @@
 # Femunity: Empowering Women Through Safe and Supportive Discussions
 
-<!-- ![Femunity logo](https://i.imgur.com/65gmLj7.png) -->
+<img src="https://i.imgur.com/nlWp1bm.png" alt="Femuunity Logo" width="619" height="487">
 
 Femunity is a forum and discussion app that aims to empower young women by providing a safe space for free speech, devoid of hate speech and toxicity. With Femunity, you can create communities, share links, text, and image-based posts, upvote and comment on posts, and participate in discussions with like-minded individuals.
 
