@@ -54,7 +54,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFffe9ec),
+            : Color(0xFFAEC6CF),
         title: Text(
           _title,
           style: TextStyle(color: textColor),
@@ -93,7 +93,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               activeColor: currentTheme.iconTheme.color,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900] // set color for dark mode
-                  : Color(0xFFffe9ec),
+                  : Color(0xFFAEC6CF),
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
                 BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),

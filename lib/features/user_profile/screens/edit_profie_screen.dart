@@ -88,7 +88,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               centerTitle: false,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
-                  : Color(0xffffe9ec),
+                  : Color(0xffAEC6CF),
               // set the background color according to the current theme mode
               brightness: Theme.of(context).brightness,
               // set the brightness according to the current theme mode

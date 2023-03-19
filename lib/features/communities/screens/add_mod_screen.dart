@@ -63,16 +63,39 @@ class _AddModsScreenState extends ConsumerState<AddModsScreen> {
 
                 return ref.watch(getUserDataProvider(member)).when(
                       data: (userData) {
-                        return CheckboxListTile(
-                          value: isChecked,
-                          onChanged: (val) {
-                            if (val!) {
-                              addUid(member);
-                            } else {
-                              removeUid(member);
-                            }
-                          },
-                          title: Text(userData.name),
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color:
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.grey[900]
+                                    : Color(0xFFAEC6CF),
+                          ),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 4, horizontal: 16),
+                          child: CheckboxListTile(
+                            activeColor: Color(0xFFc779d0),
+                            checkColor: Colors.white,
+                            value: isChecked,
+                            onChanged: (val) {
+                              if (val!) {
+                                addUid(member);
+                              } else {
+                                removeUid(member);
+                              }
+                            },
+                            title: Text(
+                              userData.name,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Theme.of(context).brightness ==
+                                        Brightness.dark
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
+                            ),
+                          ),
                         );
                       },
                       error: (error, stackTrace) => ErrorText(

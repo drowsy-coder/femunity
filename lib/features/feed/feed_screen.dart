@@ -1,6 +1,7 @@
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/common/post_card.dart';
+import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/posts/controller/posts_controller.dart';
@@ -32,7 +33,7 @@ class FeedScreen extends ConsumerWidget {
                         elevation: 8,
                         color: Theme.of(context).brightness == Brightness.dark
                             ? Colors.grey[900]
-                            : Color(0xFFffe9ec),
+                            : Color(0xFFAEC6CF),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -78,18 +79,19 @@ class FeedScreen extends ConsumerWidget {
                         elevation: 8,
                         color: Theme.of(context).brightness == Brightness.dark
                             ? Colors.grey[900]
-                            : Color(0xFFffe9ec),
+                            : Color(0xFFAEC6CF),
                         child: InkWell(
-                          onTap: () => launch('https://youtube.com/'),
+                          onTap: () => launch(
+                              'https://www.youtube.com/watch?v=oN_uYKAApXs'),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.vertical(
                                     top: Radius.circular(24)),
-                                child: Image.network(
-                                  'https://1000logos.net/wp-content/uploads/2017/05/Color-YouTube-logo.jpg',
-                                  height: 200,
+                                child: Image.asset(
+                                  Constants.logoPath,
+                                  height: 250,
                                   width: double.infinity,
                                   fit: BoxFit.cover,
                                 ),

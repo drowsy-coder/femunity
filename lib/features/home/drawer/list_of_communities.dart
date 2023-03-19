@@ -27,7 +27,7 @@ class CommunityListDrawer extends ConsumerWidget {
     return Drawer(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
           ? Colors.grey[900] // set color for dark mode
-          : Color(0xFFffe9ec),
+          : Color(0xFFAEC6CF),
       child: SafeArea(
         child: Column(
           children: [

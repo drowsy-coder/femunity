@@ -38,7 +38,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
             content: Text("Your comment contains inappropriate language!"),
-            backgroundColor: Color(0xFFffe9ec)),
+            backgroundColor: Color(0xFFAEC6CF)),
       );
     } else {
       ref.read(postControllerProvider.notifier).addComment(
@@ -75,7 +75,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                             color: Theme.of(context).brightness ==
                                     Brightness.dark
                                 ? Colors.grey[900] // set color for dark mode
-                                : Color(0xFFffe9ec),
+                                : Color(0xFFAEC6CF),
                           ),
                           child: Row(
                             children: [

@@ -55,7 +55,7 @@ class ResourceCentrePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFffe9ec),
+            : Color(0xFFAEC6CF),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -69,7 +69,7 @@ class ResourceCentrePage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.black // set color for dark mode
-                : Color(0xFFffe9ec),
+                : Color(0xFFAEC6CF),
             child: Column(
               children: [
                 Row(
@@ -175,13 +175,12 @@ class ResourceCentrePage extends StatelessWidget {
                                       await Geolocator.getCurrentPosition(
                                     desiredAccuracy: LocationAccuracy.high,
                                   );
-                                  // Open WhatsApp and prefill the message with the user's location
+                                  // Open the SMS app and prefill the message with the user's location
                                   String message =
                                       'I am in an Emergency at: https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}&zoom=15&ll=${position.latitude},${position.longitude}&markers=color:blue%7Clabel:S%7C${position.latitude},${position.longitude}';
                                   String encodedMessage =
                                       Uri.encodeComponent(message);
-                                  String url =
-                                      'whatsapp://send?text=$encodedMessage';
+                                  String url = 'sms:?body=$encodedMessage';
                                   launchUrlString(url);
                                 },
                                 icon: Icon(
@@ -191,7 +190,7 @@ class ResourceCentrePage extends StatelessWidget {
                                       ? Colors.white
                                       : Colors.black,
                                 ),
-                                tooltip: 'Share location via WhatsApp',
+                                tooltip: 'Share location via SMS',
                               );
                             } else {
                               return IconButton(
@@ -204,13 +203,12 @@ class ResourceCentrePage extends StatelessWidget {
                                         await Geolocator.getCurrentPosition(
                                       desiredAccuracy: LocationAccuracy.high,
                                     );
-                                    // Open WhatsApp and prefill the message with the user's location
+                                    // Open the SMS app and prefill the message with the user's location
                                     String message =
                                         'I am in an Emergency at: https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}&zoom=15&ll=${position.latitude},${position.longitude}&markers=color:blue%7Clabel:S%7C${position.latitude},${position.longitude}';
                                     String encodedMessage =
                                         Uri.encodeComponent(message);
-                                    String url =
-                                        'whatsapp://send?text=$encodedMessage';
+                                    String url = 'sms:?body=$encodedMessage';
                                     launchUrlString(url);
                                   }
                                 },
@@ -221,7 +219,7 @@ class ResourceCentrePage extends StatelessWidget {
                                       ? Colors.white
                                       : Colors.black,
                                 ),
-                                tooltip: 'Share location via WhatsApp',
+                                tooltip: 'Share location via SMS',
                               );
                             }
                           },
@@ -309,7 +307,7 @@ class ResourceCentrePage extends StatelessWidget {
                     ),
                     color: Theme.of(context).brightness == Brightness.dark
                         ? Colors.grey[900] // set color for dark mode
-                        : Color(0xFFffe9ec),
+                        : Color(0xFFAEC6CF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),

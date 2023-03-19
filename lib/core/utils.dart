@@ -8,7 +8,7 @@ void showSnackBar(BuildContext context, String text) {
     ..hideCurrentSnackBar()
     ..showSnackBar(SnackBar(
       content: Text(text),
-      backgroundColor: const Color(0xFFffe9ec),
+      backgroundColor: const Color(0xFFAEC6CF),
     ));
 }
 

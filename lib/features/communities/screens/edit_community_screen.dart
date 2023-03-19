@@ -64,7 +64,7 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
             appBar: AppBar(
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
-                  : Color(0xffffe9ec),
+                  : Color(0xffAEC6CF),
               title: Text(
                 'Edit Community',
                 style: Theme.of(context).textTheme.headline6?.copyWith(

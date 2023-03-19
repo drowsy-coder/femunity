@@ -84,13 +84,13 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text('Data saved successfully'),
-                backgroundColor: Color(0xFFffe9ec),
+                backgroundColor: Color(0xFFAEC6CF),
               ),
             ))
         .catchError((error) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Failed to save data: $error'),
-                backgroundColor: const Color(0xFFffe9ec),
+                backgroundColor: const Color(0xFFAEC6CF),
               ),
             ));
   }
@@ -154,7 +154,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : const Color(0xFFffe9ec),
+            : const Color(0xFFAEC6CF),
         actions: [
           IconButton(
             icon: const Icon(Icons.history),

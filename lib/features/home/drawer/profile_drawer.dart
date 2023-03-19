@@ -32,7 +32,7 @@ class ProfileDrawer extends ConsumerWidget {
     return Drawer(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
           ? Colors.grey[900] // set color for dark mode
-          : Color(0xFFffe9ec),
+          : Color(0xFFAEC6CF),
       child: SafeArea(
         child: Column(
           children: [
@@ -121,7 +121,7 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Version 0.95.0',
+                'Version 1.00',
                 style: Theme.of(context).textTheme.caption,
               ),
             ),

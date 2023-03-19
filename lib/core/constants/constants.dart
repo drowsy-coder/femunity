@@ -3,7 +3,6 @@ import 'package:femunity/features/posts/screens/add_posts_screen.dart';
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const textPath = 'assets/images/text.png';
   static const logoPath = 'assets/images/logo.png';
   static const welcomePath = 'assets/images/text.png';
   static const googleLogo = 'assets/images/google.png';
