@@ -1,6 +1,10 @@
 # Femunity: Empowering Women Through Safe and Supportive Discussions
 
-<!-- ![Femunity logo](https://i.imgur.com/65gmLj7.png) -->
+<div style="display: flex;">
+  
+  <img src="https://i.imgur.com/nlWp1bm.png" alt="Femuunity Logo" width="310" height="244">
+
+</div>
 
 Femunity is a forum and discussion app that aims to empower young women by providing a safe space for free speech, devoid of hate speech and toxicity. With Femunity, you can create communities, share links, text, and image-based posts, upvote and comment on posts, and participate in discussions with like-minded individuals.
 
@@ -90,9 +94,11 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 ## Credits
 
-All the responders to out survey who gave us suggestions.
+- All the responders to out survey who gave us suggestions.
 
-[Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
+- Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
+
+- [Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
 
 ## License
 
