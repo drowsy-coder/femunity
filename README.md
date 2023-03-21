@@ -8,6 +8,11 @@
 
 Femunity is a forum and discussion app that aims to empower young women by providing a safe space for free speech, devoid of hate speech and toxicity. With Femunity, you can create communities, share links, text, and image-based posts, upvote and comment on posts, and participate in discussions with like-minded individuals.
 
+
+Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs">
+    <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="LinkedIn Badge"/>
+  </a> 	
+
 ## Features
 
 - Safe space for free speech on women's rights
