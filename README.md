@@ -23,6 +23,7 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs"
 - Resource center with links for support groups and harassment reporting
 - Menstrual tracker feature with history of periods
 - Google OAuth and Guest Mode support
+- Scolarships and Opportunities Specific for Women! (In Closed Testing Right Now)
 
 ## Getting Started
 
