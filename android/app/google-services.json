@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "346212515172-i049dv2kte878fav2o2aki5s46r36257.apps.googleusercontent.com",
+          "client_id": "346212515172-hc0bpipkv63tv10q2a5p24a4svrv59sf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.femunity",
-            "certificate_hash": "74c20757fac245f1a997abda3e503edcbd172ae2"
+            "certificate_hash": "544807c67d2396c4debe9ecd5fa2a45875efc5fa"
           }
         },
         {
