@@ -12,6 +12,10 @@ Femunity is a forum and discussion app that aims to empower young women by provi
 Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs">
     <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="LinkedIn Badge"/>
   </a> 	
+ 
+ ## Project Achievements
+- Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section
+- Global Top 100 | Google Solution Challenge
 
 ## Features
 
