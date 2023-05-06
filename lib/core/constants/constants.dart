@@ -1,3 +1,4 @@
+import 'package:femunity/features/communities/screens/health_screen.dart';
 import 'package:femunity/features/feed/feed_screen.dart';
 import 'package:femunity/features/posts/screens/add_posts_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class Constants {
   static const tabWidgets = [
     FeedScreen(),
     AddPostsScreen(),
+    WellnessScreen(),
   ];
 
   static const IconData up =

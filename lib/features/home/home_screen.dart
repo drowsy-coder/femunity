@@ -34,7 +34,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       _page = page;
       if (page == 1) {
         _title = 'Add Post';
-      } else {
+      } else if (page == 2) {
+        _title = 'Health & Safety';
+      }
+      else {
         _title = 'Home';
       }
     });
@@ -97,10 +100,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
                 BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+                BottomNavigationBarItem(icon: Icon(Icons.health_and_safety), label: ''),
               ],
               onTap: onPageChanged,
               currentIndex: _page,
-            ),
+          ),
     );
   }
 }

@@ -87,20 +87,7 @@ class ProfileDrawer extends ConsumerWidget {
                 );
               },
             ),
-            ListTile(
-              title: const Text('Period Tracker'),
-              leading: const Icon(
-                Icons.bloodtype_outlined,
-                color: Color.fromARGB(255, 235, 25, 25),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PeriodTrackerScreen()),
-                );
-              },
-            ),
+        
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
