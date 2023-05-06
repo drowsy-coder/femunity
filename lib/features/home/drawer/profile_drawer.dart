@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:femunity/features/mindfulness/opportunities_screen.dart';
 import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
@@ -87,6 +88,19 @@ class ProfileDrawer extends ConsumerWidget {
                 );
               },
             ),
+            ListTile(
+              title: const Text('Opportunities'),
+              leading: const Icon(
+                Icons.currency_rupee_outlined,
+                color: Colors.green,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OpportunitiesScreen()),
+                );
+              },
+            ),
         
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -108,7 +122,7 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Version 1.00.10',
+                'Version 1.10.00',
                 style: Theme.of(context).textTheme.caption,
               ),
             ),

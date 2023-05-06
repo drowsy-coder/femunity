@@ -102,7 +102,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             SizedBox(height: 16.0),
@@ -121,7 +121,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
                 expands: true,
                 style: TextStyle(
                   fontSize: 18.0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),

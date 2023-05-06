@@ -19,13 +19,13 @@ class MindfulnessScreen extends StatelessWidget {
       'title': 'Breathing',
       'icon': Icons.air_outlined,
       'color': Colors.green,
-      'screen': BreathingScreen(),
+      'screen': BreathingExerciseScreen(),
     },
     {
       'title': 'Study',
       'icon': Icons.book_outlined,
       'color': Colors.blue,
-      'screen': StudyScreen(),
+      'screen': StudyTimerScreen(),
     },
     {
       'title': 'Gratitude',
