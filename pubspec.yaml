@@ -68,6 +68,7 @@ dependencies:
   flutter_spinkit: ^5.1.0
   permission_handler: ^10.2.0
   rive: ^0.10.4
+  in_app_webview: ^0.0.9
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

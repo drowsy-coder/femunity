@@ -1,4 +1,5 @@
 import 'package:femunity/features/communities/screens/mindfulness.dart';
+import 'package:femunity/features/posts/screens/journal_screen.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -95,8 +96,12 @@ class WellnessScreen extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    // Navigate to Journal screen
-                  },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => JournalScreen()),
+                );
+              },
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
