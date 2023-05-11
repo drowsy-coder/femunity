@@ -5,10 +5,12 @@ import 'package:flutter/animation.dart';
 
 class BreathingExerciseScreen extends StatefulWidget {
   @override
-  _BreathingExerciseScreenState createState() => _BreathingExerciseScreenState();
+  _BreathingExerciseScreenState createState() =>
+      _BreathingExerciseScreenState();
 }
 
-class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with SingleTickerProviderStateMixin {
+class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
   bool _isBreathingIn = true;
@@ -19,7 +21,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 8), // Increase the duration for a smoother animation
     )..addListener(() {
         setState(() {});
       });
@@ -28,7 +30,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
       end: 1.0,
     ).animate(_animationController);
     _animationController.repeat(reverse: true);
-    _timer = Timer.periodic(Duration(seconds: 5), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 8), (timer) { // Adjust the timer interval
       setState(() {
         _isBreathingIn = !_isBreathingIn;
       });

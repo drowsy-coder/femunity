@@ -69,6 +69,7 @@ dependencies:
   permission_handler: ^10.2.0
   in_app_webview: ^0.0.9
   audioplayers: ^4.0.1
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

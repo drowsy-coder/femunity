@@ -74,6 +74,7 @@ class AddPostsScreen extends ConsumerWidget {
             ),
           ),
         )
+        
       ],
     );
   }

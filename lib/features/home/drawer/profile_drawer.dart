@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
 
+import '../../settings/settings.dart';
+
 class ProfileDrawer extends ConsumerWidget {
   const ProfileDrawer({Key? key}) : super(key: key);
 
@@ -68,18 +70,10 @@ class ProfileDrawer extends ConsumerWidget {
               onTap: () => navigateToUserProfile(context, user.uid),
             ),
             ListTile(
-              title: const Text('Log Me Out'),
-              leading: Icon(
-                Icons.logout_outlined,
-                color: Colors.orange,
-              ),
-              onTap: () => logOut(ref),
-            ),
-            ListTile(
               title: const Text('Resource Centre'),
               leading: const Icon(
-                Icons.sos_outlined,
-                color: Colors.amber,
+                Icons.archive_rounded,
+                color: Color.fromARGB(255, 0, 225, 255),
               ),
               onTap: () {
                 Navigator.push(
@@ -101,8 +95,20 @@ class ProfileDrawer extends ConsumerWidget {
                 );
               },
             ),
-        
-            Padding(
+            ListTile(
+              title: const Text('Settings'),
+              leading: const Icon(
+                Icons.settings,
+                color: Colors.blueAccent,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>SettingsPage()),
+                );
+              },
+            ),
+             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
