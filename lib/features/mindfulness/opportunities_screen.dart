@@ -36,57 +36,79 @@ class OpportunitiesScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              height: 200.0,
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  viewportFraction: 0.8,
-                  enlargeCenterPage: true,
-                  autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 5),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
-                items: scholarships.map((scholarship) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          color: Colors.grey.shade300,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            
-                            SizedBox(height: 16.0),
-                            Text(
-                              scholarship['title']!,
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: 8.0),
-                            Text(
-                              scholarship['description']!,
-                              textAlign: TextAlign.center,
-                            ),
-                            SizedBox(height: 8.0),
-                            TextButton(
-                              onPressed: () => launch(scholarship['url']!),
-                              child: Text('Apply Now'),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                }).toList(),
+  child: Container(
+    height: 200.0,
+    child: CarouselSlider(
+      options: CarouselOptions(
+        viewportFraction: 0.8,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 5),
+        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+      ),
+      items: scholarships.map((scholarship) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.0),
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Color(0xFF1C1C1E)
+                    : Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade300,
+                    blurRadius: 4.0,
+                    offset: Offset(0, 2),
+                  ),
+                ],
               ),
-            ),
-          ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 16.0),
+                  Text(
+                    scholarship['title']!,
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      scholarship['description']!,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  MaterialButton(
+                    onPressed: () => launch(scholarship['url']!),
+                    child: Text(
+                      'Apply Now',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    color: Theme.of(context).accentColor,
+                    minWidth: 120.0,
+                    height: 40.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      }).toList(),
+    ),
+  ),
+),
           Expanded(
             child: ListView(
               children: [
@@ -143,27 +165,54 @@ class OpportunityTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
-      child: Container(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text(
-              company,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            Text(
-              position,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            TextButton(
-              onPressed: () => launch(url),
-              child: Text('Apply Now'),
-            ),
-          ],
+  elevation: 2,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16.0),
+  ),
+  child: Container(
+    padding: EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          company,
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
-    );
+        SizedBox(height: 8),
+        Text(
+          position,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 16),
+        OutlinedButton(
+          onPressed: () => launch(url),
+          child: Text(
+            'Apply Now',
+            style: TextStyle(
+              color: Theme.of(context).accentColor,
+            ),
+          ),
+          style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            side: BorderSide(
+              color: Theme.of(context).accentColor,
+              width: 2.0,
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: 32.0,
+              vertical: 8.0,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+);
   }
 }
