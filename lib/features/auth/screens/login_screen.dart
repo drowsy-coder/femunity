@@ -74,7 +74,7 @@ class LoginScreen extends ConsumerWidget {
                     SizedBox(
                       width: 400.0,
                       child: TextLiquidFill(
-                        text: 'FeminaPulse',
+                        text: 'Femunity',
                         waveColor: Color(0xFFff48a5),
                         textStyle: TextStyle(
                           fontFamily: 'AlBrush',
@@ -102,9 +102,9 @@ class LoginScreen extends ConsumerWidget {
                         autoPlayAnimationDuration: Duration(milliseconds: 800),
                       ),
                       items: [
-                        'https://example.com/image1.jpg',
-                        'https://example.com/image2.jpg',
-                        'https://example.com/image3.jpg',
+                        // 'https://example.com/image1.jpg',
+                        // 'https://example.com/image2.jpg',
+                        // 'https://example.com/image3.jpg',
                       ].map((i) {
                         return Builder(
                           builder: (BuildContext context) {

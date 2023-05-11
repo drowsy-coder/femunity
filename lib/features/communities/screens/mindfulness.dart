@@ -12,31 +12,31 @@ class MindfulnessScreen extends StatelessWidget {
     {
       'title': 'Yoga',
       'icon': Icons.accessibility_new_outlined,
-      'color': Colors.pink,
+      'color': Colors.pinkAccent.shade200,
       'screen': YogaScreen(),
     },
     {
       'title': 'Breathing',
       'icon': Icons.air_outlined,
-      'color': Colors.green,
+      'color': Colors.greenAccent.shade200,
       'screen': BreathingExerciseScreen(),
     },
     {
       'title': 'Study',
       'icon': Icons.book_outlined,
-      'color': Colors.blue,
+      'color': Colors.blueAccent.shade200,
       'screen': StudyTimerScreen(),
     },
     {
       'title': 'Gratitude',
       'icon': Icons.favorite_outline,
-      'color': Colors.redAccent,
+      'color': Colors.redAccent.shade200,
       'screen': GratitudeScreen(),
     },
     {
       'title': 'Meditation',
       'icon': Icons.self_improvement_outlined,
-      'color': Colors.deepPurple,
+      'color': Colors.deepPurpleAccent.shade200,
       'screen': MeditationScreen(),
     },
   ];
@@ -51,12 +51,12 @@ class MindfulnessScreen extends StatelessWidget {
   ];
 
   _launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
-}
 
   void _navigateToScreen(BuildContext context, Map<String, dynamic> option) {
     Navigator.of(context).push(
@@ -66,7 +66,8 @@ class MindfulnessScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMeditationCard(BuildContext context, Map<String, dynamic> option) {
+  Widget _buildMeditationCard(
+      BuildContext context, Map<String, dynamic> option) {
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.only(right: 16.0),
@@ -75,7 +76,7 @@ class MindfulnessScreen extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
               offset: Offset(0, 3),
@@ -85,7 +86,7 @@ class MindfulnessScreen extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               option['color'].withOpacity(0.9),
-              option['color'],
+              option['color'].withOpacity(0.7),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -108,6 +109,7 @@ class MindfulnessScreen extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
                 ),
               ),
             ],
@@ -130,7 +132,7 @@ class MindfulnessScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
               offset: Offset(0, 3),
@@ -145,8 +147,9 @@ class MindfulnessScreen extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                  color: Colors.purple,
+                  color: Colors.white,
                   fontSize: 18.0,
+                  fontFamily: 'Montserrat',
                 ),
               ),
             ),
@@ -154,7 +157,7 @@ class MindfulnessScreen extends StatelessWidget {
               padding: const EdgeInsets.only(right: 16.0),
               child: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.purple,
+                color: Colors.purple.shade900,
                 size: 24.0,
               ),
             ),
@@ -172,80 +175,89 @@ class MindfulnessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mindfulness Screen'),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.purple.withOpacity(0.9),
-              Colors.purple,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+        title: Text(
+          'Mindfulness',
+          style: TextStyle(fontFamily: 'Montserrat'),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 24.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                'Meditation Options',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+      ),
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.purple.shade900,
+                Colors.purple.shade700,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
-            SizedBox(height: 16.0),
-            Container(
-              height: 160.0,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: _meditationOptions.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Hero(
-                    tag: _meditationOptions[index]['title'],
-                    child: _buildMeditationCard(context, _meditationOptions[index]),
-                  );
-                },
-              ),
-            ),
-            SizedBox(height: 24.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                'Mindfulness Links',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32.0),
-                    topRight: Radius.circular(32.0),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 24.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  'Meditation Options',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
                   ),
-                  color: Colors.black,
                 ),
+              ),
+              SizedBox(height: 16.0),
+              Container(
+                height: 160.0,
                 child: ListView.builder(
-                  itemCount: _links.length,
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _meditationOptions.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return _buildLinkCard(
-                        _links[index]['title']!, _links[index]['url']!);
+                    return Hero(
+                      tag: _meditationOptions[index]['title'],
+                      child: _buildMeditationCard(
+                          context, _meditationOptions[index]),
+                    );
                   },
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 24.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  'Mindfulness Links',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(32.0),
+                      topRight: Radius.circular(32.0),
+                    ),
+                    color: Colors.black,
+                  ),
+                  child: ListView.builder(
+                    itemCount: _links.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return _buildLinkCard(
+                          _links[index]['title']!, _links[index]['url']!);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
