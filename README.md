@@ -14,8 +14,8 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs"
   </a> 	
  
  ## Project Achievements
-- Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section
-- Global Top 100 | Google Solution Challenge
+- [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
+- [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 
 ## Features
 
