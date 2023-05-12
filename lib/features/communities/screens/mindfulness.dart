@@ -25,7 +25,7 @@ class MindfulnessScreen extends StatelessWidget {
       'title': 'Study',
       'icon': Icons.book_outlined,
       'color': Colors.blueAccent.shade200,
-      'screen': StudyTimerScreen(),
+      'screen': PomodoroScreen(),
     },
     {
       'title': 'Gratitude',

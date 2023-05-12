@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  args:
+    dependency: transitive
+    description:
+      name: args
+      sha256: c372bb384f273f0c2a8aaaa226dad84dc27c8519a691b888725dec59518ad53a
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   async:
     dependency: transitive
     description:
@@ -430,6 +438,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.0"
+  flutter_svg:
+    dependency: "direct main"
+    description:
+      name: flutter_svg
+      sha256: f991fdb1533c3caeee0cdc14b04f50f0c3916f0dbcbc05237ccbe4e3c6b93f3f
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   flutter_test:
     dependency: "direct main"
     description: flutter
@@ -544,6 +560,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.0+1"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
+      sha256: "772db3d53d23361d4ffcf5a9bb091cf3ee9b22f2be52cd107cd7a2683a89ba0e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
   html:
     dependency: transitive
     description:
@@ -784,6 +808,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.1.2"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
   platform:
     dependency: transitive
     description:
@@ -832,6 +864,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  rive:
+    dependency: "direct main"
+    description:
+      name: rive
+      sha256: f7f365ee0e6cf0af99fb239bc3424370ca6ee2b9ad6fc879b1a79ba5e3b40770
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.4"
+  rive_common:
+    dependency: transitive
+    description:
+      name: rive_common
+      sha256: "7c4be235d75c34a0f257b4487c0cc314188aa2f9a6c177d34f02df53d7c25831"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   riverpod:
     dependency: transitive
     description:
@@ -1125,6 +1173,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.7"
+  vector_graphics:
+    dependency: transitive
+    description:
+      name: vector_graphics
+      sha256: ea8d3fc7b2e0f35de38a7465063ecfcf03d8217f7962aa2a6717132cb5d43a79
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.5"
+  vector_graphics_codec:
+    dependency: transitive
+    description:
+      name: vector_graphics_codec
+      sha256: a5eaa5d19e123ad4f61c3718ca1ed921c4e6254238d9145f82aa214955d9aced
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.5"
+  vector_graphics_compiler:
+    dependency: transitive
+    description:
+      name: vector_graphics_compiler
+      sha256: "15edc42f7eaa478ce854eaf1fbb9062a899c0e4e56e775dd73b7f4709c97c4ca"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.5"
   vector_math:
     dependency: transitive
     description:
@@ -1181,6 +1253,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: "979ee37d622dec6365e2efa4d906c37470995871fe9ae080d967e192d88286b5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.2.2"
 sdks:
   dart: ">=2.19.2 <3.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.7.0-0"

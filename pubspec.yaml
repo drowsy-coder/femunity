@@ -70,6 +70,8 @@ dependencies:
   in_app_webview: ^0.0.9
   audioplayers: ^4.0.1
   carousel_slider: ^4.2.1
+  rive: ^0.10.4
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -95,6 +97,7 @@ flutter:
     - assets/images/google.png
     - assets/images/gdsc.png
     - assets/images/down_dog.jpg
+    - assets/images/pomodorotimer.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
