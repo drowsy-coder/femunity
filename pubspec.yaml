@@ -70,7 +70,6 @@ dependencies:
   in_app_webview: ^0.0.9
   audioplayers: ^4.0.1
   carousel_slider: ^4.2.1
-  rive: ^0.10.4
   flutter_svg: ^2.0.5
 
 dev_dependencies:
