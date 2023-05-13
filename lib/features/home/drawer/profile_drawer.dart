@@ -91,7 +91,8 @@ class ProfileDrawer extends ConsumerWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => OpportunitiesScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => OpportunitiesScreen()),
                 );
               },
             ),
@@ -104,11 +105,11 @@ class ProfileDrawer extends ConsumerWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>SettingsPage()),
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
                 );
               },
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,7 +129,7 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Version 1.20.10',
+                'Version 1.30.00',
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
