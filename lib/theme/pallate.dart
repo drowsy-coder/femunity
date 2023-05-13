@@ -16,6 +16,16 @@ class Pallete {
   static var redColor = Colors.red.shade500;
   static var blueColor = Colors.blue.shade300;
 
+  static const Color mainFontColor = Color.fromRGBO(19, 61, 95, 1);
+  static const Color firstSuggestionBoxColor =
+      Color.fromRGBO(255, 192, 203, 1); // light pink
+  static const Color secondSuggestionBoxColor =
+      Color.fromRGBO(255, 105, 180, 1); // hot pink
+  static const Color thirdSuggestionBoxColor =
+      Color.fromRGBO(219, 112, 147, 1); // deep pink
+  static const Color assistantCircleColor = Color.fromRGBO(209, 243, 249, 1);
+  static const Color borderColor = Color.fromRGBO(200, 200, 200, 1);
+
   // Themes
   static var darkModeAppTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: blackColor,

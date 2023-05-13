@@ -2,7 +2,7 @@ name: femunity
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -16,10 +16,10 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.20.00
+version: 1.20.10
 
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+  sdk: '>=2.19.2 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -63,7 +63,7 @@ dependencies:
   geolocator: ^9.0.2
   location: ^4.4.0
   convert: ^3.1.1
-  http: ^0.13.5
+  http: ^0.13.6
   share: ^2.0.4
   flutter_spinkit: ^5.1.0
   permission_handler: ^10.2.0
@@ -72,6 +72,10 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_svg: ^2.0.5
   shake_event: ^0.0.9
+  chat_gpt_sdk: ^2.1.2
+  flutter_dotenv: ^5.0.2
+  velocity_x: ^3.6.0
+  speech_to_text: ^6.1.1
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -98,6 +102,7 @@ flutter:
     - assets/images/gdsc.png
     - assets/images/down_dog.jpg
     - assets/images/pomodorotimer.png
+    - assets/images/sakhi.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

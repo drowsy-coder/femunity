@@ -1,4 +1,5 @@
 import 'package:femunity/features/communities/screens/mindfulness.dart';
+import 'package:femunity/features/posts/screens/chat_screen.dart';
 import 'package:femunity/features/posts/screens/journal_screen.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,8 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: 48,
-                            child: const Icon(Icons.track_changes, size: 48, color: Colors.white),
+                            child: const Icon(Icons.track_changes,
+                                size: 48, color: Colors.white),
                           ),
                           SizedBox(height: 16),
                           Text(
@@ -83,7 +85,8 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: 48,
-                            child: const Icon(Icons.spa, size: 48, color: Colors.white),
+                            child: const Icon(Icons.spa,
+                                size: 48, color: Colors.white),
                           ),
                           SizedBox(height: 16),
                           Text(
@@ -116,7 +119,8 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: 48,
-                            child: const Icon(Icons.book, size: 48, color: Colors.white),
+                            child: const Icon(Icons.book,
+                                size: 48, color: Colors.white),
                           ),
                           SizedBox(height: 16),
                           Text(
@@ -131,28 +135,37 @@ class WellnessScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 48,
-                          child: const Icon(Icons.music_note, size: 48, color: Colors.white),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          'Music',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChatScreen()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 48,
+                            child: const Icon(Icons.chat_bubble,
+                                size: 48, color: Colors.white),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 16),
+                          Text(
+                            'Sakhi',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
