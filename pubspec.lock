@@ -872,6 +872,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      sha256: "2ef8b4e91cb3b55d155e0e34eeae0ac7107974e451495c955ac04ddee8cc21fd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.26.0"
+  sensors:
+    dependency: transitive
+    description:
+      name: sensors
+      sha256: "69c10fe94a63dd7c6f5e6557366e5329a713bf6c45d885d95a56642dd8722e35"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
+  shake_event:
+    dependency: "direct main"
+    description:
+      name: shake_event
+      sha256: "43967406bffa46f6590531307f7e2cca826e6ab48910440551f1cff750b8d30c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.9"
   share:
     dependency: "direct main"
     description:
