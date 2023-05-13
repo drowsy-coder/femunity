@@ -152,7 +152,7 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: 48,
-                            child: const Icon(Icons.chat_bubble,
+                            child: const Icon(Icons.mic,
                                 size: 48, color: Colors.white),
                           ),
                           SizedBox(height: 16),
