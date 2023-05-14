@@ -209,16 +209,18 @@ class _ChatScreenState extends State<ChatScreen> {
                     delay: Duration(milliseconds: start + delay),
                     child: FeatureBox(
                       color: Pallete.secondSuggestionBoxColor,
-                      headerText: "headerText",
-                      descriptionText: "descriptionText",
+                      headerText: "Safe and Secure",
+                      descriptionText:
+                          "Your conversations are private and deleted after the app is closed.",
                     ),
                   ),
                   SlideInLeft(
                     delay: Duration(milliseconds: start + 2 * delay),
                     child: FeatureBox(
                       color: Pallete.thirdSuggestionBoxColor,
-                      headerText: "headerText",
-                      descriptionText: "descriptionText",
+                      headerText: "Powered by AI",
+                      descriptionText:
+                          "Built using the latest AI technologies.",
                     ),
                   ),
                 ],
@@ -226,61 +228,75 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Stack(
+              child: Row(
                 children: [
-                  Form(
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          controller: _controller,
-                          decoration: InputDecoration(
-                            hintText: "Type something...",
-                            filled: true,
-                            fillColor: Colors.grey[800],
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide.none,
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 16,
-                            ),
-                          ),
-                          onFieldSubmitted: (value) async {
-                            await processInput(_controller.text);
-                            _controller.clear();
-                          },
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return '';
-                            }
-                            return null;
-                          },
+                  Expanded(
+                    child: TextFormField(
+                      controller: _controller,
+                      decoration: InputDecoration(
+                        hintText: "What is on your mind?",
+                        filled: true,
+                        fillColor: Colors.grey[800],
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
                         ),
-                        const SizedBox(height: 10),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    top: 0,
-                    bottom: 0,
-                    child: IconButton(
-                      onPressed: () async {
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 16,
+                        ),
+                      ),
+                      onFieldSubmitted: (value) async {
                         await processInput(_controller.text);
                         _controller.clear();
                       },
-                      icon: Icon(Icons.send),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  SizedBox(
+                    width: 36,
+                    height: 36,
+                    child: Material(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(width: 1, color: Colors.grey),
+                      ),
+                      child: IconButton(
+                        onPressed: () async {
+                          if (await speechToText.hasPermission &&
+                              speechToText.isNotListening) {
+                            await startListening();
+                          } else if (speechToText.isListening) {
+                            await processInput(lastWords);
+                            await stopListening();
+                          } else {
+                            initSpeechToText();
+                          }
+                        },
+                        icon: Icon(
+                            speechToText.isListening ? Icons.stop : Icons.mic),
+                        iconSize: 24,
+                        padding: const EdgeInsets.all(0),
+                        color: Colors.white,
+                        splashRadius: 18,
+                        highlightColor: Colors.white.withOpacity(0.4),
+                        hoverColor: Colors.white.withOpacity(0.4),
+                        tooltip: speechToText.isListening ? 'Stop' : 'Speak',
+                        visualDensity: VisualDensity.compact,
+                      ),
                     ),
                   ),
                   if (isLoading)
-                    Positioned.fill(
-                      child: Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      ),
+                    SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(strokeWidth: 2),
                     ),
                 ],
               ),
@@ -288,24 +304,24 @@ class _ChatScreenState extends State<ChatScreen> {
           ],
         ),
       ),
-      floatingActionButton: ZoomIn(
-        delay: Duration(milliseconds: start + 3 * delay),
-        child: FloatingActionButton(
-          backgroundColor: Colors.yellow,
-          onPressed: () async {
-            if (await speechToText.hasPermission &&
-                speechToText.isNotListening) {
-              await startListening();
-            } else if (speechToText.isListening) {
-              await processInput(lastWords);
-              await stopListening();
-            } else {
-              initSpeechToText();
-            }
-          },
-          child: Icon(speechToText.isListening ? Icons.stop : Icons.mic),
-        ),
-      ),
+      // floatingActionButton: ZoomIn(
+      //   delay: Duration(milliseconds: start + 3 * delay),
+      //   child: FloatingActionButton(
+      //     backgroundColor: Colors.yellow,
+      //     onPressed: () async {
+      //       if (await speechToText.hasPermission &&
+      //           speechToText.isNotListening) {
+      //         await startListening();
+      //       } else if (speechToText.isListening) {
+      //         await processInput(lastWords);
+      //         await stopListening();
+      //       } else {
+      //         initSpeechToText();
+      //       }
+      //     },
+      //     child: Icon(speechToText.isListening ? Icons.stop : Icons.mic),
+      //   ),
+      // ),
     );
   }
 }
