@@ -23,6 +23,8 @@ class _ChatScreenState extends State<ChatScreen> {
   String? generatedImageUrl;
   int start = 200;
   int delay = 200;
+  TextEditingController _controller = TextEditingController();
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -72,6 +74,27 @@ class _ChatScreenState extends State<ChatScreen> {
     super.dispose();
     speechToText.stop();
     flutterTts.stop();
+  }
+
+  Future<void> processInput(String input) async {
+    setState(() {
+      isLoading = true;
+    });
+    final response = await openAIService.isArtPromptAPI(input);
+    if (response.contains('https')) {
+      generatedImageUrl = response;
+      generatedContent = null;
+      setState(() {
+        isLoading = false;
+      });
+    } else {
+      generatedContent = response;
+      generatedImageUrl = null;
+      setState(() {
+        isLoading = false;
+      });
+      await systemSpeak(response);
+    }
   }
 
   @override
@@ -201,6 +224,67 @@ class _ChatScreenState extends State<ChatScreen> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Stack(
+                children: [
+                  Form(
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: _controller,
+                          decoration: InputDecoration(
+                            hintText: "Type something...",
+                            filled: true,
+                            fillColor: Colors.grey[800],
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none,
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 16,
+                            ),
+                          ),
+                          onFieldSubmitted: (value) async {
+                            await processInput(_controller.text);
+                            _controller.clear();
+                          },
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return '';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: IconButton(
+                      onPressed: () async {
+                        await processInput(_controller.text);
+                        _controller.clear();
+                      },
+                      icon: Icon(Icons.send),
+                    ),
+                  ),
+                  if (isLoading)
+                    Positioned.fill(
+                      child: Container(
+                        color: Colors.black.withOpacity(0.5),
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -213,18 +297,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 speechToText.isNotListening) {
               await startListening();
             } else if (speechToText.isListening) {
-              final speech = await openAIService.isArtPromptAPI(lastWords);
-              if (speech.contains('https')) {
-                generatedImageUrl = speech;
-                generatedContent = null;
-                setState(() {});
-              } else {
-                generatedContent = speech;
-                generatedImageUrl = null;
-                setState(() {});
-                await systemSpeak(speech);
-              }
-
+              await processInput(lastWords);
               await stopListening();
             } else {
               initSpeechToText();
