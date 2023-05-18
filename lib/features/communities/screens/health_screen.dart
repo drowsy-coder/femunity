@@ -1,11 +1,18 @@
 import 'package:femunity/features/communities/screens/mindfulness.dart';
+import 'package:femunity/features/mindfulness/opportunities_screen.dart';
 import 'package:femunity/features/posts/screens/chat_screen.dart';
 import 'package:femunity/features/posts/screens/journal_screen.dart';
+import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:routemaster/routemaster.dart';
 
 class WellnessScreen extends StatelessWidget {
   const WellnessScreen({Key? key}) : super(key: key);
+
+void navigateToResourceCentre(BuildContext context) {
+    Routemaster.of(context).push('/resource-centre');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,74 +78,6 @@ class WellnessScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => MindfulnessScreen()),
-                      );
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 48,
-                            child: const Icon(Icons.spa,
-                                size: 48, color: Colors.white),
-                          ),
-                          SizedBox(height: 16),
-                          Text(
-                            'Mindfulness',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => JournalScreen()),
-                      );
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 48,
-                            child: const Icon(Icons.book,
-                                size: 48, color: Colors.white),
-                          ),
-                          SizedBox(height: 16),
-                          Text(
-                            'Journal',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
                         MaterialPageRoute(builder: (context) => ChatScreen()),
                       );
                     },
@@ -158,6 +97,142 @@ class WellnessScreen extends StatelessWidget {
                           SizedBox(height: 16),
                           Text(
                             'Sakhi',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) => JournalScreen()),
+                  //     );
+                  //   },
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.deepPurple,
+                  //       borderRadius: BorderRadius.circular(16.0),
+                  //     ),
+                  //     child: Column(
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       children: [
+                  //         SizedBox(
+                  //           height: 48,
+                  //           child: const Icon(Icons.book,
+                  //               size: 48, color: Colors.white),
+                  //         ),
+                  //         SizedBox(height: 16),
+                  //         Text(
+                  //           'Journal',
+                  //           style: TextStyle(
+                  //             fontSize: 18,
+                  //             fontWeight: FontWeight.bold,
+                  //             color: Colors.white,
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) => MindfulnessScreen()),
+                  //     );
+                  //   },
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.green,
+                  //       borderRadius: BorderRadius.circular(16.0),
+                  //     ),
+                  //     child: Column(
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       children: [
+                  //         SizedBox(
+                  //           height: 48,
+                  //           child: const Icon(Icons.spa,
+                  //               size: 48, color: Colors.white),
+                  //         ),
+                  //         SizedBox(height: 16),
+                  //         Text(
+                  //           'Mindfulness',
+                  //           style: TextStyle(
+                  //             fontSize: 18,
+                  //             fontWeight: FontWeight.bold,
+                  //             color: Colors.white,
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OpportunitiesScreen()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 48,
+                            child: const Icon(Icons.assignment_ind_sharp,
+                                size: 48, color: Colors.white),
+                          ),
+                          SizedBox(height: 16),
+                          Text(
+                            'Opportunities',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResourceCentrePage()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 48,
+                            child: const Icon(Icons.archive_rounded,
+                                size: 48, color: Colors.white),
+                          ),
+                          SizedBox(height: 16),
+                          Text(
+                            'Resource Centre',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

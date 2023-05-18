@@ -37,7 +37,7 @@ class MindfulnessScreen extends StatelessWidget {
       'title': 'Meditation',
       'icon': Icons.self_improvement_outlined,
       'color': Colors.deepPurpleAccent.shade200,
-      'screen': MeditationScreen(),
+      'screen': MyApp(),
     },
   ];
 
