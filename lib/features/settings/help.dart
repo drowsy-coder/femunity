@@ -129,6 +129,12 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   },
                 ),
               ),
+              SizedBox(height: 30.0),
+              Image.asset(
+                'assets/images/output-onlinegiftools.gif',
+                height: 260.0,
+                fit: BoxFit.cover,
+              ),
             ],
           ),
         ),

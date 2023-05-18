@@ -152,7 +152,7 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                         hintStyle: currentTheme.textTheme.bodyText2!
                             .copyWith(color: currentTheme.hintColor),
                         filled: true,
-                        fillColor: Colors.purple[900],
+                        // fillColor: Colors.purple[900],
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -224,7 +224,7 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                               hintStyle: currentTheme.textTheme.bodyText2!
                                   .copyWith(color: currentTheme.hintColor),
                               filled: true,
-                              fillColor: Colors.green[600],
+                              // fillColor: Colors.green[600],
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide.none,
@@ -254,7 +254,7 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                               hintStyle: currentTheme.textTheme.bodyText2!
                                   .copyWith(color: currentTheme.hintColor),
                               filled: true,
-                              fillColor: Colors.orange[800],
+                              // fillColor: Colors.orange[800],
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide.none,
