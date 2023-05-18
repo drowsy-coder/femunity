@@ -166,12 +166,12 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Text(
-                'Version 1.30.20',
+                'Version 1.40.00',
                 style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 14,
-                  color: Colors.grey[500],
-                ),
+                    fontFamily: 'Montserrat',
+                    fontSize: 16,
+                    color: Colors.grey[500],
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ],
