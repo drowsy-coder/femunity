@@ -30,40 +30,65 @@ class ProfileDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(userProvider)!;
     return Drawer(
-      backgroundColor: Theme.of(context).brightness == Brightness.dark
-          ? Colors.grey[900] // set color for dark mode
-          : Color(0xFFAEC6CF),
+      backgroundColor: Colors.black,
       child: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(user.profilePic),
-                radius: 70,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              decoration: BoxDecoration(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.grey[900] // set color for dark mode
+                    : Color(0xFFAEC6CF),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center, // add this line
+                children: [
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(user.profilePic),
+                    radius: 50,
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    // add this line
+                    child: AnimatedTextKit(
+                      isRepeatingAnimation: false,
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          user.name,
+                          textStyle: const TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          speed: const Duration(milliseconds: 40),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 10),
-            AnimatedTextKit(
-              isRepeatingAnimation: false,
-              animatedTexts: [
-                TypewriterAnimatedText(
-                  user.name,
-                  textStyle: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  speed: const Duration(milliseconds: 40),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Divider(),
+            SizedBox(height: 20),
             ListTile(
-              title: const Text('My Profile'),
-              leading: const Icon(Icons.person_3_outlined),
+              title: const Text(
+                'My Profile',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: const Icon(
+                Icons.person_3_outlined,
+                size: 30,
+              ),
               onTap: () => navigateToUserProfile(context, user.uid),
             ),
             // ListTile(
@@ -94,10 +119,18 @@ class ProfileDrawer extends ConsumerWidget {
             //   },
             // ),
             ListTile(
-              title: const Text('Settings'),
+              title: const Text(
+                'Settings',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               leading: const Icon(
                 Icons.settings,
-                color: Colors.blueAccent,
+                color: Color(0xFF1E90FF),
+                size: 30,
               ),
               onTap: () {
                 Navigator.push(
@@ -106,28 +139,39 @@ class ProfileDrawer extends ConsumerWidget {
                 );
               },
             ),
+            SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
                     'Dark Mode',
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Switch.adaptive(
-                      value: ref.watch(themeNotifierProvider.notifier).mode ==
-                          ThemeMode.dark,
-                      onChanged: (val) => toggleTheme(ref)),
+                    value: ref.watch(themeNotifierProvider.notifier).mode ==
+                        ThemeMode.dark,
+                    onChanged: (val) => toggleTheme(ref),
+                    activeColor: Color(0xFF1E90FF),
+                  ),
                 ],
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               child: Text(
                 'Version 1.30.20',
-                style: Theme.of(context).textTheme.caption,
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 14,
+                  color: Colors.grey[500],
+                ),
               ),
             ),
           ],

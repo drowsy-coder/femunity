@@ -141,6 +141,10 @@ flutter:
       fonts:
         - asset: assets/fonts/SCRIPALT.ttf
         - asset: assets/fonts/SCRIPTIN.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Montserrat-VariableFont_wght.ttf
 
     - family: AlBrush
       fonts:

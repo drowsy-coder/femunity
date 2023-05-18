@@ -44,7 +44,6 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Create a Community'),
-        centerTitle: true,
       ),
       body: isLoading
           ? const Loader()
@@ -75,11 +74,18 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                   ElevatedButton(
                     onPressed: createCommunity,
                     style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green[300],
                         minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadiusDirectional.circular(20))),
-                    child: const Text('Create Community'),
+                    child: const Text(
+                      'Create Community',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
                   ),
                 ],
               ),

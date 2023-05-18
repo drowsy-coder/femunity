@@ -18,22 +18,6 @@ class SettingsPage extends ConsumerWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 16.0),
         children: [
-          // ListTile(
-          //   leading: Icon(Icons.person),
-          //   title: Text('Edit Profile'),
-          //   onTap: () {
-          //     // Handle edit profile action
-          //   },
-          // ),
-          // Divider(),
-          // ListTile(
-          //   leading: Icon(Icons.notifications),
-          //   title: Text('Notifications'),
-          //   onTap: () {
-          //     // Handle notifications action
-          //   },
-          // ),
-          // Divider(),
           ListTile(
             leading: Icon(Icons.security),
             title: Text('Privacy & Security'),
@@ -44,15 +28,6 @@ class SettingsPage extends ConsumerWidget {
                       builder: (context) => PrivacyPolicyScreen()));
             },
           ),
-          Divider(),
-          // ListTile(
-          //   leading: Icon(Icons.language),
-          //   title: Text('Language'),
-          //   onTap: () {
-          //     // Handle language action
-          //   },
-          // // ),
-          // Divider(),
           ListTile(
             leading: Icon(Icons.help),
             title: Text('Help & Support'),

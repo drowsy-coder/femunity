@@ -1,11 +1,9 @@
 import 'package:any_link_preview/any_link_preview.dart';
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
-import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/posts/controller/posts_controller.dart';
-import 'package:femunity/models/community_model.dart';
 import 'package:femunity/models/post_model.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
@@ -77,8 +75,8 @@ class PostCard extends ConsumerWidget {
                                   GestureDetector(
                                     onTap: () => navigateToCommunity(context),
                                     child: CircleAvatar(
-                                      backgroundImage:
-                                          NetworkImage(post.communityProfilePic),
+                                      backgroundImage: NetworkImage(
+                                          post.communityProfilePic),
                                       radius: 16,
                                     ),
                                   ),
@@ -126,11 +124,10 @@ class PostCard extends ConsumerWidget {
                           ),
                           if (isTypeImage)
                             SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.35,
+                              height: MediaQuery.of(context).size.height * 0.35,
                               width: double.infinity,
-                              child: Image.network(post.link!,
-                                  fit: BoxFit.cover),
+                              child:
+                                  Image.network(post.link!, fit: BoxFit.cover),
                             ),
                           if (isTypeLink)
                             Padding(
@@ -146,8 +143,8 @@ class PostCard extends ConsumerWidget {
                             Container(
                               alignment: Alignment.bottomLeft,
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8.0),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: Text(
                                   post.description!,
                                   style: const TextStyle(
@@ -175,10 +172,10 @@ class PostCard extends ConsumerWidget {
                                     child: IconButton(
                                       onPressed: () => upvotePost(ref),
                                       icon: Icon(
-                                        Constants.up,
+                                        Icons.thumb_up_outlined,
                                         size: 30,
                                         color: post.upvotes.contains(user.uid)
-                                            ? Pallete.redColor
+                                            ? Colors.green[400]
                                             : null,
                                       ),
                                     ),
@@ -195,12 +192,11 @@ class PostCard extends ConsumerWidget {
                                     child: IconButton(
                                       onPressed: () => downvotePost(ref),
                                       icon: Icon(
-                                        Constants.down,
+                                        Icons.thumb_down_outlined,
                                         size: 30,
-                                        color:
-                                            post.downvotes.contains(user.uid)
-                                                ? Pallete.blueColor
-                                                : null,
+                                        color: post.downvotes.contains(user.uid)
+                                            ? Colors.red[900]
+                                            : null,
                                       ),
                                     ),
                                   ),
@@ -213,8 +209,9 @@ class PostCard extends ConsumerWidget {
                                     IconButton(
                                       onPressed: () =>
                                           navigateToComments(context),
-                                      icon: const Icon(Icons.comment),
-                                      color: Colors.blue, // set the color to blue
+                                      icon: const Icon(Icons.insert_comment),
+                                      color:
+                                          Colors.blue, // set the color to blue
                                     ),
                                     Text(
                                       '${post.commentCount == 0 ? 'Comment' : post.commentCount}',

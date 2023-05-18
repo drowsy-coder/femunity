@@ -1,3 +1,4 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/common/sign_in_button.dart';
@@ -7,7 +8,6 @@ import 'package:femunity/models/community_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
-import 'package:delayed_display/delayed_display.dart';
 
 class CommunityListDrawer extends ConsumerWidget {
   const CommunityListDrawer({Key? key}) : super(key: key);
@@ -25,29 +25,80 @@ class CommunityListDrawer extends ConsumerWidget {
     final user = ref.watch(userProvider)!;
     final isGuest = !user.isAuthenticated;
     return Drawer(
-      backgroundColor: Theme.of(context).brightness == Brightness.dark
-          ? Colors.grey[900] // set color for dark mode
-          : Color(0xFFAEC6CF),
+      backgroundColor: Colors.black,
       child: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Container(
+              height: 150,
+              decoration: BoxDecoration(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.grey[900] // set color for dark mode
+                    : Color(0xFFAEC6CF),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Femunity',
+                    style: TextStyle(
+                      fontFamily: 'AlBrush',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 40,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    isGuest
+                        ? 'Sign in to join the community'
+                        : 'Hey 👋 ${user.name}',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
             isGuest
                 ? const SignInButton()
-                : ListTile(
-                    title: Text(
-                      'Create a Community',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                : Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ElevatedButton.icon(
+                      onPressed: () => navigateToCreateCommunity(context),
+                      icon: Icon(
+                        Icons.add_box,
+                        color: Colors.black,
+                      ),
+                      label: Text(
+                        'Create a Community',
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.yellow[300]
+                            : Color(0xFFFAC898),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                       ),
                     ),
-                    leading: Icon(
-                      Icons.add_box,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    onTap: () => navigateToCreateCommunity(context),
                   ),
+            SizedBox(height: 20),
             if (!isGuest)
               ref.watch(userCommunitiesProvider).when(
                     data: (communities) => Expanded(
@@ -63,10 +114,36 @@ class CommunityListDrawer extends ConsumerWidget {
                               leading: CircleAvatar(
                                 backgroundImage: NetworkImage(community.avatar),
                               ),
-                              title: Text(community.name),
+                              title: Text(
+                                community.name,
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              // subtitle: Text(
+                              //   community.description,
+                              //   style: TextStyle(
+                              //     fontFamily: 'Montserrat',
+                              //     fontWeight: FontWeight.w600,
+                              //     fontSize: 14,
+                              //   ),
+                              // ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.grey,
+                              ),
                               onTap: () {
                                 navigateToCommunity(context, community);
                               },
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              tileColor: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.grey[800]
+                                  : Colors.white,
                             ),
                           );
                         },
