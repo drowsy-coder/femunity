@@ -1,0 +1,199 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+class HelpAndSupportScreen extends StatefulWidget {
+  @override
+  _HelpAndSupportScreenState createState() => _HelpAndSupportScreenState();
+}
+
+class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _subjectController = TextEditingController();
+  final _descriptionController = TextEditingController();
+
+  @override
+  void dispose() {
+    _subjectController.dispose();
+    _descriptionController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.blue[300],
+        title: Text(
+          'Help & Support',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Subject',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.pink[300],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10.0),
+              TextFormField(
+                controller: _subjectController,
+                decoration: InputDecoration(
+                  hintText: 'Enter subject',
+                  fillColor: Colors.grey[900],
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter a subject';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                'Description',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.pink[300],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10.0),
+              TextFormField(
+                controller: _descriptionController,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  hintText: 'Enter description',
+                  fillColor: Colors.grey[900],
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter a description';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 30.0),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.yellow[300],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Send Feedback',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _sendEmail();
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _sendEmail() async {
+    final subject = _subjectController.text.trim();
+    final description = _descriptionController.text.trim();
+
+    final uri = Uri(
+      scheme: 'mailto',
+      path: 'amritansh.code@gmail.com',
+      queryParameters: {
+        'subject': Uri.encodeComponent(subject),
+        'body': Uri.encodeComponent(description),
+      },
+    );
+
+    final url = uri.toString();
+
+    if (await launchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(
+            'Error',
+            style: TextStyle(
+              color: Colors.pink[300],
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Text(
+            'Could not send email. Please check your email client or try again later.',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16.0,
+            ),
+          ),
+          actions: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.pink[300],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: Text(
+                'OK',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      );
+    }
+  }
+}
