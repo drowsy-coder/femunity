@@ -149,7 +149,3 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 ## License
 
 Femunity is licensed under the MIT license. See [LICENSE.txt](LICENSE.txt) for more information.
-
----
-
-Thank you for choosing Femunity! We hope you enjoy using our app to connect with and empower other women.
