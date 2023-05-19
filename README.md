@@ -146,8 +146,6 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 - Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
 
-- [Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
-
 ## License
 
 Femunity is licensed under the MIT license. See [LICENSE.txt](LICENSE.txt) for more information.
