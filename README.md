@@ -30,29 +30,6 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs"
 - Scolarships and Opportunities Specific for Women!
 - Sakhi - AI Support and Health Chatbot
 
-## Getting Started
-
-Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
-
-### Prerequisites
-
-Before you start, make sure you have installed the following on your system:
-
-- Flutter SDK
-- VS Code
-- Dart and Flutter extensions for VS Code
-- Android emulator or physical device
-
-### Installation
-
-1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity.git
-
-2. Open the project folder in VS Code.
-
-3. In VS Code, open the command palette (View > Command Palette) and type "Flutter: Run Flutter Doctor". This will check your system to make sure everything is set up correctly.
-
-4. In VS Code, open the main.dart file and click the "Run" button. This will launch the app in the emulator or on your physical device.
-
 <hr>
 <table style="width: 100%;">
   <tr>
@@ -102,6 +79,30 @@ Before you start, make sure you have installed the following on your system:
 </table>
 
 <hr>
+
+
+## Getting Started
+
+Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
+
+### Prerequisites
+
+Before you start, make sure you have installed the following on your system:
+
+- Flutter SDK
+- VS Code
+- Dart and Flutter extensions for VS Code
+- Android emulator or physical device
+
+### Installation
+
+1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity.git
+
+2. Open the project folder in VS Code.
+
+3. In VS Code, open the command palette (View > Command Palette) and type "Flutter: Run Flutter Doctor". This will check your system to make sure everything is set up correctly.
+
+4. In VS Code, open the main.dart file and click the "Run" button. This will launch the app in the emulator or on your physical device.
 
 ## How to Use
 
