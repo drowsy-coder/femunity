@@ -1,7 +1,5 @@
-import 'package:femunity/features/communities/screens/mindfulness.dart';
 import 'package:femunity/features/mindfulness/opportunities_screen.dart';
 import 'package:femunity/features/posts/screens/chat_screen.dart';
-import 'package:femunity/features/posts/screens/journal_screen.dart';
 import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
 import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +8,7 @@ import 'package:routemaster/routemaster.dart';
 class WellnessScreen extends StatelessWidget {
   const WellnessScreen({Key? key}) : super(key: key);
 
-void navigateToResourceCentre(BuildContext context) {
+  void navigateToResourceCentre(BuildContext context) {
     Routemaster.of(context).push('/resource-centre');
   }
 
@@ -232,7 +230,7 @@ void navigateToResourceCentre(BuildContext context) {
                           ),
                           SizedBox(height: 16),
                           Text(
-                            'Resource Centre',
+                            'SoS',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

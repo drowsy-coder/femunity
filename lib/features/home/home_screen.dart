@@ -1,5 +1,4 @@
 import 'package:femunity/features/auth/controller/auth_controller.dart';
-import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/home/delegates/search_community_delegate.dart';
 import 'package:femunity/features/home/drawer/list_of_communities.dart';
 import 'package:femunity/features/home/drawer/profile_drawer.dart';
@@ -35,9 +34,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       if (page == 1) {
         _title = 'Add Post';
       } else if (page == 2) {
-        _title = 'Health & Safety';
-      }
-      else {
+        _title = 'Resource Centre';
+      } else {
         _title = 'Home';
       }
     });
@@ -104,7 +102,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ],
               onTap: onPageChanged,
               currentIndex: _page,
-          ),
+            ),
     );
   }
 }

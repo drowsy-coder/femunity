@@ -1,16 +1,10 @@
-import 'package:any_link_preview/any_link_preview.dart';
-import 'package:femunity/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:routemaster/routemaster.dart';
+import 'package:permission_handler/permission_handler.dart';
 // import 'package:location/location.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter/painting.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class ResourceCentrePage extends StatelessWidget {
   ResourceCentrePage({Key? key}) : super(key: key);

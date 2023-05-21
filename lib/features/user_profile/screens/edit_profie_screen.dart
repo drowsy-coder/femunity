@@ -6,10 +6,8 @@ import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/core/utils.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
-import 'package:femunity/features/communities/controller/community_controller.dart';
 import 'package:femunity/features/user_profile/controller/user_profile_controller.dart';
 import 'package:femunity/theme/pallate.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
