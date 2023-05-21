@@ -27,7 +27,59 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=oN_uYKAApXs"
 - Resource center with links for support groups and harassment reporting
 - Menstrual tracker feature with history of periods
 - Google OAuth and Guest Mode support
-- Scolarships and Opportunities Specific for Women! (In Closed Testing Right Now)
+- Scolarships and Opportunities Specific for Women!
+- Sakhi - AI Support and Health Chatbot
+
+<hr>
+<table style="width: 100%;">
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/uzzqjOO.jpg" alt="Image 1" style="width: 100%;">
+      <p>Community Drawer</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/WPdMVy7.jpg" alt="Image 2" style="width: 100%;">
+      <p>Add Posts</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/RbEwAIF.jpg" alt="Image 3" style="width: 100%;">
+      <p>Utilities Toolbox</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/PkMyFmm.jpg" alt="Image 4" style="width: 100%;">
+      <p>Menstrual Tracking</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/ZiLYFbP.jpg" alt="Image 5" style="width: 100%;">
+      <p>Opportunities</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/hEY3nw5.jpg" alt="Image 6" style="width: 100%;">
+      <p>Sakhi AI Chatbot</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/vd2nzCO.jpg" alt="Image 7" style="width: 100%;">
+      <p>User Profile Drawer</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/7oASf0S.jpg" alt="Image 8" style="width: 100%;">
+      <p>Home Screen</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/mSj75Hx.jpg" alt="Image 9" style="width: 100%;">
+      <p>Create Community</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/zvyOtSr.jpg" alt="Image 10" style="width: 100%;">
+      <p>Image Upload</p>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
 
 ## Getting Started
 
@@ -52,8 +104,6 @@ Before you start, make sure you have installed the following on your system:
 
 4. In VS Code, open the main.dart file and click the "Run" button. This will launch the app in the emulator or on your physical device.
 
-
-
 ## How to Use
 
 Once you have created an account or logged in as a Guest, you can start exploring the app's features.
@@ -62,20 +112,13 @@ Once you have created an account or logged in as a Guest, you can start explorin
 
 To create a community, click on the "Create Community" button in the navigation bar. The communities are customisable with their own banner and profile picture.
 
-<img src="https://i.imgur.com/046m7rU.jpg" alt="Creating Community" width="270" height="211">
-
 ### Sharing Posts
 
 To share a post, click on the "+" button on the screen. You can then choose whether to share a link, text, or image-based post. You can also choose which community to share your post with.
 
-<img src="https://i.imgur.com/llVe4Bp.jpg" alt="Sharing Posts" width="270" height="568">
-
 ### Upvoting and Commenting
 
-To upvote or downvote a post, simply click on the arrows next to the post. To comment on a post, click on the comment button and enter your comment.
-
-
-<img src="https://i.imgur.com/4QXN7QC.jpg" alt="Sharing Posts" width="270" height="365">
+To upvote or downvote a post, simply click on the icons next to the post. To comment on a post, click on the comment button and enter your comment.
 
 ### Radiance Points System
 
@@ -85,18 +128,13 @@ Femunity uses a Radiance points system to reward users for their activity on the
 
 Femunity's Resource Center provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away.
 
-<img src="https://i.imgur.com/OMzwOjY.jpg" alt="Sharing Posts" width="270" height="568">
-
 ### Menstrual Tracker
 
 Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. To use the Menstrual Tracker, click on the "Period Tracker" button present in the navigation bar.
 
-<div style="display: flex;">
-  <img src="https://i.imgur.com/Lf9W81w.jpg" alt="Sharing Posts" width="270" height="568" style="margin-right: 10px;">
-  
-  <img src="https://i.imgur.com/iNMKN51.jpg" alt="Sharing Posts" width="270" height="568" style="margin-left: 10px;">
-</div>
+### Sakhi - ChatBot
 
+An AI Chatbot, always available to talk to you. Share your thoughts, feelings or concerns and get honest and accurate answers.
 
 ## Contributing
 
@@ -108,12 +146,6 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 - Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
 
-- [Forum Section Inspiration](https://github.com/RivaanRanawat/flutter-reddit-clone)
-
 ## License
 
 Femunity is licensed under the MIT license. See [LICENSE.txt](LICENSE.txt) for more information.
-
----
-
-Thank you for choosing Femunity! We hope you enjoy using our app to connect with and empower other women.
