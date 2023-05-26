@@ -145,20 +145,20 @@ class ProfileDrawer extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Dark Mode',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Switch.adaptive(
-                    value: ref.watch(themeNotifierProvider.notifier).mode ==
-                        ThemeMode.dark,
-                    onChanged: (val) => toggleTheme(ref),
-                    activeColor: Color(0xFF1E90FF),
-                  ),
+                  // const Text(
+                  //   'Dark Mode',
+                  //   style: TextStyle(
+                  //     fontFamily: 'Montserrat',
+                  //     fontSize: 18,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
+                  // Switch.adaptive(
+                  //   value: ref.watch(themeNotifierProvider.notifier).mode ==
+                  //       ThemeMode.dark,
+                  //   onChanged: (val) => toggleTheme(ref),
+                  //   activeColor: Color(0xFF1E90FF),
+                  // ),
                 ],
               ),
             ),
