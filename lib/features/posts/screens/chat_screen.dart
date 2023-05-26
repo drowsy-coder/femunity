@@ -102,6 +102,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sakhi'),
+        backgroundColor: Colors.green[600],
       ),
       body: SingleChildScrollView(
         child: Column(

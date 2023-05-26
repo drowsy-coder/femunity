@@ -19,11 +19,11 @@ class Pallete {
 
   static const Color mainFontColor = Color.fromRGBO(19, 61, 95, 1);
   static const Color firstSuggestionBoxColor =
-      Color.fromRGBO(255, 192, 203, 1); // light pink
+      Color.fromRGBO(255, 252, 185, 1); // pale yellow
   static const Color secondSuggestionBoxColor =
-      Color.fromRGBO(255, 105, 180, 1); // hot pink
+      Color.fromRGBO(255, 217, 102, 1); // bright yellow
   static const Color thirdSuggestionBoxColor =
-      Color.fromRGBO(219, 112, 147, 1); // deep pink
+      Color.fromRGBO(255, 196, 0, 1); // golden yellow
   static const Color assistantCircleColor = Color.fromRGBO(209, 243, 249, 1);
   static const Color borderColor = Color.fromRGBO(200, 200, 200, 1);
 

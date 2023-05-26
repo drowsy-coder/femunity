@@ -38,6 +38,7 @@ class OpportunitiesScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        backgroundColor: Colors.indigo,
       ),
       body: Column(
         children: [

@@ -1,10 +1,11 @@
-import 'package:femunity/features/posts/screens/history_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intl/intl.dart';
+import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/exercise_tips.dart';
+import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/food_tips.dart';
+import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/stress_tips.dart';
+import 'package:femunity/features/posts/screens/history_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class PeriodTrackerScreen extends StatefulWidget {
   @override
@@ -140,206 +141,212 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
     );
   }
 
-  
   @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.black,
-    appBar: AppBar(
-      title: Text(
-        'Period Tracking',
-        style: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(
+          'Period Tracking',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
-      ),
-      backgroundColor: Colors.pink,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.history),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HistoryScreen()),
-            );
-          },
-        ),
-      ],
-    ),
-    body: SingleChildScrollView(
-      child: Form(
-      key: _formKey,
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-            child: Text(
-              'Enter your period details:',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
+        backgroundColor: Colors.pink[400],
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HistoryScreen()),
+              );
+            },
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextFormField(
-              controller: _cycleController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Cycle length (in days)',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.pink),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              style: const TextStyle(fontSize: 18),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter cycle length';
-                }
-                return null;
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextFormField(
-              controller: _periodController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Period length (in days)',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.pink),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              style: const TextStyle(fontSize: 18),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter period length';
-                }
-                return null;
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                const Text(
-                  'Period started on: ',
-                  style: TextStyle(fontSize: 18),
-                ),
-                Text(
-                  _selectedDate == null
-                      ? 'Please select a date'
-                      : DateFormat('dd MMM yyyy').format(_selectedDate!),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    _selectDate(context);
-                  },
-                  icon: const Icon(Icons.calendar_today, color: Colors.green),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: [
-                const Text(
-                  'Are you on your period? ',
-                  style: TextStyle(fontSize: 18),
-                ),
-                Switch(
-                  value: _periodOn,
-                  onChanged: (value) {
-                    setState(() {
-                      _periodOn = value;
-                    });
-                  },
-                  activeColor: Colors.pink,
-                  inactiveTrackColor: Colors.grey[400],
-                  inactiveThumbColor: Colors.white,
-                  activeTrackColor: Colors.pink[100],
-                  materialTapTargetSize: MaterialTapTargetSize.padded,
-                ),
-              ],
-            ),
-          ),
-          if (_periodOn) _buildHealthTipsButton(),
-          const SizedBox(height: 32),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState?.validate() ?? false) {
-                  _calculatePeriod();
-                }
-              },
-              child: const Text(
-                'Calculate',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.pink),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                    const EdgeInsets.symmetric(horizontal: 72, vertical: 16)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          if (_nextPeriodDate != null)
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Your next period will start on: ${DateFormat('dd MMM yyyy').format(_nextPeriodDate!)}',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.pink,
-                ),
-              ),
-            ),
         ],
       ),
-    ),
-    ),
-  );
-}
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+                child: Text(
+                  'Enter your period details:',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextFormField(
+                  controller: _cycleController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: 'Cycle length (in days)',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  style: const TextStyle(fontSize: 18),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter cycle length';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextFormField(
+                  controller: _periodController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: 'Period length (in days)',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  style: const TextStyle(fontSize: 18),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter period length';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    const Text(
+                      'Period started on: ',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      _selectedDate == null
+                          ? 'Please select a date'
+                          : DateFormat('dd MMM yyyy').format(_selectedDate!),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        _selectDate(context);
+                      },
+                      icon:
+                          const Icon(Icons.calendar_today, color: Colors.green),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  children: [
+                    const Text(
+                      'Are you on your period? ',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Switch(
+                      value: _periodOn,
+                      onChanged: (value) {
+                        setState(() {
+                          _periodOn = value;
+                        });
+                      },
+                      activeColor: Colors.pink,
+                      inactiveTrackColor: Colors.grey[400],
+                      inactiveThumbColor: Colors.white,
+                      activeTrackColor: Colors.pink[100],
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                    ),
+                  ],
+                ),
+              ),
+              if (_periodOn) _buildHealthTipsButton(),
+              const SizedBox(height: 32),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState?.validate() ?? false) {
+                      _calculatePeriod();
+                    }
+                  },
+                  child: const Text(
+                    'Calculate',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.pink),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.symmetric(
+                            horizontal: 72, vertical: 16)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              if (_nextPeriodDate != null)
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Your next period will start on: ${DateFormat('dd MMM yyyy').format(_nextPeriodDate!)}',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class HealthTipsScreen extends StatelessWidget {
+  void _navigateToScreen(BuildContext context, Widget screen) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -355,24 +362,21 @@ class HealthTipsScreen extends StatelessWidget {
               title: 'Healthy eating',
               imageUrl:
                   'https://flo.health/uploads/media/sulu-1000x-inset/09/929-foods%20periods%202.jpg',
-              onTap: () => launch(
-                  'https://www.healthline.com/health/womens-health/what-to-eat-during-period'),
+              onTap: () => _navigateToScreen(context, FoodTipsScreen()),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Fitness exercises',
               imageUrl:
-                  'https://www.pinkvilla.com/files/styles/large/public/exercises.jpg',
-              onTap: () => launch(
-                  'https://www.healthline.com/health/exercise-during-period'),
+                  'https://hips.hearstapps.com/hmg-prod/images/screen-shot-2020-10-29-at-10-09-57-am-1603980609.png?crop=1.00xw:0.576xh;0,0.424xh&resize=1200:*',
+              onTap: () => _navigateToScreen(context, ExerciseTipsScreen()),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Stress management',
               imageUrl:
                   'https://www.wikihow.com/images/thumb/a/a8/Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg/v4-460px-Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg',
-              onTap: () => launch(
-                  'https://voxapod.com/blogs/journal/7-natural-ways-to-deal-with-stress-during-your-period'),
+              onTap: () => _navigateToScreen(context, StressTipsScreen()),
             ),
             const SizedBox(height: 16),
           ],
