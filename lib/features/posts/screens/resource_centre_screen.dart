@@ -28,7 +28,7 @@ class ResourceCentrePage extends StatelessWidget {
     Resource(
       title: 'National Consumer Helpline',
       description:
-          'Consumers can reach out to the helpline through a toll-free number, email, or by registering their complaint online through the NCH website. The helpline also provides consumers with information on various consumer-related issues such as product safety, consumer awareness, consumer rights, and the provisions of the Consumer Protection Act, among others.',
+          'Consumers can reach out to the helpline through a toll-free number, email, or by registering their complaint online through the NCH website.',
       url: 'https://consumerhelpline.gov.in/',
       thumbnailUrl:
           'https://voxya.com/stories/wp-content/uploads/2021/09/national-consumer-helpline-1024x576.jpg',
@@ -240,76 +240,77 @@ class ResourceCentrePage extends StatelessWidget {
               itemCount: resources.length,
               itemBuilder: (context, index) {
                 final resource = resources[index];
+
                 return Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 4.0,
+                    horizontal: 16.0,
+                    vertical: 8.0,
                   ),
-                  child: Card(
-                    elevation: 2.0,
-                    // ignore: sort_child_properties_last
-                    child: InkWell(
-                      onTap: () => launch(resource.url),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 150,
-                              width: double.infinity,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(4.0),
-                                child: FadeInImage.memoryNetwork(
-                                  placeholder: kTransparentImage,
-                                  image: resource.thumbnailUrl,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16.0),
-                            Text(
-                              resource.title,
-                              style: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.purpleAccent,
-                                    )
-                                  : TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.purpleAccent,
-                                    ),
-                            ),
-                            const SizedBox(height: 4.0),
-                            Text(
-                              resource.description,
-                              style: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? TextStyle(
-                                      color: Colors.white,
-                                    )
-                                  : TextStyle(
-                                      color: Colors.black,
-                                    ),
-                            ),
-                          ],
-                        ),
+                  child: GestureDetector(
+                    onTap: () => launch(resource.url),
+                    child: Card(
+                      elevation: 4.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
                       ),
-                    ),
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.grey[900] // set color for dark mode
-                        : Color(0xFFAEC6CF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.black,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16.0),
+                              bottomLeft: Radius.circular(16.0),
+                            ),
+                            child: FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image: resource.thumbnailUrl,
+                              width: 120.0,
+                              height: 120.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(width: 16.0),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  resource.title,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  resource.description,
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 16.0),
+                                Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
               },
             ),
-          ),
+          )
         ],
       ),
     );

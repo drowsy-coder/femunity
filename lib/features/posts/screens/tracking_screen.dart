@@ -406,7 +406,7 @@ class HealthTipsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Here are some permanent facts about women health and hygiene that you should always keep in mind:',
+              'Here are some tips about women health and hygiene that you should always keep in mind:',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey[200],
