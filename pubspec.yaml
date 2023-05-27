@@ -82,7 +82,6 @@ dependencies:
   shake: ^2.2.0
   google_ml_vision: ^0.0.8
   googleapis_auth: ^1.4.0
-  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

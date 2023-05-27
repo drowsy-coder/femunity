@@ -15,7 +15,8 @@ class ResourceCentrePage extends StatelessWidget {
       description:
           'This portal is an initiative of Government of India to facilitate victims/complainants to report cyber crime complaints online.',
       url: 'https://cybercrime.gov.in/',
-      thumbnailUrl: 'https://cybercrime.gov.in/images/i4clogo.jpg',
+      thumbnailUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzty7Xukru8Z5mmeoW8etj7aPlZwACndKL8p1z7z1lD0eV5M2ltA32egc6I9nfOY32t50&usqp=CAU',
     ),
     Resource(
       title: 'NCW',
