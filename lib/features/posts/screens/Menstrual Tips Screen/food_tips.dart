@@ -19,19 +19,19 @@ class FoodTipsScreen extends StatelessWidget {
                 context,
                 'Spinach',
                 'Spinach is a great source of iron and other nutrients.',
-                'https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/05/spinach-1296x728-header.jpg?w=1155&h=1528',
+                'assets/images/spinach-1296x728-header.webp',
               ),
               _buildFoodItem(
                 context,
                 'Lentils',
                 'Lentils are rich in iron and provide essential protein.',
-                'https://imgur.com/hzulH27.jpg',
+                'assets/images/lentils.png',
               ),
               _buildFoodItem(
                 context,
                 'Meat',
                 'Meat is a good source of iron for those who consume it.',
-                'https://imgur.com/RPlP3BX.jpg',
+                'assets/images/cb.jpg',
               ),
             ],
           ),
@@ -43,13 +43,13 @@ class FoodTipsScreen extends StatelessWidget {
                 context,
                 'Drink Water',
                 'Drink plenty of water during your menstrual cycle to stay hydrated.',
-                'https://imgur.com/N0wOpgX.jpg',
+                'assets/images/water.png',
               ),
               _buildFoodItem(
                 context,
                 'Herbal Tea',
                 'Herbal teas like chamomile and peppermint can help with hydration.',
-                'https://imgur.com/EwKuRtb.jpg',
+                'assets/images/tea.png',
               ),
             ],
           ),
@@ -61,13 +61,13 @@ class FoodTipsScreen extends StatelessWidget {
                 context,
                 'Salmon',
                 'Salmon is rich in omega-3 fatty acids and provides various health benefits.',
-                'https://imgur.com/qqh6ISm.jpg',
+                'assets/images/something.png',
               ),
               _buildFoodItem(
                 context,
                 'Chia Seeds',
                 'Chia seeds are a plant-based source of omega-3 fatty acids.',
-                'https://imgur.com/mgdoMy7.jpg',
+                'assets/images/chinaseeds.png',
               ),
             ],
           ),
@@ -124,7 +124,7 @@ class FoodTipsScreen extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: NetworkImage(imageUrl),
+              image: AssetImage(imageUrl),
               fit: BoxFit.cover,
             ),
           ),
@@ -176,7 +176,7 @@ class FoodTipsScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.network(
+                    Image.asset(
                       imageUrl,
                       height: 200.0,
                       fit: BoxFit.cover,
