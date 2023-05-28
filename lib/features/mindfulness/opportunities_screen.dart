@@ -16,7 +16,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'description':
           'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
       'url': 'https://we.talentsprint.com/',
-      'image': 'https://i.imgur.com/4FFWJ7E.png',
+      'image': 'assets/images/talentsprint.png',
       'field': 'STEM',
     },
     {
@@ -24,7 +24,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'description':
           'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
       'url': 'https://www.deshawindia.com/desis-ascend-educare/about.pdf',
-      'image': 'https://avatars.githubusercontent.com/u/2298205?s=200&v=4',
+      'image': 'assets/images/deshaw.png',
       'field': 'STEM',
     },
     {
@@ -34,7 +34,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'url':
           'https://www.adobe.com/in/lead/creativecloud/women-in-technology.html',
       'image':
-          'https://1000logos.net/wp-content/uploads/2021/04/Adobe-logo.png',
+          'assets/images/Adobe-logo.png',
       'field': 'STEM',
     },
   ];
@@ -99,7 +99,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(16.0),
-                              child: Image.network(
+                              child: Image.asset(
                                 scholarship['image'] ?? '',
                                 height: 200.0,
                                 width: double.infinity,
@@ -129,15 +129,15 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                       ),
                                     ),
                                     SizedBox(height: 8.0),
-                                    Text(
-                                      scholarship['description'] ?? '',
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        color: Colors.black,
-                                        fontFamily: 'Montserrat',
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
+                                    // Text(
+                                    //   scholarship['description'] ?? '',
+                                    //   style: TextStyle(
+                                    //     fontSize: 16.0,
+                                    //     color: Colors.black,
+                                    //     fontFamily: 'Montserrat',
+                                    //     fontWeight: FontWeight.bold,
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
