@@ -31,7 +31,7 @@ class ExerciseTipsScreen extends StatelessWidget {
           ),
           _buildSection(
             context,
-            'Strength Training',
+            'Strength training',
             [
               _buildFoodItem(
                 context,
