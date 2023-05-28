@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
-// import 'package:location/location.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -15,24 +13,21 @@ class ResourceCentrePage extends StatelessWidget {
       description:
           'This portal is an initiative of Government of India to facilitate victims/complainants to report cyber crime complaints online.',
       url: 'https://cybercrime.gov.in/',
-      thumbnailUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzty7Xukru8Z5mmeoW8etj7aPlZwACndKL8p1z7z1lD0eV5M2ltA32egc6I9nfOY32t50&usqp=CAU',
+      thumbnailUrl: 'assets/images/cybercrime.png',
     ),
     Resource(
       title: 'NCW',
       description:
           'The National Commission for Women is the apex national level organisation of India with the mandate of protecting and promoting the interests of women.',
       url: 'https://ncwapps.nic.in/',
-      thumbnailUrl:
-          'https://vajiramandravi.s3.us-east-1.amazonaws.com/media/2018/12/16/11/56/10/4.jpg',
+      thumbnailUrl: 'assets/images/ncw.jpg',
     ),
     Resource(
       title: 'National Consumer Helpline',
       description:
           'Consumers can reach out to the helpline through a toll-free number, email, or by registering their complaint online through the NCH website.',
       url: 'https://consumerhelpline.gov.in/',
-      thumbnailUrl:
-          'https://voxya.com/stories/wp-content/uploads/2021/09/national-consumer-helpline-1024x576.jpg',
+      thumbnailUrl: 'assets/images/consumer.jpg',
     ),
   ];
 
@@ -59,7 +54,8 @@ class ResourceCentrePage extends StatelessWidget {
             color: Colors.black, // set container color to black
             child: const SizedBox(height: 1.0), // add spacing
           ),
-          const Divider(height: 1.0, color: Colors.black), // add black divider line
+          const Divider(
+              height: 1.0, color: Colors.black), // add black divider line
           Container(
             padding: const EdgeInsets.all(16.0),
             color: Theme.of(context).brightness == Brightness.dark
@@ -263,9 +259,8 @@ class ResourceCentrePage extends StatelessWidget {
                               topLeft: Radius.circular(16.0),
                               bottomLeft: Radius.circular(16.0),
                             ),
-                            child: FadeInImage.memoryNetwork(
-                              placeholder: kTransparentImage,
-                              image: resource.thumbnailUrl,
+                            child: Image.asset(
+                              resource.thumbnailUrl,
                               width: 120.0,
                               height: 120.0,
                               fit: BoxFit.cover,

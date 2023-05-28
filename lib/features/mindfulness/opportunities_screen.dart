@@ -25,7 +25,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
           'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
       'url': 'https://www.deshawindia.com/desis-ascend-educare/about.pdf',
       'image': 'https://avatars.githubusercontent.com/u/2298205?s=200&v=4',
-      'field': 'Business',
+      'field': 'STEM',
     },
     {
       'title': 'Adobe Women in Tech',
@@ -35,7 +35,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
           'https://www.adobe.com/in/lead/creativecloud/women-in-technology.html',
       'image':
           'https://1000logos.net/wp-content/uploads/2021/04/Adobe-logo.png',
-      'field': 'Law',
+      'field': 'STEM',
     },
   ];
 
