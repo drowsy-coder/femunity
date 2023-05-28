@@ -174,8 +174,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
                 child: Text(
                   'Enter your period details:',
                   style: TextStyle(
@@ -360,22 +359,21 @@ class HealthTipsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Healthy eating',
-              imageUrl:
-                  'https://flo.health/uploads/media/sulu-1000x-inset/09/929-foods%20periods%202.jpg',
+              imageUrl: 'assets/images/didiiseatinh.jpg',
               onTap: () => _navigateToScreen(context, FoodTipsScreen()),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Fitness exercises',
               imageUrl:
-                  'https://hips.hearstapps.com/hmg-prod/images/screen-shot-2020-10-29-at-10-09-57-am-1603980609.png?crop=1.00xw:0.576xh;0,0.424xh&resize=1200:*',
+                  'assets/images/kasrat.png',
               onTap: () => _navigateToScreen(context, ExerciseTipsScreen()),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Stress management',
               imageUrl:
-                  'https://www.wikihow.com/images/thumb/a/a8/Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg/v4-460px-Deal-with-Stress-During-Menstruation-Step-3-Version-2.jpg',
+                  'assets/images/teaing.jpg',
               onTap: () => _navigateToScreen(context, StressTipsScreen()),
             ),
             const SizedBox(height: 16),
@@ -484,7 +482,7 @@ class HealthTipsScreen extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(24)),
-              child: Image.network(
+              child: Image.asset(
                 imageUrl,
                 height: 200,
                 width: double.infinity,
