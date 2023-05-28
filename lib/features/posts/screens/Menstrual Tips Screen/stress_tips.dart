@@ -13,7 +13,7 @@ class StressTipsScreen extends StatelessWidget {
         children: [
           _buildSection(
             context,
-            'Deep Breathing',
+            'Deep breathing',
             [
               _buildFoodItem(
                 context,
