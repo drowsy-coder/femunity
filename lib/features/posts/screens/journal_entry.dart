@@ -28,7 +28,8 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
   @override
   void initState() {
     super.initState();
-    _journalEntriesRef = FirebaseFirestore.instance.collection('journal_entries');
+    _journalEntriesRef =
+        FirebaseFirestore.instance.collection('journal_entries');
     if (widget.existingTitle != null && widget.existingBody != null) {
       _titleController.text = widget.existingTitle!;
       _bodyController.text = widget.existingBody!;
@@ -63,7 +64,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Journal Entry',
           style: TextStyle(
             fontSize: 22.0,
@@ -75,7 +76,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.save,
               color: Colors.white,
               size: 28.0,
@@ -85,7 +86,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -93,25 +94,25 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
               controller: _titleController,
               decoration: InputDecoration(
                 labelText: 'Title',
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelStyle: TextStyle(
                   fontSize: 18.0,
                   color: Colors.grey.shade700,
                 ),
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Expanded(
               child: TextFormField(
                 controller: _bodyController,
                 decoration: InputDecoration(
                   labelText: 'Body',
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelStyle: TextStyle(
                     fontSize: 18.0,
                     color: Colors.grey.shade700,
@@ -119,7 +120,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
                 ),
                 maxLines: null,
                 expands: true,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18.0,
                   color: Colors.white,
                 ),

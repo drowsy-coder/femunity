@@ -86,7 +86,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               centerTitle: false,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
-                  : Color(0xffAEC6CF),
+                  : const Color(0xffAEC6CF),
               // set the background color according to the current theme mode
               brightness: Theme.of(context).brightness,
               // set the brightness according to the current theme mode
@@ -103,8 +103,8 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         color: Theme.of(context).brightness == Brightness.dark
-                            ? Color(0xffFEB2B2)
-                            : Color.fromARGB(255, 0, 0, 0)),
+                            ? const Color(0xffFEB2B2)
+                            : const Color.fromARGB(255, 0, 0, 0)),
                   ),
                 ),
               ],
@@ -178,7 +178,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                             filled: true,
                             hintText: 'Enter Your Username',
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
+                              borderSide: const BorderSide(color: Colors.blue),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             border: InputBorder.none,

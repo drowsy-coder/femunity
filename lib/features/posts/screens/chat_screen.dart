@@ -101,7 +101,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sakhi'),
+        title: const Text('Sakhi'),
         backgroundColor: Colors.green[600],
       ),
       body: SingleChildScrollView(
@@ -115,7 +115,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       height: 120,
                       width: 120,
                       margin: const EdgeInsets.only(top: 4),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.black,
                         shape: BoxShape.circle,
                       ),
@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   Container(
                     height: 140,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         image: AssetImage(
@@ -182,7 +182,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   left: 10,
                 ),
                 child: SlideInLeft(
-                  child: Text(
+                  child: const Text(
                     "Here are a few features",
                     style: TextStyle(
                       fontFamily: "Times New Roman",
@@ -199,7 +199,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: [
                   SlideInLeft(
                     delay: Duration(milliseconds: start),
-                    child: FeatureBox(
+                    child: const FeatureBox(
                       color: Pallete.firstSuggestionBoxColor,
                       headerText: 'Share your feelings',
                       descriptionText:
@@ -208,7 +208,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   SlideInRight(
                     delay: Duration(milliseconds: start + delay),
-                    child: FeatureBox(
+                    child: const FeatureBox(
                       color: Pallete.secondSuggestionBoxColor,
                       headerText: "Safe and Secure",
                       descriptionText:
@@ -217,7 +217,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   SlideInLeft(
                     delay: Duration(milliseconds: start + 2 * delay),
-                    child: FeatureBox(
+                    child: const FeatureBox(
                       color: Pallete.thirdSuggestionBoxColor,
                       headerText: "Powered by AI",
                       descriptionText:
@@ -266,7 +266,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Material(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(width: 1, color: Colors.grey),
+                        side: const BorderSide(width: 1, color: Colors.grey),
                       ),
                       child: IconButton(
                         onPressed: () async {
@@ -294,7 +294,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                   if (isLoading)
-                    SizedBox(
+                    const SizedBox(
                       width: 24,
                       height: 24,
                       child: CircularProgressIndicator(strokeWidth: 2),

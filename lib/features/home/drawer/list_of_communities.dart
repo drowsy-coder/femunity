@@ -35,8 +35,8 @@ class CommunityListDrawer extends ConsumerWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.grey[900] // set color for dark mode
-                    : Color(0xFFAEC6CF),
-                borderRadius: BorderRadius.only(
+                    : const Color(0xFFAEC6CF),
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50),
                 ),
@@ -44,7 +44,7 @@ class CommunityListDrawer extends ConsumerWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Femunity',
                     style: TextStyle(
                       fontFamily: 'AlBrush',
@@ -53,12 +53,12 @@ class CommunityListDrawer extends ConsumerWidget {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     isGuest
                         ? 'Sign in to join the community'
                         : 'Hey 👋 ${user.name}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
@@ -68,18 +68,18 @@ class CommunityListDrawer extends ConsumerWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             isGuest
                 ? const SignInButton()
                 : Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: ElevatedButton.icon(
                       onPressed: () => navigateToCreateCommunity(context),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.add_box,
                         color: Colors.black,
                       ),
-                      label: Text(
+                      label: const Text(
                         'Create a Community',
                         style: TextStyle(
                             fontFamily: 'Montserrat',
@@ -90,7 +90,7 @@ class CommunityListDrawer extends ConsumerWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Theme.of(context).brightness == Brightness.dark
                             ? Colors.yellow[300]
-                            : Color(0xFFFAC898),
+                            : const Color(0xFFFAC898),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -98,7 +98,7 @@ class CommunityListDrawer extends ConsumerWidget {
                       ),
                     ),
                   ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (!isGuest)
               ref.watch(userCommunitiesProvider).when(
                     data: (communities) => Expanded(
@@ -116,7 +116,7 @@ class CommunityListDrawer extends ConsumerWidget {
                               ),
                               title: Text(
                                 community.name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -130,7 +130,7 @@ class CommunityListDrawer extends ConsumerWidget {
                               //     fontSize: 14,
                               //   ),
                               // ),
-                              trailing: Icon(
+                              trailing: const Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.grey,
                               ),

@@ -41,7 +41,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFAEC6CF),
+            : const Color(0xFFAEC6CF),
       ),
       body: FutureBuilder<QuerySnapshot>(
         future: FirebaseFirestore.instance
@@ -57,14 +57,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
           }
 
           if (!snapshot.hasData) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
 
           List<DocumentSnapshot> documents = snapshot.data!.docs;
           if (documents.isEmpty) {
-            return Center(
+            return const Center(
               child: Text('No data found'),
             );
           }
@@ -95,7 +95,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   elevation: 8,
                   color: Theme.of(context).brightness == Brightness.dark
                       ? Colors.grey[900] // set color for dark mode
-                      : Color(0xFFAEC6CF),
+                      : const Color(0xFFAEC6CF),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(16.0),
                     onTap: () {
@@ -119,7 +119,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                       .purpleAccent, // set text color for light mode
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             'Cycle length: $cycleLength days, Period length: $periodLength days',
                             style: TextStyle(
@@ -132,7 +132,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                       .black, // set text color for light mode
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                         ],
                       ),
                     ),

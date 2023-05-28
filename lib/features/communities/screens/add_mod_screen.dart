@@ -69,12 +69,12 @@ class _AddModsScreenState extends ConsumerState<AddModsScreen> {
                             color:
                                 Theme.of(context).brightness == Brightness.dark
                                     ? Colors.grey[900]
-                                    : Color(0xFFAEC6CF),
+                                    : const Color(0xFFAEC6CF),
                           ),
                           margin: const EdgeInsets.symmetric(
                               vertical: 4, horizontal: 16),
                           child: CheckboxListTile(
-                            activeColor: Color(0xFFc779d0),
+                            activeColor: const Color(0xFFc779d0),
                             checkColor: Colors.white,
                             value: isChecked,
                             onChanged: (val) {

@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
@@ -36,7 +35,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
     String commentText = commentController.text.trim();
     if (filter.hasProfanity(commentText)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
             content: Text("Your comment contains inappropriate language!"),
             backgroundColor: Color(0xFFAEC6CF)),
       );
@@ -75,7 +74,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                             color: Theme.of(context).brightness ==
                                     Brightness.dark
                                 ? Colors.grey[900] // set color for dark mode
-                                : Color(0xFFAEC6CF),
+                                : const Color(0xFFAEC6CF),
                           ),
                           child: Row(
                             children: [
@@ -104,7 +103,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                                 // Remove the Expanded widget
                                 shrinkWrap: true, // Set shrinkWrap to true
                                 physics:
-                                    NeverScrollableScrollPhysics(), // Disable scrolling of the ListView
+                                    const NeverScrollableScrollPhysics(), // Disable scrolling of the ListView
                                 itemCount: data.length,
                                 separatorBuilder:
                                     (BuildContext context, int index) =>

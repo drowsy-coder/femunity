@@ -146,7 +146,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Period Tracking',
           style: TextStyle(
             fontSize: 24,
@@ -173,9 +173,9 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
+              const Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+                    EdgeInsets.symmetric(horizontal: 24, vertical: 32),
                 child: Text(
                   'Enter your period details:',
                   style: TextStyle(
@@ -193,15 +193,15 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                   decoration: InputDecoration(
                     labelText: 'Cycle length (in days)',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: const BorderSide(color: Colors.pink),
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
@@ -222,15 +222,15 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                   decoration: InputDecoration(
                     labelText: 'Period length (in days)',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: const BorderSide(color: Colors.pink),
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
@@ -327,7 +327,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
                     'Your next period will start on: ${DateFormat('dd MMM yyyy').format(_nextPeriodDate!)}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.pink,

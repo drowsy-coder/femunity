@@ -24,7 +24,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.blue[300],
-        title: Text(
+        title: const Text(
           'Help & Support',
           style: TextStyle(
             color: Colors.white,
@@ -33,7 +33,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -47,7 +47,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               TextFormField(
                 controller: _subjectController,
                 decoration: InputDecoration(
@@ -70,7 +70,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Text(
                 'Description',
                 style: TextStyle(
@@ -79,7 +79,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               TextFormField(
                 controller: _descriptionController,
                 maxLines: 5,
@@ -103,10 +103,10 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 30.0),
+              const SizedBox(height: 30.0),
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                margin: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.yellow[300],
@@ -114,7 +114,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Send Feedback',
                     style: TextStyle(
                       color: Colors.black,
@@ -129,7 +129,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   },
                 ),
               ),
-              SizedBox(height: 30.0),
+              const SizedBox(height: 30.0),
               Image.asset(
                 'assets/images/output-onlinegiftools.gif',
                 height: 260.0,
@@ -170,7 +170,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          content: Text(
+          content: const Text(
             'Could not send email. Please check your email client or try again later.',
             style: TextStyle(
               color: Colors.black,
@@ -185,7 +185,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'OK',
                 style: TextStyle(
                   color: Colors.white,

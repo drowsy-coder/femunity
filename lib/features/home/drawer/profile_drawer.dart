@@ -36,12 +36,12 @@ class ProfileDrawer extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.grey[900] // set color for dark mode
-                    : Color(0xFFAEC6CF),
-                borderRadius: BorderRadius.only(
+                    : const Color(0xFFAEC6CF),
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50),
                 ),
@@ -53,7 +53,7 @@ class ProfileDrawer extends ConsumerWidget {
                     backgroundImage: NetworkImage(user.profilePic),
                     radius: 50,
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Center(
                     // add this line
                     child: AnimatedTextKit(
@@ -75,7 +75,7 @@ class ProfileDrawer extends ConsumerWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ListTile(
               title: const Text(
                 'My Profile',
@@ -139,7 +139,7 @@ class ProfileDrawer extends ConsumerWidget {
                 );
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -162,7 +162,7 @@ class ProfileDrawer extends ConsumerWidget {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Text(

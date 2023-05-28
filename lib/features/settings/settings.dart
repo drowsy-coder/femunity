@@ -13,14 +13,14 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
         children: [
           ListTile(
-            leading: Icon(Icons.security),
-            title: Text('Privacy & Security'),
+            leading: const Icon(Icons.security),
+            title: const Text('Privacy & Security'),
             onTap: () {
               Navigator.push(
                   context,
@@ -29,8 +29,8 @@ class SettingsPage extends ConsumerWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.help),
-            title: Text('Help & Support'),
+            leading: const Icon(Icons.help),
+            title: const Text('Help & Support'),
             onTap: () {
               Navigator.push(
                   context,
@@ -38,10 +38,10 @@ class SettingsPage extends ConsumerWidget {
                       builder: (context) => HelpAndSupportScreen()));
             },
           ),
-          Divider(),
+          const Divider(),
           ListTile(
             title: const Text('Log Me Out'),
-            leading: Icon(
+            leading: const Icon(
               Icons.logout_outlined,
               color: Colors.orange,
             ),

@@ -165,7 +165,7 @@ class CommunityController extends StateNotifier<bool> {
 
       if (!communityDoc.exists) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Community does not exist.'),
           ),
         );
@@ -182,7 +182,7 @@ class CommunityController extends StateNotifier<bool> {
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Moderators added successfully.'),
         ),
       );

@@ -38,7 +38,7 @@ class _JournalScreenState extends State<JournalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Journal'),
+        title: const Text('Journal'),
       ),
       body: Column(
         children: [
@@ -50,14 +50,14 @@ class _JournalScreenState extends State<JournalScreen> {
                 color: Colors.grey.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              padding: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.edit, size: 32.0),
-                  SizedBox(width: 16.0),
-                  Text(
+                  const Icon(Icons.edit, size: 32.0),
+                  const SizedBox(width: 16.0),
+                  const Text(
                     "What's on your mind?",
                     style: TextStyle(fontSize: 18.0),
                   ),
@@ -65,7 +65,7 @@ class _JournalScreenState extends State<JournalScreen> {
               ),
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           Expanded(
             child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
               stream: _journalEntriesStream,
@@ -76,10 +76,10 @@ class _JournalScreenState extends State<JournalScreen> {
                   return Center(child: Text('Error: ${snapshot.error}'));
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 if (snapshot.data!.docs.isEmpty) {
-                  return Center(
+                  return const Center(
                       child: Text('No journal entries yet. Start writing!'));
                 }
                 return ListView(
@@ -103,28 +103,28 @@ class _JournalScreenState extends State<JournalScreen> {
                       },
                       child: Card(
                         margin:
-                            EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 8.0),
+                              const SizedBox(height: 8.0),
                               Text(
                                 body,
-                                style: TextStyle(fontSize: 16.0),
+                                style: const TextStyle(fontSize: 16.0),
                               ),
-                              SizedBox(height: 8.0),
+                              const SizedBox(height: 8.0),
                               Text(
                                 _formatDateTime(timestamp),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 14.0, color: Colors.grey),
                               ),
                             ],

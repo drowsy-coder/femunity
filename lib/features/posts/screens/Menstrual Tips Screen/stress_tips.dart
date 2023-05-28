@@ -6,10 +6,10 @@ class StressTipsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Stress Management'),
+        title: const Text('Stress Management'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           _buildSection(
             context,
@@ -77,10 +77,10 @@ class StressTipsScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -107,7 +107,7 @@ class StressTipsScreen extends StatelessWidget {
     String imageUrl,
   ) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ListTile(
         onTap: () {
           _showDetailsDialog(context, name, description, imageUrl);
@@ -125,13 +125,13 @@ class StressTipsScreen extends StatelessWidget {
         ),
         title: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        trailing: Icon(
+        trailing: const Icon(
           Icons.chevron_right,
           color: Colors.white,
         ),
@@ -150,7 +150,7 @@ class StressTipsScreen extends StatelessWidget {
       builder: (BuildContext context) {
         return Dialog(
           backgroundColor: Colors.transparent,
-          insetPadding: EdgeInsets.all(16.0),
+          insetPadding: const EdgeInsets.all(16.0),
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -159,7 +159,7 @@ class StressTipsScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(16.0),
                 ),
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -168,19 +168,19 @@ class StressTipsScreen extends StatelessWidget {
                       height: 200.0,
                       fit: BoxFit.cover,
                     ),
-                    SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
                       description,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         color: Colors.white,
                       ),
@@ -192,7 +192,7 @@ class StressTipsScreen extends StatelessWidget {
                 top: 0,
                 right: 0,
                 child: IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

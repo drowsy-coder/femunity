@@ -50,27 +50,27 @@ class ResourceCentrePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900] // set color for dark mode
-            : Color(0xFFAEC6CF),
+            : const Color(0xFFAEC6CF),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             color: Colors.black, // set container color to black
-            child: SizedBox(height: 1.0), // add spacing
+            child: const SizedBox(height: 1.0), // add spacing
           ),
-          Divider(height: 1.0, color: Colors.black), // add black divider line
+          const Divider(height: 1.0, color: Colors.black), // add black divider line
           Container(
             padding: const EdgeInsets.all(16.0),
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.black // set color for dark mode
-                : Color(0xFFAEC6CF),
+                : const Color(0xFFAEC6CF),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.call,
                       color: Colors.blue,
                     ),
@@ -86,7 +86,7 @@ class ResourceCentrePage extends StatelessWidget {
                                   : Colors.black,
                             ),
                         children: [
-                          TextSpan(text: 'Are you in an '),
+                          const TextSpan(text: 'Are you in an '),
                           TextSpan(
                             text: 'Emergency',
                             style: TextStyle(
@@ -96,7 +96,7 @@ class ResourceCentrePage extends StatelessWidget {
                                   : Colors.red,
                             ),
                           ),
-                          TextSpan(text: ' ?'),
+                          const TextSpan(text: ' ?'),
                         ],
                       ),
                     ),
@@ -259,7 +259,7 @@ class ResourceCentrePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(16.0),
                               bottomLeft: Radius.circular(16.0),
                             ),
@@ -271,36 +271,36 @@ class ResourceCentrePage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(width: 16.0),
+                          const SizedBox(width: 16.0),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   resource.title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18.0,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                const SizedBox(height: 8.0),
                                 Text(
                                   resource.description,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 14.0,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(height: 16.0),
-                                Align(
+                                const SizedBox(height: 16.0),
+                                const Align(
                                   alignment: Alignment.bottomRight,
                                   child: Icon(
                                     Icons.arrow_forward,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                const SizedBox(height: 8.0),
                               ],
                             ),
                           ),

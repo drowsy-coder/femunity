@@ -24,7 +24,7 @@ class FeedScreen extends ConsumerWidget {
                 return SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       Card(
                         margin: const EdgeInsets.symmetric(horizontal: 16),
                         shape: RoundedRectangleBorder(
@@ -33,12 +33,12 @@ class FeedScreen extends ConsumerWidget {
                         elevation: 8,
                         color: Theme.of(context).brightness == Brightness.dark
                             ? Colors.grey[900]
-                            : Color(0xFFAEC6CF),
+                            : const Color(0xFFAEC6CF),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
+                            const Padding(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 16),
                               child: Text(
                                 'How to use this app',
@@ -49,28 +49,26 @@ class FeedScreen extends ConsumerWidget {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
                                 'To use the Femunity app, follow these simple steps:\n',
                                 style: TextStyle(fontSize: 18),
                               ),
                             ),
-                            SizedBox(height: 8),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                            const SizedBox(height: 8),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
                                 '- Tap the search bar above to search and join communities.\n\n- Press the "+" button on the home screen to add posts.\n\n- Go to the community drawer to access your communities.',
                                 style: TextStyle(fontSize: 18),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                           ],
                         ),
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       Card(
                         margin: const EdgeInsets.symmetric(horizontal: 16),
                         shape: RoundedRectangleBorder(
@@ -79,7 +77,7 @@ class FeedScreen extends ConsumerWidget {
                         elevation: 8,
                         color: Theme.of(context).brightness == Brightness.dark
                             ? Colors.grey[900]
-                            : Color(0xFFAEC6CF),
+                            : const Color(0xFFAEC6CF),
                         child: InkWell(
                           onTap: () => launch(
                               'https://www.youtube.com/watch?v=oN_uYKAApXs'),
@@ -87,7 +85,7 @@ class FeedScreen extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               ClipRRect(
-                                borderRadius: BorderRadius.vertical(
+                                borderRadius: const BorderRadius.vertical(
                                     top: Radius.circular(24)),
                                 child: Image.asset(
                                   Constants.logoPath,
@@ -96,10 +94,9 @@ class FeedScreen extends ConsumerWidget {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              SizedBox(height: 16),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 16),
+                              const SizedBox(height: 16),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
                                   'Watch this video to learn more!',
                                   style: TextStyle(
@@ -109,12 +106,11 @@ class FeedScreen extends ConsumerWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 8),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 16),
+                              const SizedBox(height: 8),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
                               ),
-                              SizedBox(height: 16),
+                              const SizedBox(height: 16),
                             ],
                           ),
                         ),

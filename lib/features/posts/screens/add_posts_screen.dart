@@ -20,13 +20,13 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Image'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.grey[900] // set color for dark mode
-                : Color(0xFFFAC898),
+                : const Color(0xFFFAC898),
             elevation: 16,
             child: const SizedBox(
               height: 120,
@@ -37,13 +37,13 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Text'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.grey[900] // set color for dark mode
-                : Color.fromARGB(255, 254, 254, 254),
+                : const Color.fromARGB(255, 254, 254, 254),
             elevation: 16,
             child: SizedBox(
               height: 120,
@@ -60,13 +60,13 @@ class AddPostsScreen extends ConsumerWidget {
         GestureDetector(
           onTap: () => navigateToType(context, 'Link'),
           child: Card(
-            margin: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.grey[900] // set color for dark mode
-                : Color(0xFF77DD77),
+                : const Color(0xFF77DD77),
             elevation: 16,
             child: const SizedBox(
               height: 120,

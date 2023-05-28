@@ -20,7 +20,7 @@ class WellnessScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               child: Text(
                 'Wellness',
@@ -34,7 +34,7 @@ class WellnessScreen extends StatelessWidget {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 mainAxisSpacing: 32,
                 crossAxisSpacing: 32,
                 children: [
@@ -54,13 +54,13 @@ class WellnessScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
-                            child: const Icon(Icons.track_changes,
+                            child: Icon(Icons.track_changes,
                                 size: 48, color: Colors.white),
                           ),
-                          SizedBox(height: 16),
-                          Text(
+                          const SizedBox(height: 16),
+                          const Text(
                             'Menstrual Tracker',
                             style: TextStyle(
                               fontSize: 18,
@@ -76,7 +76,7 @@ class WellnessScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ChatScreen()),
+                        MaterialPageRoute(builder: (context) => const ChatScreen()),
                       );
                     },
                     child: Container(
@@ -87,13 +87,13 @@ class WellnessScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
-                            child: const Icon(Icons.mic,
+                            child: Icon(Icons.mic,
                                 size: 48, color: Colors.white),
                           ),
-                          SizedBox(height: 16),
-                          Text(
+                          const SizedBox(height: 16),
+                          const Text(
                             'Sakhi',
                             style: TextStyle(
                               fontSize: 18,
@@ -189,13 +189,13 @@ class WellnessScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
-                            child: const Icon(Icons.assignment_ind_sharp,
+                            child: Icon(Icons.assignment_ind_sharp,
                                 size: 48, color: Colors.white),
                           ),
-                          SizedBox(height: 16),
-                          Text(
+                          const SizedBox(height: 16),
+                          const Text(
                             'Opportunities',
                             style: TextStyle(
                               fontSize: 18,
@@ -223,13 +223,13 @@ class WellnessScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
-                            child: const Icon(Icons.archive_rounded,
+                            child: Icon(Icons.archive_rounded,
                                 size: 48, color: Colors.white),
                           ),
-                          SizedBox(height: 16),
-                          Text(
+                          const SizedBox(height: 16),
+                          const Text(
                             'SoS',
                             style: TextStyle(
                               fontSize: 18,

@@ -64,7 +64,7 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
             appBar: AppBar(
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
-                  : Color(0xffAEC6CF),
+                  : const Color(0xffAEC6CF),
               title: Text(
                 'Edit Community',
                 style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -80,8 +80,8 @@ class _EditCommunityScreenState extends ConsumerState<EditCommunityScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         color: Theme.of(context).brightness == Brightness.dark
-                            ? Color(0xffFEB2B2)
-                            : Color.fromARGB(255, 0, 0, 0)),
+                            ? const Color(0xffFEB2B2)
+                            : const Color.fromARGB(255, 0, 0, 0)),
                   ),
                 ),
               ],

@@ -57,8 +57,8 @@ class LoginScreen extends ConsumerWidget {
                         width: 400.0,
                         child: TextLiquidFill(
                           text: 'Femunity',
-                          waveColor: Color(0xFFff48a5),
-                          textStyle: TextStyle(
+                          waveColor: const Color(0xFFff48a5),
+                          textStyle: const TextStyle(
                             fontFamily: 'AlBrush',
                             fontSize: 79.50,
                           ),
