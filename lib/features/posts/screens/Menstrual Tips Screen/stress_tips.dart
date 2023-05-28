@@ -13,7 +13,7 @@ class StressTipsScreen extends StatelessWidget {
         children: [
           _buildSection(
             context,
-            'Deep Breathing',
+            'Deep breathing',
             [
               _buildFoodItem(
                 context,
@@ -163,7 +163,7 @@ class StressTipsScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.network(
+                    Image.asset(
                       imageUrl,
                       height: 200.0,
                       fit: BoxFit.cover,
