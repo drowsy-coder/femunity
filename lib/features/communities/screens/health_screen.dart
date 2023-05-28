@@ -76,7 +76,8 @@ class WellnessScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const ChatScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const ChatScreen()),
                       );
                     },
                     child: Container(
@@ -89,8 +90,8 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           const SizedBox(
                             height: 48,
-                            child: Icon(Icons.mic,
-                                size: 48, color: Colors.white),
+                            child:
+                                Icon(Icons.mic, size: 48, color: Colors.white),
                           ),
                           const SizedBox(height: 16),
                           const Text(
@@ -105,74 +106,6 @@ class WellnessScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => JournalScreen()),
-                  //     );
-                  //   },
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       color: Colors.deepPurple,
-                  //       borderRadius: BorderRadius.circular(16.0),
-                  //     ),
-                  //     child: Column(
-                  //       mainAxisAlignment: MainAxisAlignment.center,
-                  //       children: [
-                  //         SizedBox(
-                  //           height: 48,
-                  //           child: const Icon(Icons.book,
-                  //               size: 48, color: Colors.white),
-                  //         ),
-                  //         SizedBox(height: 16),
-                  //         Text(
-                  //           'Journal',
-                  //           style: TextStyle(
-                  //             fontSize: 18,
-                  //             fontWeight: FontWeight.bold,
-                  //             color: Colors.white,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => MindfulnessScreen()),
-                  //     );
-                  //   },
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       color: Colors.green,
-                  //       borderRadius: BorderRadius.circular(16.0),
-                  //     ),
-                  //     child: Column(
-                  //       mainAxisAlignment: MainAxisAlignment.center,
-                  //       children: [
-                  //         SizedBox(
-                  //           height: 48,
-                  //           child: const Icon(Icons.spa,
-                  //               size: 48, color: Colors.white),
-                  //         ),
-                  //         SizedBox(height: 16),
-                  //         Text(
-                  //           'Mindfulness',
-                  //           style: TextStyle(
-                  //             fontSize: 18,
-                  //             fontWeight: FontWeight.bold,
-                  //             color: Colors.white,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
