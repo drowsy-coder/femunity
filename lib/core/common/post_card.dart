@@ -101,7 +101,7 @@ class PostCard extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 8),
+                      // SizedBox(height: 8),
                       Text(
                         post.title,
                         style: TextStyle(
@@ -109,9 +109,10 @@ class PostCard extends ConsumerWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
+                      SizedBox(height: 8),
                       if (isTypeImage)
                         SizedBox(
-                          height: 200,
+                          height: 240,
                           width: double.infinity,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
@@ -157,8 +158,10 @@ class PostCard extends ConsumerWidget {
                                 child: IconButton(
                                   onPressed: () => upvotePost(ref),
                                   icon: Icon(
-                                    Icons.thumb_up_outlined,
-                                    size: 30,
+                                    post.upvotes.contains(user.uid)
+                                        ? Icons.thumb_up
+                                        : Icons.thumb_up_outlined,
+                                    size: 26,
                                     color: post.upvotes.contains(user.uid)
                                         ? Colors.green[400]
                                         : null,
@@ -176,8 +179,10 @@ class PostCard extends ConsumerWidget {
                                 child: IconButton(
                                   onPressed: () => downvotePost(ref),
                                   icon: Icon(
-                                    Icons.thumb_down_outlined,
-                                    size: 30,
+                                    post.downvotes.contains(user.uid)
+                                        ? Icons.thumb_down
+                                        : Icons.thumb_down_outlined,
+                                    size: 26,
                                     color: post.downvotes.contains(user.uid)
                                         ? Colors.red[900]
                                         : null,
@@ -208,7 +213,10 @@ class PostCard extends ConsumerWidget {
                                   if (data.mods.contains(user.uid)) {
                                     return IconButton(
                                       onPressed: () => deletePost(ref, context),
-                                      icon: Icon(Icons.admin_panel_settings),
+                                      icon: Icon(
+                                        Icons.admin_panel_settings_sharp,
+                                        color: Colors.red[900],
+                                      ),
                                     );
                                   }
                                   return SizedBox();
