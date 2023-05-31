@@ -57,7 +57,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Opportunities',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -75,22 +75,22 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   viewportFraction: 0.8,
                   enlargeCenterPage: true,
                   autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 5),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayInterval: const Duration(seconds: 5),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
                   autoPlayCurve: Curves.fastOutSlowIn,
                 ),
                 items: filteredOpportunities.map((scholarship) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 8.0),
+                        margin: const EdgeInsets.symmetric(horizontal: 8.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16.0),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade200,
                               blurRadius: 4.0,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
@@ -120,14 +120,14 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                   children: [
                                     Text(
                                       scholarship['title']?.toUpperCase() ?? '',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 24.0,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontFamily: 'Montserrat',
                                       ),
                                     ),
-                                    SizedBox(height: 8.0),
+                                    const SizedBox(height: 8.0),
                                   ],
                                 ),
                               ),
@@ -138,7 +138,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                               child: ElevatedButton(
                                 onPressed: () =>
                                     launch(scholarship['url'] ?? ''),
-                                child: Text(
+                                child: const Text(
                                   'Learn More',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -152,7 +152,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                     horizontal: 24.0,
                                     vertical: 12.0,
                                   ),
@@ -175,7 +175,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
               children: [
                 ElevatedButton(
                   onPressed: () => filterOpportunities('STEM'),
-                  child: Text('STEM'),
+                  child: const Text('STEM'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'STEM'
                         ? Colors.indigo
@@ -185,7 +185,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24.0),
                     ),
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 24.0,
                       vertical: 12.0,
                     ),
@@ -193,7 +193,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () => filterOpportunities('Business'),
-                  child: Text('Business'),
+                  child: const Text('Business'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'Business'
                         ? Colors.indigo
@@ -204,7 +204,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24.0),
                     ),
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 24.0,
                       vertical: 12.0,
                     ),
@@ -212,7 +212,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () => filterOpportunities('Law'),
-                  child: Text('Law'),
+                  child: const Text('Law'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'Law'
                         ? Colors.indigo
@@ -222,7 +222,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24.0),
                     ),
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 24.0,
                       vertical: 12.0,
                     ),
@@ -235,7 +235,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
             child: ListView(
               children: [
                 if (selectedField == 'STEM')
-                  OpportunityTile(
+                  const OpportunityTile(
                     company: 'DAAD WISE',
                     position: 'Research Intern',
                     url:
@@ -243,7 +243,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     logo: 'assets/images/daad.png',
                   ),
                 if (selectedField == 'STEM')
-                  OpportunityTile(
+                  const OpportunityTile(
                     company: 'Mitacs',
                     position: 'Globalink Research Intern',
                     url:
@@ -251,21 +251,21 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     logo: 'assets/images/mitacs.png',
                   ),
                 if (selectedField == 'STEM')
-                  OpportunityTile(
+                  const OpportunityTile(
                     company: 'CERN',
                     position: 'Summer Student Programme',
                     url: 'https://careers.cern/summer',
                     logo: 'assets/images/CERN.svg.png',
                   ),
                 if (selectedField == 'Business')
-                  OpportunityTile(
+                  const OpportunityTile(
                     company: 'Amazon',
                     position: 'Software Development Engineer',
                     url: 'https://www.amazon.jobs/en/',
                     logo: 'assets/images/Amazon_icon.svg.png',
                   ),
                 if (selectedField == 'Law')
-                  OpportunityTile(
+                  const OpportunityTile(
                     company: 'Google',
                     position: 'Software Engineer',
                     url: 'https://www.google.com/about/careers/',
@@ -301,7 +301,7 @@ class OpportunityTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -310,7 +310,7 @@ class OpportunityTile extends StatelessWidget {
               height: 60,
               width: 60,
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -321,14 +321,14 @@ class OpportunityTile extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     position,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   OutlinedButton(
                     onPressed: () => launch(url),
                     child: Text(
@@ -345,7 +345,7 @@ class OpportunityTile extends StatelessWidget {
                         color: Theme.of(context).accentColor,
                         width: 2.0,
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 32.0,
                         vertical: 8.0,
                       ),

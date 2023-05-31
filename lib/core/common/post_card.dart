@@ -59,7 +59,7 @@ class PostCard extends ConsumerWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
-                  offset: Offset(0, 2),
+                  offset: const Offset(0, 2),
                   blurRadius: 4,
                 ),
               ],
@@ -75,14 +75,14 @@ class PostCard extends ConsumerWidget {
                   ),
                   title: Text(
                     post.communityName,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(
                     post.username,
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 12),
                   ),
                   trailing: post.uid == user.uid
                       ? isGuest
@@ -104,12 +104,12 @@ class PostCard extends ConsumerWidget {
                       // SizedBox(height: 8),
                       Text(
                         post.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       if (isTypeImage)
                         SizedBox(
                           height: 240,
@@ -141,14 +141,14 @@ class PostCard extends ConsumerWidget {
                             ),
                           ),
                         ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
                               AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
+                                duration: const Duration(milliseconds: 200),
                                 curve: Curves.easeOut,
                                 transform: Matrix4.translationValues(
                                   0.0,
@@ -170,10 +170,10 @@ class PostCard extends ConsumerWidget {
                               ),
                               Text(
                                 '${post.upvotes.length - post.downvotes.length == 0 ? 'Vote' : post.upvotes.length - post.downvotes.length}',
-                                style: TextStyle(fontSize: 17),
+                                style: const TextStyle(fontSize: 17),
                               ),
                               AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
+                                duration: const Duration(milliseconds: 300),
                                 height:
                                     post.downvotes.contains(user.uid) ? 38 : 45,
                                 child: IconButton(
@@ -195,12 +195,12 @@ class PostCard extends ConsumerWidget {
                             children: [
                               IconButton(
                                 onPressed: () => navigateToComments(context),
-                                icon: Icon(Icons.insert_comment),
+                                icon: const Icon(Icons.insert_comment),
                                 color: Colors.blue,
                               ),
                               Text(
                                 '${post.commentCount == 0 ? 'Comment' : post.commentCount}',
-                                style: TextStyle(fontSize: 17),
+                                style: const TextStyle(fontSize: 17),
                               ),
                             ],
                           ),
@@ -219,15 +219,15 @@ class PostCard extends ConsumerWidget {
                                       ),
                                     );
                                   }
-                                  return SizedBox();
+                                  return const SizedBox();
                                 },
                                 error: (error, stackTrace) =>
                                     ErrorText(error: error.toString()),
-                                loading: () => Loader(),
+                                loading: () => const Loader(),
                               ),
                         ],
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                     ],
                   ),
                 ),
@@ -235,7 +235,7 @@ class PostCard extends ConsumerWidget {
             ),
           ),
         ),
-        SizedBox(height: 16), // Add a gap between posts
+        const SizedBox(height: 16), // Add a gap between posts
       ],
     );
   }
