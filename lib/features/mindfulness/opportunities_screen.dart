@@ -33,8 +33,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
           'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
       'url':
           'https://www.adobe.com/in/lead/creativecloud/women-in-technology.html',
-      'image':
-          'assets/images/Adobe-logo.png',
+      'image': 'assets/images/Adobe-logo.png',
       'field': 'STEM',
     },
   ];
@@ -129,15 +128,6 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                       ),
                                     ),
                                     SizedBox(height: 8.0),
-                                    // Text(
-                                    //   scholarship['description'] ?? '',
-                                    //   style: TextStyle(
-                                    //     fontSize: 16.0,
-                                    //     color: Colors.black,
-                                    //     fontFamily: 'Montserrat',
-                                    //     fontWeight: FontWeight.bold,
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                               ),
@@ -149,7 +139,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                 onPressed: () =>
                                     launch(scholarship['url'] ?? ''),
                                 child: Text(
-                                  'Apply Now',
+                                  'Learn More',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 16.0,
@@ -246,10 +236,26 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
               children: [
                 if (selectedField == 'STEM')
                   OpportunityTile(
-                    company: 'Facebook',
-                    position: 'Developer Program Manager',
-                    url: 'https://www.facebook.com/careers/jobs/',
-                    logo: 'assets/images/logo-Meta.png',
+                    company: 'DAAD WISE',
+                    position: 'Research Intern',
+                    url:
+                        'https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50015295',
+                    logo: 'assets/images/daad.png',
+                  ),
+                if (selectedField == 'STEM')
+                  OpportunityTile(
+                    company: 'Mitacs',
+                    position: 'Globalink Research Intern',
+                    url:
+                        'https://www.mitacs.ca/en/programs/globalink/globalink-research-internship',
+                    logo: 'assets/images/mitacs.png',
+                  ),
+                if (selectedField == 'STEM')
+                  OpportunityTile(
+                    company: 'CERN',
+                    position: 'Summer Student Programme',
+                    url: 'https://careers.cern/summer',
+                    logo: 'assets/images/CERN.svg.png',
                   ),
                 if (selectedField == 'Business')
                   OpportunityTile(
@@ -299,7 +305,11 @@ class OpportunityTile extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(logo, height: 60, width: 60),
+            Image.asset(
+              logo,
+              height: 60,
+              width: 60,
+            ),
             SizedBox(width: 16),
             Expanded(
               child: Column(

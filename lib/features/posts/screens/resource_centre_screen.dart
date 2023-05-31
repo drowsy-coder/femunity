@@ -36,7 +36,7 @@ class ResourceCentrePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Resource Centre',
+          'SoS',
           style: Theme.of(context).textTheme.headline6?.copyWith(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white

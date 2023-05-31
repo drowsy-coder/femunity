@@ -82,8 +82,8 @@ class CommunityListDrawer extends ConsumerWidget {
                       label: const Text(
                         'Create a Community',
                         style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
+                            // fontFamily: 'Montserrat',
+                            // fontWeight: FontWeight.bold,
                             fontSize: 18,
                             color: Colors.black),
                       ),
