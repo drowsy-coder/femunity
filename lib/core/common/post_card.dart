@@ -54,7 +54,7 @@ class PostCard extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Container(
             decoration: BoxDecoration(
-              color: currentTheme.drawerTheme.backgroundColor,
+              color: Colors.grey[900],
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
