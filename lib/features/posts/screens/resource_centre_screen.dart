@@ -1,3 +1,4 @@
+import 'package:femunity/features/posts/screens/Digital%20Safety/digital_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -36,7 +37,7 @@ class ResourceCentrePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'SoS',
+          'Safety',
           style: Theme.of(context).textTheme.headline6?.copyWith(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white
@@ -230,6 +231,38 @@ class ResourceCentrePage extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+          Card(
+            elevation: 4.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+            ),
+            color: Colors.grey[900],
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16.0),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FemaleDigitalSafetyScreen()));
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16.0,
+                  horizontal: 24.0,
+                ),
+                child: Center(
+                  child: Text(
+                    '👩‍💻 Stay Safe Digitally 👩‍💻',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
           Expanded(
