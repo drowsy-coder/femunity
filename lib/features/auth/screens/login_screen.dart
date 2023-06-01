@@ -65,6 +65,13 @@ class LoginScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 20),
+                      Image.asset(
+                        'assets/images/logo.png',
+                        width: 200,
+                        height: 100,
+                        // Adjust the width and height as needed
+                      ),
                       const SizedBox(
                         width: 300,
                         child: Text(
@@ -85,12 +92,11 @@ class LoginScreen extends ConsumerWidget {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 320),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           children: [
-                            // const SizedBox(height: 30),
                             const SignInButton(),
                           ],
                         ),
