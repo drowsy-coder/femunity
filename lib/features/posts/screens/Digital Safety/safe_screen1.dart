@@ -47,7 +47,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                   'Enable Two-Factor Authentication',
                   'Enable two-factor authentication (2FA) for your accounts whenever possible. It provides an extra layer of security.',
                   Icons.verified_user,
-                  "https://www.sciencedirect.com/topics/computer-science/two-factor-authentication#:~:text=Two%2Dfactor%20authentication%20requires%20you,data%20privacy%20in%20two%20ways.",
+                  "https://authy.com/what-is-2fa/",
                 ),
                 buildStepCard(
                   context,

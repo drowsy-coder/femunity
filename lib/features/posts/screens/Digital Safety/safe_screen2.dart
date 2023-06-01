@@ -85,7 +85,7 @@ class _SexualHarassmentScreenState extends State<SexualHarassmentScreen> {
                   'Contact Authorities',
                   'If the harassment involves serious threats, explicit content involving minors, or poses a significant risk, contact law enforcement agencies to report the incident.',
                   Icons.phone,
-                  'tel:911',
+                  'https://cybercrime.gov.in/webform/FAQ.aspx',
                 ),
                 buildStepCard(
                   context,
