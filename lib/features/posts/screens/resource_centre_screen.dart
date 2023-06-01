@@ -1,12 +1,16 @@
-import 'package:femunity/features/posts/screens/Digital%20Safety/digital_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:routemaster/routemaster.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ResourceCentrePage extends StatelessWidget {
   ResourceCentrePage({Key? key}) : super(key: key);
+
+  void navigateToDigital(BuildContext context) {
+    Routemaster.of(context).push('/safety/digital');
+  }
 
   final List<Resource> resources = [
     Resource(
@@ -242,10 +246,11 @@ class ResourceCentrePage extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(16.0),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => FemaleDigitalSafetyScreen()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => FemaleDigitalSafetyScreen()));
+                navigateToDigital(context);
               },
               child: Container(
                 padding: const EdgeInsets.symmetric(

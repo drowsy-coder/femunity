@@ -1,15 +1,23 @@
-import 'package:femunity/features/mindfulness/opportunities_screen.dart';
-import 'package:femunity/features/posts/screens/chat_screen.dart';
-import 'package:femunity/features/posts/screens/resource_centre_screen.dart';
-import 'package:femunity/features/posts/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:routemaster/routemaster.dart';
 
 class WellnessScreen extends StatelessWidget {
   const WellnessScreen({Key? key}) : super(key: key);
 
-  void navigateToResourceCentre(BuildContext context) {
-    Routemaster.of(context).push('/resource-centre');
+  void navigateToSafety(BuildContext context) {
+    Routemaster.of(context).push('/safety');
+  }
+
+  void navigateToMenstrualTracker(BuildContext context) {
+    Routemaster.of(context).push('/menstrual-tracker');
+  }
+
+  void navigateToSakhi(BuildContext context) {
+    Routemaster.of(context).push('/sakhi-chat');
+  }
+
+  void navigateToOpportunities(BuildContext context) {
+    Routemaster.of(context).push('/opportunities');
   }
 
   @override
@@ -40,11 +48,12 @@ class WellnessScreen extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PeriodTrackerScreen()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => PeriodTrackerScreen()),
+                      // );
+                      navigateToMenstrualTracker(context);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -74,11 +83,12 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ChatScreen()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const ChatScreen()),
+                      // );
+                      navigateToSakhi(context);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -108,11 +118,12 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OpportunitiesScreen()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => OpportunitiesScreen()),
+                      navigateToOpportunities(context);
+                      // );
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -142,11 +153,12 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ResourceCentrePage()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => ResourceCentrePage()),
+                      // );
+                      navigateToSafety(context);
                     },
                     child: Container(
                       decoration: BoxDecoration(

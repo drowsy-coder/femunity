@@ -1,13 +1,20 @@
-import 'package:femunity/features/posts/screens/Digital%20Safety/safe_screen1.dart';
-import 'package:femunity/features/posts/screens/Digital%20Safety/safe_screen2.dart';
 import 'package:flutter/material.dart';
+import 'package:routemaster/routemaster.dart';
 
 class FemaleDigitalSafetyScreen extends StatelessWidget {
+  void navigateToCyber(BuildContext context) {
+    Routemaster.of(context).push('cyber');
+  }
+
+  void navigateToSexual(BuildContext context) {
+    Routemaster.of(context).push('sexual');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Female Digital Safety'),
+        title: Text('Digital Safety'),
         backgroundColor: Colors.deepPurple,
       ),
       body: ListView(
@@ -18,22 +25,27 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
             'Identifying Cyber Crimes',
             'Learn how to identify and protect yourself from cyber crimes.',
             'assets/images/cybercrime.jpg',
-            CyberCrimeGuideScreen(),
+            'cyber', // Pass the route name instead of the destination screen
           ),
           buildCard(
             context,
             'Preventing Sexual Harassment',
             'Find out how to prevent and respond to sexual harassment online.',
             'assets/images/sexual_harassment.jpg',
-            SexualHarassmentScreen(),
+            'sexual', // Pass the route name instead of the destination screen
           ),
         ],
       ),
     );
   }
 
-  Widget buildCard(BuildContext context, String title, String description,
-      String image, Widget destinationScreen) {
+  Widget buildCard(
+    BuildContext context,
+    String title,
+    String description,
+    String image,
+    String routeName, // Updated parameter type
+  ) {
     return Card(
       elevation: 4.0,
       shape: RoundedRectangleBorder(
@@ -90,12 +102,7 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
                   SizedBox(height: 16.0),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => destinationScreen,
-                        ),
-                      );
+                      Routemaster.of(context).push(routeName); // Use route navigation
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.deepPurple,

@@ -1,12 +1,19 @@
 import 'package:femunity/features/auth/controller/auth_controller.dart';
-import 'package:femunity/features/settings/help.dart';
-import 'package:femunity/features/settings/privacy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:routemaster/routemaster.dart';
 
 class SettingsPage extends ConsumerWidget {
   void logOut(WidgetRef ref) {
     ref.read(authControllerProvider.notifier).logout();
+  }
+
+  void navigateToPrivacy(BuildContext context) {
+    Routemaster.of(context).push('/privacy-policy');
+  }
+
+  void navigateToSupport(BuildContext context) {
+    Routemaster.of(context).push('/help-support');
   }
 
   @override
@@ -22,20 +29,22 @@ class SettingsPage extends ConsumerWidget {
             leading: const Icon(Icons.security),
             title: const Text('Privacy & Security'),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PrivacyPolicyScreen()));
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => PrivacyPolicyScreen()));
+              navigateToPrivacy(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.help),
             title: const Text('Help & Support'),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HelpAndSupportScreen()));
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => HelpAndSupportScreen()));
+              navigateToSupport(context);
             },
           ),
           const Divider(),

@@ -1,7 +1,6 @@
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
-import 'package:femunity/features/auth/screens/login_screen.dart';
 import 'package:femunity/firebase_options.dart';
 import 'package:femunity/models/user_model.dart';
 import 'package:femunity/router.dart';

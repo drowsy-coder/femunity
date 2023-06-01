@@ -140,11 +140,13 @@ An AI Chatbot, always available to talk to you. Share your thoughts, feelings or
 
 If you would like to contribute to Femunity, please fork the project on GitHub and submit a pull request.
 
-## Credits
+## Acknowledgments
 
 - All the responders to our survey and those who gave us suggestions.
 
 - Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
+
+- Team Management and Content: [Shourya Pratap SIngh](https://www.linkedin.com/in/amspsingh04/)
 
 ## License
 
