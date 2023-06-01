@@ -1,0 +1,127 @@
+import 'package:femunity/features/posts/screens/Digital%20Safety/safe_screen1.dart';
+import 'package:femunity/features/posts/screens/Digital%20Safety/safe_screen2.dart';
+import 'package:flutter/material.dart';
+
+class FemaleDigitalSafetyScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Female Digital Safety'),
+        backgroundColor: Colors.deepPurple,
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          buildCard(
+            context,
+            'Identifying Cyber Crimes',
+            'Learn how to identify and protect yourself from cyber crimes.',
+            'assets/images/cybercrime.jpg',
+            CyberCrimeGuideScreen(),
+          ),
+          buildCard(
+            context,
+            'Preventing Sexual Harassment',
+            'Find out how to prevent and respond to sexual harassment online.',
+            'assets/images/sexual_harassment.jpg',
+            SexualHarassmentScreen(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildCard(BuildContext context, String title, String description,
+      String image, Widget destinationScreen) {
+    return Card(
+      elevation: 4.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16.0),
+          color: Colors.grey[900],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 5.0,
+              spreadRadius: 2.0,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(16.0),
+              ),
+              child: Image.asset(
+                image,
+                width: double.infinity,
+                height: 150.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => destinationScreen,
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.deepPurple,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      elevation: 2.0,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      child: Text(
+                        'Learn More',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

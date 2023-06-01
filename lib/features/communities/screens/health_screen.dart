@@ -21,7 +21,7 @@ class WellnessScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               child: Text(
                 'Wellness',
                 style: TextStyle(
@@ -158,12 +158,12 @@ class WellnessScreen extends StatelessWidget {
                         children: [
                           const SizedBox(
                             height: 48,
-                            child: Icon(Icons.archive_rounded,
+                            child: Icon(Icons.security,
                                 size: 48, color: Colors.white),
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'SoS',
+                            'Safety',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

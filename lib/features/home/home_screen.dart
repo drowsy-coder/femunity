@@ -91,9 +91,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       bottomNavigationBar: isGuest
           ? null
           : CupertinoTabBar(
-              activeColor: currentTheme.iconTheme.color,
+              activeColor: Colors.amber,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.grey[900] // set color for dark mode
+                  ? Colors.black // set color for dark mode
                   : const Color(0xFFAEC6CF),
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
