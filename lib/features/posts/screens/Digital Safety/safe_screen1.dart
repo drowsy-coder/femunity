@@ -33,7 +33,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                   'Be Vigilant',
                   'Be cautious while sharing personal information online. Avoid sharing sensitive data on unsecured websites or with unknown individuals.',
                   Icons.visibility,
-                  null,
+                  'https://google.com/', // add relevant links instead of null
                 ),
                 buildStepCard(
                   context,
@@ -173,7 +173,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                 description,
                 style: const TextStyle(
                   fontSize: 16.0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
               actions: [

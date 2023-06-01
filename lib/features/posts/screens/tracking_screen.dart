@@ -1,11 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/exercise_tips.dart';
-import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/food_tips.dart';
-import 'package:femunity/features/posts/screens/Menstrual%20Tips%20Screen/stress_tips.dart';
-import 'package:femunity/features/posts/screens/history_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:routemaster/routemaster.dart';
 
 class PeriodTrackerScreen extends StatefulWidget {
   @override
@@ -20,6 +17,14 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
   DateTime? _selectedDate;
   DateTime? _nextPeriodDate;
   late String _userId;
+
+  void navigateToHistory(BuildContext context) {
+    Routemaster.of(context).push('/period-history');
+  }
+
+  void navigateToHealthTips(BuildContext context) {
+    Routemaster.of(context).push('/health-tips');
+  }
 
   @override
   void initState() {
@@ -101,10 +106,11 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HealthTipsScreen()),
-          );
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => HealthTipsScreen()),
+          // );
+          navigateToHealthTips(context);
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
@@ -159,10 +165,11 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           IconButton(
             icon: const Icon(Icons.history),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HistoryScreen()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => HistoryScreen()),
+              // );
+              navigateToHistory(context);
             },
           ),
         ],
@@ -342,8 +349,20 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
 }
 
 class HealthTipsScreen extends StatelessWidget {
-  void _navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  // void _navigateToScreen(BuildContext context, Widget screen) {
+  //   Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  // }
+
+  void navigateToFood(BuildContext context) {
+    Routemaster.of(context).push('/eating');
+  }
+
+  void navigateToExercise(BuildContext context) {
+    Routemaster.of(context).push('/exercise');
+  }
+
+  void navigateToStress(BuildContext context) {
+    Routemaster.of(context).push('/stress');
   }
 
   @override
@@ -360,21 +379,19 @@ class HealthTipsScreen extends StatelessWidget {
             _buildHealthGuideCard(
               title: 'Healthy eating',
               imageUrl: 'assets/images/didiiseatinh.jpg',
-              onTap: () => _navigateToScreen(context, FoodTipsScreen()),
+              onTap: () => navigateToFood(context),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Fitness exercises',
-              imageUrl:
-                  'assets/images/kasrat.png',
-              onTap: () => _navigateToScreen(context, ExerciseTipsScreen()),
+              imageUrl: 'assets/images/kasrat.png',
+              onTap: () => navigateToExercise(context),
             ),
             const SizedBox(height: 16),
             _buildHealthGuideCard(
               title: 'Stress management',
-              imageUrl:
-                  'assets/images/teaing.jpg',
-              onTap: () => _navigateToScreen(context, StressTipsScreen()),
+              imageUrl: 'assets/images/teaing.jpg',
+              onTap: () => navigateToStress(context),
             ),
             const SizedBox(height: 16),
           ],

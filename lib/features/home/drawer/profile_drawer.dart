@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
 
-import '../../settings/settings.dart';
-
 class ProfileDrawer extends ConsumerWidget {
   const ProfileDrawer({Key? key}) : super(key: key);
 
@@ -16,6 +14,10 @@ class ProfileDrawer extends ConsumerWidget {
 
   void navigateToUserProfile(BuildContext context, String uid) {
     Routemaster.of(context).push('/u/$uid');
+  }
+
+  void navigateToSettings(BuildContext context) {
+    Routemaster.of(context).push('/settings');
   }
 
   void navigateToResourceCentre(BuildContext context) {
@@ -91,33 +93,6 @@ class ProfileDrawer extends ConsumerWidget {
               ),
               onTap: () => navigateToUserProfile(context, user.uid),
             ),
-            // ListTile(
-            //   title: const Text('Resource Centre'),
-            //   leading: const Icon(
-            //     Icons.archive_rounded,
-            //     color: Color.fromARGB(255, 0, 225, 255),
-            //   ),
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => ResourceCentrePage()),
-            //     );
-            //   },
-            // ),
-            // ListTile(
-            //   title: const Text('Opportunities'),
-            //   leading: const Icon(
-            //     Icons.currency_rupee_outlined,
-            //     color: Colors.green,
-            //   ),
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => OpportunitiesScreen()),
-            //     );
-            //   },
-            // ),
             ListTile(
               title: const Text(
                 'Settings',
@@ -133,10 +108,11 @@ class ProfileDrawer extends ConsumerWidget {
                 size: 30,
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SettingsPage()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SettingsPage()),
+                // );
+                navigateToSettings(context);
               },
             ),
             const SizedBox(height: 20),
@@ -144,22 +120,7 @@ class ProfileDrawer extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // const Text(
-                  //   'Dark Mode',
-                  //   style: TextStyle(
-                  //     fontFamily: 'Montserrat',
-                  //     fontSize: 18,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
-                  // Switch.adaptive(
-                  //   value: ref.watch(themeNotifierProvider.notifier).mode ==
-                  //       ThemeMode.dark,
-                  //   onChanged: (val) => toggleTheme(ref),
-                  //   activeColor: Color(0xFF1E90FF),
-                  // ),
-                ],
+                children: [],
               ),
             ),
             const Spacer(),
