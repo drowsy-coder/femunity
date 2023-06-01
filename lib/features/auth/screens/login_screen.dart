@@ -1,15 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:femunity/core/common/loader.dart';
-import 'package:femunity/core/constants/constants.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../../core/common/sign_in_button.dart';
 
 class LoginScreen extends ConsumerWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key});
+
   void signInAsGuest(WidgetRef ref, BuildContext context) {
     ref.read(authControllerProvider.notifier).signInAsGuest(context);
   }
@@ -21,25 +20,37 @@ class LoginScreen extends ConsumerWidget {
       body: isLoading
           ? const Loader()
           : SafeArea(
-            child: Stack(
+              child: Stack(
                 children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.black,
+                          Colors.grey[800]!,
+                          Colors.grey[400]!,
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const SizedBox(
-                        height: 15,
-                      ),
+                      const SizedBox(height: 40),
                       SizedBox(
-                        height: 30, 
+                        height: 100,
                         child: DefaultTextStyle(
                           style: const TextStyle(
                             fontFamily: 'FutureLight',
-                            fontSize: 29,
+                            fontSize: 27,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
                             shadows: [
                               Shadow(
                                 blurRadius: 7.0,
-                                color: Colors.white,
+                                color: Colors.black,
                                 offset: Offset(0, 0),
                               ),
                             ],
@@ -48,29 +59,47 @@ class LoginScreen extends ConsumerWidget {
                             repeatForever: true,
                             animatedTexts: [
                               FlickerAnimatedText('Unleash your power'),
-                              FlickerAnimatedText('Connect with your community'),
+                              FlickerAnimatedText(
+                                  'Connect with your community'),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 400.0,
-                        child: TextLiquidFill(
-                          text: 'Femunity',
-                          waveColor: const Color(0xFFff48a5),
-                          textStyle: const TextStyle(
+                      const SizedBox(
+                        width: 300,
+                        child: Text(
+                          'Femunity',
+                          style: TextStyle(
                             fontFamily: 'AlBrush',
-                            fontSize: 79.50,
+                            fontSize: 70,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 5.0,
+                                color: Colors.black,
+                                offset: Offset(0, 0),
+                              ),
+                            ],
                           ),
-                          boxHeight: 150.0,
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                      const SignInButton(),
+                      const SizedBox(height: 40),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: [
+                            // const SizedBox(height: 30),
+                            const SignInButton(),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
-          ),
+            ),
     );
   }
 }
