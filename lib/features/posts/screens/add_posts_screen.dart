@@ -1,4 +1,3 @@
-import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
@@ -12,7 +11,7 @@ class AddPostsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentTheme = ref.watch(themeNotifierProvider);
+    // final currentTheme = ref.watch(themeNotifierProvider);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,7 +29,11 @@ class AddPostsScreen extends ConsumerWidget {
             elevation: 16,
             child: const SizedBox(
               height: 120,
-              child: Icon(Icons.image_outlined, size: 40),
+              child: Icon(
+                Icons.image_outlined,
+                size: 40,
+                color: Colors.pink,
+              ),
             ),
           ),
         ),
@@ -51,7 +54,7 @@ class AddPostsScreen extends ConsumerWidget {
                 Icons.text_fields_outlined,
                 size: 40,
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? null // keep the default color for dark mode
+                    ? Colors.green // keep the default color for dark mode
                     : Colors.blue, // set color to blue in light mode
               ),
             ),
@@ -70,7 +73,11 @@ class AddPostsScreen extends ConsumerWidget {
             elevation: 16,
             child: const SizedBox(
               height: 120,
-              child: Icon(Icons.link_outlined, size: 40),
+              child: Icon(
+                Icons.link_outlined,
+                size: 40,
+                color: Colors.lightBlue,
+              ),
             ),
           ),
         )

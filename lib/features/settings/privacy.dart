@@ -6,46 +6,62 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Privacy & Security Policy'),
+        backgroundColor:
+            Colors.deepPurple, // Radically changing the app bar color
       ),
       body: Container(
+        decoration: BoxDecoration(),
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            _buildCard(
               'Introduction',
-              style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.orange),
-            ),
-            const SizedBox(height: 10.0),
-            const Text(
               'Welcome to Femunity, an app designed to empower women around the world. At Femunity, we take your privacy and security seriously. This privacy policy outlines how we collect, use, and protect your personal information.',
-              style: TextStyle(fontSize: 18.0),
+              Colors.orange,
             ),
             const SizedBox(height: 20.0),
-            const Text(
+            _buildCard(
               'Data Collection',
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10.0),
-            const Text(
-              'We collect your email id, username, and profile picture when you create an account on Femunity. This information is stored securely on Firebase servers provided by Google. We do not share, sell or disclose your personal information to any third party.',
-              style: TextStyle(fontSize: 18.0),
+              'We collect your email id, username, and profile picture when you create an account on Femunity. This information is stored securely on Firebase servers provided by Google. We do not share, sell, or disclose your personal information to any third party.',
+              Colors.white,
             ),
             const SizedBox(height: 20.0),
-            const Text(
+            _buildCard(
               'Data Protection',
+              'At Femunity, we take the security of your personal information seriously. We use industry-standard security measures to protect your data. All data is protected, and access to our servers is restricted to authorized personnel only.',
+              Colors.green,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard(String title, String content, Color color) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
               style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green),
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              'At Femunity, we take the security of your personal information seriously. We use industry-standard security measures to protect your data. All data is protected, and access to our servers is restricted to authorized personnel only.',
-              style: TextStyle(fontSize: 18.0),
+            Text(
+              content,
+              style: const TextStyle(fontSize: 18.0),
             ),
           ],
         ),

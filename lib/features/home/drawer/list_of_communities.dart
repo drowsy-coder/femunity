@@ -25,7 +25,7 @@ class CommunityListDrawer extends ConsumerWidget {
     final user = ref.watch(userProvider)!;
     final isGuest = !user.isAuthenticated;
     return Drawer(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[980],
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

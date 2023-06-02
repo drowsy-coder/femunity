@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/features/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isLoading = ref.watch(authControllerProvider);
+
     return Scaffold(
       body: isLoading
           ? const Loader()
@@ -23,12 +25,12 @@ class LoginScreen extends ConsumerWidget {
               child: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.black,
-                          Colors.grey[800]!,
-                          Colors.grey[400]!,
+                          Colors.pink,
+                          Colors.orange,
+                          Colors.yellow,
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -92,12 +94,55 @@ class LoginScreen extends ConsumerWidget {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      const SizedBox(height: 320),
+                      const SizedBox(height: 40),
+                      CarouselSlider(
+                        options: CarouselOptions(
+                          height: 200,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                        items: const [
+                          SliderCard(
+                            image: 'assets/images/commu.png',
+                            title: 'Discover new communities',
+                            description:
+                                'Find communities of like-minded women to connect with and support each other.',
+                          ),
+                          SliderCard(
+                            image: 'assets/images/idea.png',
+                            title: 'Share your thoughts and ideas',
+                            description:
+                                'Post links, text, and image-based posts to start discussions and share your thoughts and ideas with others.',
+                          ),
+                          SliderCard(
+                            image: 'assets/images/mental.png',
+                            title: 'Care for physical & mental health',
+                            description:
+                                'Learn more about physical & mental health.',
+                          ),
+                          SliderCard(
+                            image: 'assets/images/opport.png',
+                            title: 'Get opportunities to grow',
+                            description:
+                                'Explore opportunities for personal and professional growth.',
+                          ),
+                          SliderCard(
+                            image: 'assets/images/digitalsec.png',
+                            title: 'Stay Digitally Secure',
+                            description:
+                                'Learn how to stay safe and secure in the digital world.',
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 100),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
-                          children: [
-                            const SignInButton(),
+                          children: const [
+                            SignInButton(),
                           ],
                         ),
                       ),
@@ -106,6 +151,64 @@ class LoginScreen extends ConsumerWidget {
                 ],
               ),
             ),
+    );
+  }
+}
+
+class SliderCard extends StatelessWidget {
+  final String image;
+  final String title;
+  final String description;
+
+  const SliderCard({
+    required this.image,
+    required this.title,
+    required this.description,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 270,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: Card(
+        elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        color: Colors.white.withOpacity(0.7),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(
+                image,
+                height: 110,
+                width: 110,
+              ),
+              // const SizedBox(height: 10),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Colors.black,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey[900],
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
