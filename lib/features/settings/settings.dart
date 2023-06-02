@@ -21,46 +21,70 @@ class SettingsPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
+        backgroundColor:
+            Colors.deepPurple, // Radically changing the app bar color
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
-        children: [
-          ListTile(
-            leading: const Icon(Icons.security),
-            title: const Text('Privacy & Security'),
-            onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => PrivacyPolicyScreen()));
-              navigateToPrivacy(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text('Help & Support'),
-            onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => HelpAndSupportScreen()));
-              navigateToSupport(context);
-            },
-          ),
-          const Divider(),
-          ListTile(
-            title: const Text('Log Me Out'),
-            leading: const Icon(
+      body: Container(
+        decoration: BoxDecoration(),
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          children: [
+            _buildButtonCard(
+              Icons.security,
+              'Privacy & Security',
+              () => navigateToPrivacy(context),
+            ),
+            _buildButtonCard(
+              Icons.help,
+              'Help & Support',
+              () => navigateToSupport(context),
+            ),
+            const SizedBox(height: 16.0),
+            _buildButtonCard(
               Icons.logout_outlined,
+              'Log Me Out',
+              () {
+                logOut(ref);
+                Navigator.pop(context);
+              },
               color: Colors.orange,
             ),
-            onTap: () {
-              // Call the logOut function to log out the user
-              logOut(ref);
-              Navigator.pop(context);
-            },
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildButtonCard(IconData icon, String title, VoidCallback onPressed,
+      {Color color = Colors.deepPurple}) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(12.0),
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                color: color,
+              ),
+              const SizedBox(width: 16.0),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

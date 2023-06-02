@@ -32,7 +32,7 @@ class ProfileDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(userProvider)!;
     return Drawer(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[980],
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,7 @@ class ProfileDrawer extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Text(
-                'Version 1.9.0',
+                'Version 1.9.8',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 16,

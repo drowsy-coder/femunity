@@ -63,6 +63,15 @@ class PostCard extends ConsumerWidget {
                   blurRadius: 4,
                 ),
               ],
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black,
+                  Colors.grey[900]!,
+                  Colors.blueGrey[900]!,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
             child: Column(
               children: [
