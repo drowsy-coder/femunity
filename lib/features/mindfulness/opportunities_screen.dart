@@ -36,6 +36,56 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'image': 'assets/images/Adobe-logo.png',
       'field': 'STEM',
     },
+    {
+      'title': 'Business Internships',
+      'description':
+          'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
+      'url': 'https://careers.google.com/students/business-internships/',
+      'image': 'assets/images/google.png',
+      'field': 'Business',
+    },
+    {
+      'title': 'We Make Scholars',
+      'description':
+          'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
+      'url':
+          'https://www.wemakescholars.com/',
+      'image': 'assets/images/busScholar.webp',
+      'field': 'Business',
+    },
+    {
+      'title': 'DELL SCHOLARS PROGRAM ',
+      'description':
+          'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
+      'url': 'https://www.dellscholars.org/',
+      'image': 'assets/images/dell.jpg',
+      'field': 'Business',
+    },
+    {
+      'title': 'Empowering Women in Law Scholarship',
+      'description':
+          'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
+      'url': 'https://studentscholarships.org/scholarship/13274/empowering-women-in-law-scholarship',
+      'image': 'assets/images/ss.png',
+      'field': 'Law',
+    },
+    {
+      'title': 'LAW SCHOOL SCHOLARSHIPS FOR WOMEN',
+      'description':
+          'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
+      'url':
+          'https://www.bu.edu/law/about/offices/financial-aid/scholarships/scholarships-writing-competitions/outside-scholarships/women/',
+      'image': 'assets/images/law.jpg',
+      'field': 'Law',
+    },
+    {
+      'title': 'Events and opportunities in the field of law',
+      'description':
+          'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
+      'url': 'https://www.lawctopus.com/tag/chennai-law-firm-internship/',
+      'image': 'assets/images/lawocc.png',
+      'field': 'Law',
+    },
   ];
 
   List<Map<String, String>> getFilteredOpportunities() {
@@ -261,16 +311,40 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   const OpportunityTile(
                     company: 'Amazon',
                     position: 'Software Development Engineer',
+                    url: 'https://www.lagrantfoundation.org/about-our-scholarships',
+                    logo: 'assets/images/lagrant.png',
+                  ),
+                if (selectedField == 'Business')
+                  const OpportunityTile(
+                    company: 'Amazon',
+                    position: 'Prouction Manager',
                     url: 'https://www.amazon.jobs/en/',
                     logo: 'assets/images/Amazon_icon.svg.png',
                   ),
+               
                 if (selectedField == 'Law')
                   const OpportunityTile(
                     company: 'Google',
                     position: 'Software Engineer',
-                    url: 'https://www.google.com/about/careers/',
-                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                    url: 'https://www.wemakescholars.com/other/educational-testing-service-ets-',
+                    logo: 'assets/images/ets.jpg',
                   ),
+                if (selectedField == 'Law')
+                  const OpportunityTile(
+                    company: 'ABD',
+                    position: '',
+                    url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
+                    logo: 'assets/images/abd.jpeg',
+                  ),
+                if (selectedField == 'Law')
+                  const OpportunityTile(
+                    company: 'ServiceScape',
+                    position: 'Judge',
+                    url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
+                    logo: 'assets/images/ssssss.jpg',
+                  ),
+                
+                
               ],
             ),
           ),
