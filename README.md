@@ -12,10 +12,36 @@ Femunity is a forum and discussion app that aims to empower young women by provi
 Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM">
     <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="LinkedIn Badge"/>
   </a> 	
+  
+ <hr>
  
  ## 💯 Project Achievements
 - [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
 - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
+
+
+## 📊 Project Impact
+
+<hr>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      <img src="https://imgur.com/BNkYMrh.png" alt="Image 1" style="width: 100%;">
+    </td>
+    <td>
+      <img src="https://imgur.com/UIjobbi.png" alt="Image 8" style="width: 100%;">
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/DwjnJrh.png" alt="Image 2" style="width: 100%;">  
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/TfdOF3C.png" alt="Image 3" style="width: 100%;">
+    </td>
+  </tr>
+</table>
 
 <hr>
 
@@ -188,7 +214,7 @@ Explore various scolarships and internships in STEM, Business and Law.
 
 ### 🩸 Menstrual Tracker 
 
-Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. To use the Menstrual Tracker, click on the "Period Tracker" button present in the navigation bar.
+Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. Also get advice on food habits, exercise and stress management during periods.
 
 ### 🤖 Sakhi - ChatBot
 
@@ -208,6 +234,6 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 - Team Handling and Content: [Shourya Pratap SIngh - GDSC VIT-C | Management](https://www.linkedin.com/in/amspsingh04/)
 
-## License
+## 🪪 License
 
 Femunity is licensed under the MIT license. See [LICENSE.txt](LICENSE.txt) for more information.
