@@ -75,7 +75,7 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 - Radiance points system based on user activity
 - Resource center with links for support groups and harassment reporting
 - Menstrual tracker feature with history of periods
-- Google OAuth and Guest Mode support
+- Google OAuth for easy user verification
 - Scolarships and Opportunities Specific for Women!
 - Sakhi - AI Support and Health Chatbot
 
