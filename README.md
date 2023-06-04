@@ -38,6 +38,10 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
       <p>Login Screen</p>
     </td>
     <td style="text-align: center;">
+      <img src="https://imgur.com/UJenl3L.gif" alt="Image 8" style="width: 100%;">
+      <p>Home Screen</p>
+    </td>
+    <td style="text-align: center;">
       <img src="https://imgur.com/7UCqRiI.gif" alt="Image 2" style="width: 100%;">
       <p>Add Posts</p>
     </td>
@@ -45,12 +49,8 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
       <img src="https://imgur.com/sUQaklh.gif" alt="Image 3" style="width: 100%;">
       <p>Communities Drawer</p>
     </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/Am1AzQN.gif" alt="Image 4" style="width: 100%;">
-      <p>Menstrual Tracking</p>
-    </td>
   </tr>
-  <tr>
+<!--   <tr>
     <td style="text-align: center;">
       <img src="https://imgur.com/K6pF4UY.gif" alt="Image 6" style="width: 100%;">
       <p>Opportunities</p>
@@ -71,7 +71,7 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
       <img src="https://imgur.com/zvyOtSr.jpg" alt="Image 10" style="width: 100%;">
       <p>Image Upload</p>
     </td> -->
-  </tr>
+<!--   </tr> -->
 </table>
 
 <!-- // <td style="text-align: center;">
@@ -104,6 +104,52 @@ Before you start, make sure you have installed the following on your system:
 3. In VS Code, open the command palette (View > Command Palette) and type "Flutter: Run Flutter Doctor". This will check your system to make sure everything is set up correctly.
 
 4. In VS Code, open the main.dart file and click the "Run" button. This will launch the app in the emulator or on your physical device.
+<hr>
+
+<table style="width: 100%;">
+<!--   <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/uyirs8p.gif" alt="Image 1" style="width: 100%;">
+      <p>Login Screen</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/7UCqRiI.gif" alt="Image 2" style="width: 100%;">
+      <p>Add Posts</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/sUQaklh.gif" alt="Image 3" style="width: 100%;">
+      <p>Communities Drawer</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/Am1AzQN.gif" alt="Image 4" style="width: 100%;">
+      <p>Menstrual Tracking</p>
+    </td>
+  </tr> -->
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/K6pF4UY.gif" alt="Image 6" style="width: 100%;">
+      <p>Opportunities</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/EsKLjCG.gif" alt="Image 7" style="width: 100%;">
+      <p>Sakhi: AI Chatbot</p>
+    </td>
+  <td style="text-align: center;">
+      <img src="https://imgur.com/Am1AzQN.gif" alt="Image 4" style="width: 100%;">
+      <p>Menstrual Tracking</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/eVNaaF3.gif" alt="Image 9" style="width: 100%;">
+      <p>Safety Section</p>
+    </td>
+<!--     <td style="text-align: center;">
+      <img src="https://imgur.com/zvyOtSr.jpg" alt="Image 10" style="width: 100%;">
+      <p>Image Upload</p>
+    </td> -->
+  </tr>
+</table>
+
+<hr>
 
 ## How to Use
 
