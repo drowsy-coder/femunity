@@ -137,7 +137,7 @@ class LoginScreen extends ConsumerWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 100),
+                      const SizedBox(height: 75),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(

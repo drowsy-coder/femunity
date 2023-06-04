@@ -80,7 +80,7 @@ class FeedScreen extends ConsumerWidget {
                             : const Color(0xFFAEC6CF),
                         child: InkWell(
                           onTap: () => launch(
-                              'https://www.youtube.com/watch?v=oN_uYKAApXs'),
+                              'https://www.youtube.com/watch?v=1H82iFD0pHM'),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
