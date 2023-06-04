@@ -17,6 +17,53 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 - [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
 - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 
+<hr>
+
+## Latest Version - v2.0.0
+
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/drowsy-coder/femunity/releases/download/v2.00.00/Femunity.v2.0.0.apk">
+        <img src="https://raw.githubusercontent.com/flocke/andOTP/master/assets/badges/get-it-on-github.png" alt="Github" width="200">
+      </a>
+    </td>
+    <td>
+      <a href="https://media.giphy.com/media/iHD88spVFkL7mZakwa/giphy.gif">
+        <img src="https://imgur.com/F5JxdNT.png" alt="Github" width="200">
+      </a>
+    </td>
+       <td>
+      <a href="https://media.giphy.com/media/iHD88spVFkL7mZakwa/giphy.gif">
+        <img src="https://imgur.com/91mkzE2.png" alt="Github" width="200">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+### New Features ⭐🚀
+
+- Revamped login screen with gradient color and features guide.
+- Redesigned home page with interactive icons and modern card-style posts.
+- Improved and enhanced community drawer.
+- Redefined Safety Section with guides on staying digitally safe.
+- Simplified health tips section with advice on food, exercise and stress.
+- Privacy and Help Section for getting user feedback
+
+### Bug Fixes 🪲✅
+
+- Fixed major routing bug causing app to crash.
+- Fixed render-flex errors in multiple parts of the app.
+
+### Upcoming Features 👀
+
+- Google Cloud Vision based NSFW Image filtering.
+- Transition to Google BARD for Sakhi.
+- Improved user Gender verification and specifying them on the profile.
+
+<hr>
+
 ## Features
 
 - Safe space for free speech on women's rights
