@@ -71,7 +71,7 @@ class _SexualHarassmentScreenState extends State<SexualHarassmentScreen> {
                   'Document Evidence',
                   'Keep a record of any offensive messages, images, or other evidence of sexual harassment. This documentation can be helpful when reporting the incident.',
                   Icons.camera_alt,
-                  null,
+                  "https://www.forensicnotes.com/best-practice-guidelines-for-recording-and-documenting-evidence/",
                 ),
                 buildStepCard(
                   context,
