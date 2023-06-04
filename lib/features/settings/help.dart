@@ -160,6 +160,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
     if (await launchUrlString(url)) {
       await launchUrlString(url);
     } else {
+      // ignore: use_build_context_synchronously
       showDialog(
         context: context,
         builder: (context) => AlertDialog(

@@ -141,8 +141,10 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                   children: [
                     const Text(
                       'Title',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber),
                     ),
                     const SizedBox(height: 10),
                     TextField(
@@ -171,7 +173,9 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                           const Text(
                             'Image',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.amber),
                           ),
                           const SizedBox(height: 10),
                           GestureDetector(
@@ -214,7 +218,9 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                           const Text(
                             'Text',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.amber),
                           ),
                           const SizedBox(height: 10),
                           TextField(
@@ -244,7 +250,9 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
                           const Text(
                             'Link',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.amber),
                           ),
                           const SizedBox(height: 10),
                           TextField(
