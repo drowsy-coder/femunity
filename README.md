@@ -34,49 +34,50 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 <table style="width: 100%;">
   <tr>
     <td style="text-align: center;">
-      <img src="https://imgur.com/uzzqjOO.jpg" alt="Image 1" style="width: 100%;">
-      <p>Community Drawer</p>
+      <img src="https://imgur.com/uyirs8p.gif" alt="Image 1" style="width: 100%;">
+      <p>Login Screen</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/WPdMVy7.jpg" alt="Image 2" style="width: 100%;">
+      <img src="https://imgur.com/7UCqRiI.gif" alt="Image 2" style="width: 100%;">
       <p>Add Posts</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/RbEwAIF.jpg" alt="Image 3" style="width: 100%;">
-      <p>Utilities Toolbox</p>
+      <img src="https://imgur.com/sUQaklh.gif" alt="Image 3" style="width: 100%;">
+      <p>Communities Drawer</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/PkMyFmm.jpg" alt="Image 4" style="width: 100%;">
+      <img src="https://imgur.com/Am1AzQN.gif" alt="Image 4" style="width: 100%;">
       <p>Menstrual Tracking</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/ZiLYFbP.jpg" alt="Image 5" style="width: 100%;">
-      <p>Opportunities</p>
     </td>
   </tr>
   <tr>
     <td style="text-align: center;">
-      <img src="https://imgur.com/hEY3nw5.jpg" alt="Image 6" style="width: 100%;">
-      <p>Sakhi AI Chatbot</p>
+      <img src="https://imgur.com/K6pF4UY.gif" alt="Image 6" style="width: 100%;">
+      <p>Opportunities</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/vd2nzCO.jpg" alt="Image 7" style="width: 100%;">
-      <p>User Profile Drawer</p>
+      <img src="https://imgur.com/EsKLjCG.gif" alt="Image 7" style="width: 100%;">
+      <p>Sakhi: AI Chatbot</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/7oASf0S.jpg" alt="Image 8" style="width: 100%;">
+      <img src="https://imgur.com/UJenl3L.gif" alt="Image 8" style="width: 100%;">
       <p>Home Screen</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/mSj75Hx.jpg" alt="Image 9" style="width: 100%;">
-      <p>Create Community</p>
+      <img src="https://imgur.com/eVNaaF3.gif" alt="Image 9" style="width: 100%;">
+      <p>Safety Section</p>
     </td>
-    <td style="text-align: center;">
+<!--     <td style="text-align: center;">
       <img src="https://imgur.com/zvyOtSr.jpg" alt="Image 10" style="width: 100%;">
       <p>Image Upload</p>
-    </td>
+    </td> -->
   </tr>
 </table>
+
+<!-- // <td style="text-align: center;">
+      <img src="https://imgur.com/ZiLYFbP.jpg" alt="Image 5" style="width: 100%;">
+      <p>Opportunities</p>
+    </td> -->
 
 <hr>
 
@@ -106,7 +107,7 @@ Before you start, make sure you have installed the following on your system:
 
 ## How to Use
 
-Once you have created an account or logged in as a Guest, you can start exploring the app's features.
+Once you have created an account you can start exploring the app's features.
 
 ### Creating Communities
 
@@ -124,9 +125,13 @@ To upvote or downvote a post, simply click on the icons next to the post. To com
 
 Femunity uses a Radiance points system to reward users for their activity on the app. The more active you are, the more Radiance points you will earn. You can view your Radiance points on your profile page.
 
-### Resource Center
+### Safety Section
 
-Femunity's Resource Center provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away.
+Femunity's Safety Section provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away. It also educates users on identifying cyber crime and online harrasement.
+
+### Opportunities Section
+
+Explore various scolarships and internships in STEM, Business and Law.
 
 ### Menstrual Tracker
 
@@ -146,7 +151,7 @@ If you would like to contribute to Femunity, please fork the project on GitHub a
 
 - Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
 
-- Team Management and Content: [Shourya Pratap SIngh](https://www.linkedin.com/in/amspsingh04/)
+- Team Handling and Content: [Shourya Pratap SIngh - GDSC VIT-C | Management](https://www.linkedin.com/in/amspsingh04/)
 
 ## License
 
