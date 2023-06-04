@@ -36,6 +36,56 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'image': 'assets/images/Adobe-logo.png',
       'field': 'STEM',
     },
+    {
+      'title': 'Business Internships',
+      'description':
+          'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
+      'url': 'https://careers.google.com/students/business-internships/',
+      'image': 'assets/images/google.png',
+      'field': 'Business',
+    },
+    {
+      'title': 'We Make Scholars',
+      'description':
+          'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
+      'url':
+          'https://www.wemakescholars.com/',
+      'image': 'assets/images/busScholar.webp',
+      'field': 'Business',
+    },
+    {
+      'title': 'DELL SCHOLARS PROGRAM ',
+      'description':
+          'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
+      'url': 'https://www.dellscholars.org/',
+      'image': 'assets/images/dell.jpg',
+      'field': 'Business',
+    },
+    {
+      'title': 'DESIS by D.E. Shaw',
+      'description':
+          'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
+      'url': 'https://www.deshawindia.com/desis-ascend-educare/about.pdf',
+      'image': 'assets/images/deshaw.png',
+      'field': 'Law',
+    },
+    {
+      'title': 'Adobe Women in Tech',
+      'description':
+          'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
+      'url':
+          'https://www.adobe.com/in/lead/creativecloud/women-in-technology.html',
+      'image': 'assets/images/Adobe-logo.png',
+      'field': 'Law',
+    },
+    {
+      'title': 'TalentSprint WE',
+      'description':
+          'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
+      'url': 'https://we.talentsprint.com/',
+      'image': 'assets/images/talentsprint.png',
+      'field': 'Law',
+    },
   ];
 
   List<Map<String, String>> getFilteredOpportunities() {
@@ -261,6 +311,20 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   const OpportunityTile(
                     company: 'Amazon',
                     position: 'Software Development Engineer',
+                    url: 'https://www.lagrantfoundation.org/about-our-scholarships',
+                    logo: 'assets/images/lagrant.png',
+                  ),
+                if (selectedField == 'Business')
+                  const OpportunityTile(
+                    company: 'Amazon',
+                    position: 'Software Development Engineer',
+                    url: 'https://www.amazon.jobs/en/',
+                    logo: 'assets/images/Amazon_icon.svg.png',
+                  ),
+                if (selectedField == 'Business')
+                  const OpportunityTile(
+                    company: 'Amazon',
+                    position: 'Software Development Engineer',
                     url: 'https://www.amazon.jobs/en/',
                     logo: 'assets/images/Amazon_icon.svg.png',
                   ),
@@ -271,6 +335,22 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     url: 'https://www.google.com/about/careers/',
                     logo: 'assets/images/Google_ G _Logo.svg.webp',
                   ),
+                if (selectedField == 'Law')
+                  const OpportunityTile(
+                    company: 'Google',
+                    position: 'Software Engineer',
+                    url: 'https://www.google.com/about/careers/',
+                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                  ),
+                if (selectedField == 'Law')
+                  const OpportunityTile(
+                    company: 'Google',
+                    position: 'Software Engineer',
+                    url: 'https://www.google.com/about/careers/',
+                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                  ),
+                
+                
               ],
             ),
           ),
