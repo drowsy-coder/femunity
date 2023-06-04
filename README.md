@@ -25,7 +25,7 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
   <tr>
     <td>
       <a href="https://github.com/drowsy-coder/femunity/releases/download/v2.00.00/Femunity.v2.0.0.apk">
-        <img src="https://raw.githubusercontent.com/flocke/andOTP/master/assets/badges/get-it-on-github.png" alt="Github" width="200">
+        <img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Github" width="200">
       </a>
     </td>
     <td>
