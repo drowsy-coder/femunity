@@ -317,17 +317,11 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                 if (selectedField == 'Business')
                   const OpportunityTile(
                     company: 'Amazon',
-                    position: 'Software Development Engineer',
+                    position: 'Prouction Manager',
                     url: 'https://www.amazon.jobs/en/',
                     logo: 'assets/images/Amazon_icon.svg.png',
                   ),
-                if (selectedField == 'Business')
-                  const OpportunityTile(
-                    company: 'Amazon',
-                    position: 'Software Development Engineer',
-                    url: 'https://www.amazon.jobs/en/',
-                    logo: 'assets/images/Amazon_icon.svg.png',
-                  ),
+               
                 if (selectedField == 'Law')
                   const OpportunityTile(
                     company: 'Google',
