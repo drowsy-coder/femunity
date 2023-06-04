@@ -321,18 +321,24 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                     url: 'https://www.amazon.jobs/en/',
                     logo: 'assets/images/Amazon_icon.svg.png',
                   ),
-               
+                if (selectedField == 'Business')
+                  const OpportunityTile(
+                    company: 'SFI',
+                    position: 'Analyst',
+                    url: 'https://www.wemakescholars.com/research-institute/science-foundation-ireland',
+                    logo: 'assets/images/sfi.png',
+                  ), 
                 if (selectedField == 'Law')
                   const OpportunityTile(
-                    company: 'Google',
-                    position: 'Software Engineer',
+                    company: 'ETS',
+                    position: 'Accountant',
                     url: 'https://www.wemakescholars.com/other/educational-testing-service-ets-',
                     logo: 'assets/images/ets.jpg',
                   ),
                 if (selectedField == 'Law')
                   const OpportunityTile(
                     company: 'ABD',
-                    position: '',
+                    position: 'Staff Attorney',
                     url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
                     logo: 'assets/images/abd.jpeg',
                   ),
