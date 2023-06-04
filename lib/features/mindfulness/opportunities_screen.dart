@@ -309,8 +309,8 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   ),
                 if (selectedField == 'Business')
                   const OpportunityTile(
-                    company: 'Amazon',
-                    position: 'Software Development Engineer',
+                    company: 'TLF',
+                    position: 'Administrative assistant',
                     url: 'https://www.lagrantfoundation.org/about-our-scholarships',
                     logo: 'assets/images/lagrant.png',
                   ),
@@ -337,7 +337,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   ),
                 if (selectedField == 'Law')
                   const OpportunityTile(
-                    company: 'ABD',
+                    company: 'ADB',
                     position: 'Staff Attorney',
                     url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
                     logo: 'assets/images/abd.jpeg',
