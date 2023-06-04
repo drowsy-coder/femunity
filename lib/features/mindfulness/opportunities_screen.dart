@@ -62,28 +62,28 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
       'field': 'Business',
     },
     {
-      'title': 'DESIS by D.E. Shaw',
+      'title': 'Empowering Women in Law Scholarship',
       'description':
           'Students enrolled in an undergraduate or postgraduate degree will participate in unique educational experiences in areas ranging from core technical skills to holistic professional development.',
-      'url': 'https://www.deshawindia.com/desis-ascend-educare/about.pdf',
-      'image': 'assets/images/deshaw.png',
+      'url': 'https://studentscholarships.org/scholarship/13274/empowering-women-in-law-scholarship',
+      'image': 'assets/images/ss.png',
       'field': 'Law',
     },
     {
-      'title': 'Adobe Women in Tech',
+      'title': 'LAW SCHOOL SCHOLARSHIPS FOR WOMEN',
       'description':
           'They recognize talented female undergraduate & master\'s students studying computer science and provide them an opportunity to learn, build, and grow.',
       'url':
-          'https://www.adobe.com/in/lead/creativecloud/women-in-technology.html',
-      'image': 'assets/images/Adobe-logo.png',
+          'https://www.bu.edu/law/about/offices/financial-aid/scholarships/scholarships-writing-competitions/outside-scholarships/women/',
+      'image': 'assets/images/law.jpg',
       'field': 'Law',
     },
     {
-      'title': 'TalentSprint WE',
+      'title': 'Events and opportunities in the field of law',
       'description':
           'Women Engineers (WE), a 24-month immersive and LIVE online learning experiential program offered by TalentSprint and supported by Google, trains deserving first-year women engineering students.',
-      'url': 'https://we.talentsprint.com/',
-      'image': 'assets/images/talentsprint.png',
+      'url': 'https://www.lawctopus.com/tag/chennai-law-firm-internship/',
+      'image': 'assets/images/lawocc.png',
       'field': 'Law',
     },
   ];
@@ -333,15 +333,15 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   const OpportunityTile(
                     company: 'Google',
                     position: 'Software Engineer',
-                    url: 'https://www.google.com/about/careers/',
+                    url: 'https://www.wemakescholars.com/scholarship/servicescape-scholarship',
                     logo: 'assets/images/Google_ G _Logo.svg.webp',
                   ),
                 if (selectedField == 'Law')
                   const OpportunityTile(
-                    company: 'Google',
-                    position: 'Software Engineer',
-                    url: 'https://www.google.com/about/careers/',
-                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                    company: 'ServiceScape',
+                    position: 'Judge',
+                    url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
+                    logo: 'assets/images/ssssss.jpg',
                   ),
                 
                 
