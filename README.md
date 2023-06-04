@@ -13,11 +13,60 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
     <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="LinkedIn Badge"/>
   </a> 	
  
- ## Project Achievements
+ ## 💯 Project Achievements
 - [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
 - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 
+<hr>
+
+## Latest Version - v2.0.0
+
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/drowsy-coder/femunity/releases/download/v2.00.00/Femunity.v2.0.0.apk">
+        <img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Github" width="200">
+      </a>
+    </td>
+    <td>
+      <a href="https://media.giphy.com/media/iHD88spVFkL7mZakwa/giphy.gif">
+        <img src="https://imgur.com/F5JxdNT.png" alt="Github" width="200">
+      </a>
+    </td>
+       <td>
+      <a href="https://media.giphy.com/media/iHD88spVFkL7mZakwa/giphy.gif">
+        <img src="https://imgur.com/91mkzE2.png" alt="Github" width="200">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+### ⭐🚀 New Features
+
+- Revamped login screen with gradient color and features guide.
+- Redesigned home page with interactive icons and modern card-style posts.
+- Improved and enhanced community drawer.
+- Redefined Safety Section with guides on staying digitally safe.
+- Simplified health tips section with advice on food, exercise and stress.
+- Privacy and Help Section for getting user feedback
+
+### 🪲✅ Bug Fixes
+
+- Fixed major routing bug causing app to crash.
+- Fixed render-flex errors in multiple parts of the app.
+
+### 👀 Upcoming Features
+
+- Google Cloud Vision based NSFW Image filtering.
+- Transition to Google BARD for Sakhi.
+- Improved user Gender verification and specifying them on the profile.
+
+<hr>
+
 ## Features
+
+<hr>
 
 - Safe space for free speech on women's rights
 - Create communities and have moderators
@@ -31,49 +80,24 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 - Sakhi - AI Support and Health Chatbot
 
 <hr>
+
 <table style="width: 100%;">
   <tr>
     <td style="text-align: center;">
-      <img src="https://imgur.com/uzzqjOO.jpg" alt="Image 1" style="width: 100%;">
-      <p>Community Drawer</p>
+      <img src="https://imgur.com/uyirs8p.gif" alt="Image 1" style="width: 100%;">
+      <p>Login Screen</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/WPdMVy7.jpg" alt="Image 2" style="width: 100%;">
-      <p>Add Posts</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/RbEwAIF.jpg" alt="Image 3" style="width: 100%;">
-      <p>Utilities Toolbox</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/PkMyFmm.jpg" alt="Image 4" style="width: 100%;">
-      <p>Menstrual Tracking</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/ZiLYFbP.jpg" alt="Image 5" style="width: 100%;">
-      <p>Opportunities</p>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/hEY3nw5.jpg" alt="Image 6" style="width: 100%;">
-      <p>Sakhi AI Chatbot</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/vd2nzCO.jpg" alt="Image 7" style="width: 100%;">
-      <p>User Profile Drawer</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://imgur.com/7oASf0S.jpg" alt="Image 8" style="width: 100%;">
+      <img src="https://imgur.com/UJenl3L.gif" alt="Image 8" style="width: 100%;">
       <p>Home Screen</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/mSj75Hx.jpg" alt="Image 9" style="width: 100%;">
-      <p>Create Community</p>
+      <img src="https://imgur.com/7UCqRiI.gif" alt="Image 2" style="width: 100%;">
+      <p>Add Posts</p>
     </td>
     <td style="text-align: center;">
-      <img src="https://imgur.com/zvyOtSr.jpg" alt="Image 10" style="width: 100%;">
-      <p>Image Upload</p>
+      <img src="https://imgur.com/sUQaklh.gif" alt="Image 3" style="width: 100%;">
+      <p>Communities Drawer</p>
     </td>
   </tr>
 </table>
@@ -81,11 +105,13 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 <hr>
 
 
-## Getting Started
+## 🏃‍♀️ Getting Started
+
+<hr>
 
 Download Femunity directly from our [GitHub repository](https://github.com/drowsy-coder/femunity). After downloading the app, you can sign up for an account using your Google account or use Guest Mode to explore the app.
 
-### Prerequisites
+### 📝 Prerequisites
 
 Before you start, make sure you have installed the following on your system:
 
@@ -94,7 +120,7 @@ Before you start, make sure you have installed the following on your system:
 - Dart and Flutter extensions for VS Code
 - Android emulator or physical device
 
-### Installation
+### 🛠️ Installation
 
 1. Clone the Femunity repository from GitHub: https://github.com/drowsy-coder/femunity.git
 
@@ -104,49 +130,83 @@ Before you start, make sure you have installed the following on your system:
 
 4. In VS Code, open the main.dart file and click the "Run" button. This will launch the app in the emulator or on your physical device.
 
-## How to Use
+<hr>
 
-Once you have created an account or logged in as a Guest, you can start exploring the app's features.
+<table style="width: 100%;">
 
-### Creating Communities
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/K6pF4UY.gif" alt="Image 6" style="width: 100%;">
+      <p>Opportunities</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/EsKLjCG.gif" alt="Image 7" style="width: 100%;">
+      <p>Sakhi: AI Chatbot</p>
+    </td>
+  <td style="text-align: center;">
+      <img src="https://imgur.com/Am1AzQN.gif" alt="Image 4" style="width: 100%;">
+      <p>Menstrual Tracking</p>
+    </td>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/eVNaaF3.gif" alt="Image 9" style="width: 100%;">
+      <p>Safety Section</p>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+## ❓ How to Use
+
+<hr>
+
+Once you have created an account you can start exploring the app's features.
+
+### 🆕 Creating Communities
 
 To create a community, click on the "Create Community" button in the navigation bar. The communities are customisable with their own banner and profile picture.
 
-### Sharing Posts
+### 🗣️ Sharing Posts
 
 To share a post, click on the "+" button on the screen. You can then choose whether to share a link, text, or image-based post. You can also choose which community to share your post with.
 
-### Upvoting and Commenting
+### 👍 Upvoting and Commenting 
 
 To upvote or downvote a post, simply click on the icons next to the post. To comment on a post, click on the comment button and enter your comment.
 
-### Radiance Points System
+### 💫 Radiance Points System
 
 Femunity uses a Radiance points system to reward users for their activity on the app. The more active you are, the more Radiance points you will earn. You can view your Radiance points on your profile page.
 
-### Resource Center
+### 🆘 Safety Section
 
-Femunity's Resource Center provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away.
+Femunity's Safety Section provides links to support groups and harassment reporting. Police, Ambulance and quick location sharing are just a touch away. It also educates users on identifying cyber crime and online harrasement.
 
-### Menstrual Tracker
+### 👩‍💻 Opportunities Section
+
+Explore various scolarships and internships in STEM, Business and Law.
+
+### 🩸 Menstrual Tracker 
 
 Femunity's Menstrual Tracker allows you to track your menstrual cycle and view your cycle history. To use the Menstrual Tracker, click on the "Period Tracker" button present in the navigation bar.
 
-### Sakhi - ChatBot
+### 🤖 Sakhi - ChatBot
 
 An AI Chatbot, always available to talk to you. Share your thoughts, feelings or concerns and get honest and accurate answers.
 
-## Contributing
+<hr>
+
+## 🤝 Contributing
 
 If you would like to contribute to Femunity, please fork the project on GitHub and submit a pull request.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - All the responders to our survey and those who gave us suggestions.
 
 - Logo: [Aryan Laxaman](https://www.instagram.com/aryanlaxaman/)
 
-- Team Management and Content: [Shourya Pratap SIngh](https://www.linkedin.com/in/amspsingh04/)
+- Team Handling and Content: [Shourya Pratap SIngh - GDSC VIT-C | Management](https://www.linkedin.com/in/amspsingh04/)
 
 ## License
 
