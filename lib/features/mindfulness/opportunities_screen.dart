@@ -326,15 +326,15 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                   const OpportunityTile(
                     company: 'Google',
                     position: 'Software Engineer',
-                    url: 'https://www.google.com/about/careers/',
-                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                    url: 'https://www.wemakescholars.com/other/educational-testing-service-ets-',
+                    logo: 'assets/images/ets.jpg',
                   ),
                 if (selectedField == 'Law')
                   const OpportunityTile(
-                    company: 'Google',
-                    position: 'Software Engineer',
-                    url: 'https://www.wemakescholars.com/scholarship/servicescape-scholarship',
-                    logo: 'assets/images/Google_ G _Logo.svg.webp',
+                    company: 'ABD',
+                    position: '',
+                    url: 'https://www.wemakescholars.com/scholarship/asian-development-bank-japan-scholarship-program',
+                    logo: 'assets/images/abd.jpeg',
                   ),
                 if (selectedField == 'Law')
                   const OpportunityTile(
