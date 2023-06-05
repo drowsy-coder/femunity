@@ -9,7 +9,9 @@
 Femunity is a forum and discussion app that aims to empower young women by providing a safe space for free speech, devoid of hate speech and toxicity. With Femunity, you can create communities, share links, text, and image-based posts, upvote and comment on posts, and participate in discussions with like-minded individuals.
 
 
-Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM">
+Watch the product demo on:
+
+<a href="https://www.youtube.com/watch?v=1H82iFD0pHM">
     <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="LinkedIn Badge"/>
   </a> 	
   
@@ -20,7 +22,12 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 
 
-## 📊 Project Impact
+## 📊 Public Opinion
+
+#### 600 students surveyed across 6️⃣ colleges in India
+
+- The Form was circulated carefully to ensure that the intended demographic received it.
+- Best efforts to ensure that only respondents who identify as female are polled.
 
 <hr>
 
@@ -50,7 +57,7 @@ Watch the product demo on  <a href="https://www.youtube.com/watch?v=1H82iFD0pHM"
 <table>
   <tr>
     <td>
-      <a href="https://github.com/drowsy-coder/femunity/releases/download/v2.00.00/Femunity.v2.0.0.apk">
+      <a href="https://github.com/drowsy-coder/femunity/releases/download/v2.00.00/Femunity.v2.apk">
         <img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Github" width="200">
       </a>
     </td>
