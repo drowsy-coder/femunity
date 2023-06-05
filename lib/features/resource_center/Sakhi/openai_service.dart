@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:femunity/features/posts/screens/secrets.dart';
+import 'package:femunity/features/resource_center/Sakhi/secrets.dart';
 import 'package:http/http.dart' as http;
 
 class OpenAIService {

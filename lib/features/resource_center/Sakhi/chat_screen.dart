@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:femunity/features/posts/screens/feature_box.dart';
-import 'package:femunity/features/posts/screens/openai_service.dart';
+import 'package:femunity/features/resource_center/Sakhi/feature_box.dart';
+import 'package:femunity/features/resource_center/Sakhi/openai_service.dart';
 import 'package:femunity/theme/pallate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
