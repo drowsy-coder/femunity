@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
+
 import 'package:femunity/core/common/error_text.dart';
 import 'package:femunity/core/common/loader.dart';
 import 'package:femunity/core/common/post_card.dart';

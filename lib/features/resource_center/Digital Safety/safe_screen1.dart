@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CyberCrimeGuideScreen extends StatefulWidget {
+  const CyberCrimeGuideScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CyberCrimeGuideScreenState createState() => _CyberCrimeGuideScreenState();
 }
 
@@ -233,13 +236,6 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                     if (link != null) const SizedBox(height: 8.0),
                     ElevatedButton(
                       onPressed: () => launch(link!),
-                      child: const Text(
-                        'Learn More',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.white,
-                        ),
-                      ),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.green, // Set the button color to green
                         shape: RoundedRectangleBorder(
@@ -248,6 +244,13 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                         padding: const EdgeInsets.symmetric(
                           vertical: 8.0,
                           horizontal: 16.0,
+                        ),
+                      ),
+                      child: const Text(
+                        'Learn More',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),

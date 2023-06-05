@@ -112,15 +112,15 @@ class _AddPostsTypeScreenState extends ConsumerState<AddPostsTypeScreen> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title:
-            Text('Add ${widget.type}', style: TextStyle(color: Colors.white)),
+            Text('Add ${widget.type}', style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             onPressed: sharePost,
-            style: ButtonStyle(
+            style: const ButtonStyle(
                 // foregroundColor: MaterialStateProperty.all<Color>(
                 //     currentTheme.accentIconColor),
                 ),
-            child: Text(
+            child: const Text(
               'Share',
               style: TextStyle(
                 fontSize: 18,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:routemaster/routemaster.dart';
 
 class FemaleDigitalSafetyScreen extends StatelessWidget {
+  const FemaleDigitalSafetyScreen({super.key});
+
   void navigateToCyber(BuildContext context) {
     Routemaster.of(context).push('cyber');
   }
@@ -14,11 +16,11 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Digital Safety'),
+        title: const Text('Digital Safety'),
         backgroundColor: Colors.deepPurple,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           buildCard(
             context,
@@ -60,7 +62,7 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
               color: Colors.black.withOpacity(0.2),
               blurRadius: 5.0,
               spreadRadius: 2.0,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -68,7 +70,7 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(
+              borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(16.0),
               ),
               child: Image.asset(
@@ -85,21 +87,21 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.deepPurple,
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Text(
                     description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   ElevatedButton(
                     onPressed: () {
                       Routemaster.of(context).push(routeName); // Use route navigation
@@ -111,8 +113,8 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
                       ),
                       elevation: 2.0,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.0),
                       child: Text(
                         'Learn More',
                         style: TextStyle(

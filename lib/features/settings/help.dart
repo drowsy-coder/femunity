@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class HelpAndSupportScreen extends StatefulWidget {
+  const HelpAndSupportScreen({super.key});
+
   @override
   _HelpAndSupportScreenState createState() => _HelpAndSupportScreenState();
 }

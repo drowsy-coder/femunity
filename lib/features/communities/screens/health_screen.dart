@@ -62,14 +62,14 @@ class WellnessScreen extends StatelessWidget {
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
+                        children: const [
+                          SizedBox(
                             height: 48,
                             child: Icon(Icons.track_changes,
                                 size: 48, color: Colors.white),
                           ),
-                          const SizedBox(height: 16),
-                          const Text(
+                          SizedBox(height: 16),
+                          Text(
                             'Menstrual Tracker',
                             style: TextStyle(
                               fontSize: 18,
@@ -97,14 +97,14 @@ class WellnessScreen extends StatelessWidget {
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
+                        children: const [
+                          SizedBox(
                             height: 48,
                             child:
                                 Icon(Icons.mic, size: 48, color: Colors.white),
                           ),
-                          const SizedBox(height: 16),
-                          const Text(
+                          SizedBox(height: 16),
+                          Text(
                             'Sakhi',
                             style: TextStyle(
                               fontSize: 18,
@@ -132,14 +132,14 @@ class WellnessScreen extends StatelessWidget {
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
+                        children: const [
+                          SizedBox(
                             height: 48,
                             child: Icon(Icons.assignment_ind_sharp,
                                 size: 48, color: Colors.white),
                           ),
-                          const SizedBox(height: 16),
-                          const Text(
+                          SizedBox(height: 16),
+                          Text(
                             'Opportunities',
                             style: TextStyle(
                               fontSize: 18,
@@ -167,14 +167,14 @@ class WellnessScreen extends StatelessWidget {
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
+                        children: const [
+                          SizedBox(
                             height: 48,
                             child: Icon(Icons.security,
                                 size: 48, color: Colors.white),
                           ),
-                          const SizedBox(height: 16),
-                          const Text(
+                          SizedBox(height: 16),
+                          Text(
                             'Safety',
                             style: TextStyle(
                               fontSize: 18,

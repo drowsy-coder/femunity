@@ -41,5 +41,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/lib/features/posts/screens/secrets.dart
+lib/features/resource_center/Sakhi/shh.dart
 E:\femunity-RP\.vscode

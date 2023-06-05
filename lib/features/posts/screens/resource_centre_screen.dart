@@ -257,7 +257,7 @@ class ResourceCentrePage extends StatelessWidget {
                   vertical: 16.0,
                   horizontal: 24.0,
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     '👩‍💻 Stay Safe Digitally 👩‍💻',
                     style: TextStyle(

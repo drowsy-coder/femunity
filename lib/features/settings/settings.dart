@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
 
 class SettingsPage extends ConsumerWidget {
+  const SettingsPage({super.key});
+
   void logOut(WidgetRef ref) {
     ref.read(authControllerProvider.notifier).logout();
   }
@@ -25,7 +27,7 @@ class SettingsPage extends ConsumerWidget {
             Colors.deepPurple, // Radically changing the app bar color
       ),
       body: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           children: [
@@ -91,7 +93,7 @@ class SettingsPage extends ConsumerWidget {
 }
 
 void main() {
-  runApp(ProviderScope(
+  runApp(const ProviderScope(
     child: MaterialApp(
       home: SettingsPage(),
     ),

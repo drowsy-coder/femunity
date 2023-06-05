@@ -88,7 +88,7 @@ class CommunityListDrawer extends ConsumerWidget {
                             color: Colors.black),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Theme.of(context).brightness == Brightness.dark
+                        backgroundColor: Theme.of(context).brightness == Brightness.dark
                             ? Colors.yellow[300]
                             : const Color(0xFFFAC898),
                         shape: RoundedRectangleBorder(

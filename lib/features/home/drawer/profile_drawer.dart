@@ -120,7 +120,7 @@ class ProfileDrawer extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [],
+                children: const [],
               ),
             ),
             const Spacer(),

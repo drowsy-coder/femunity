@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SexualHarassmentScreen extends StatefulWidget {
+  const SexualHarassmentScreen({super.key});
+
   @override
   _SexualHarassmentScreenState createState() => _SexualHarassmentScreenState();
 }
@@ -224,13 +226,6 @@ class _SexualHarassmentScreenState extends State<SexualHarassmentScreen> {
                     if (link != null) const SizedBox(height: 8.0),
                     ElevatedButton(
                       onPressed: () => launch(link!),
-                      child: const Text(
-                        'Learn More',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.white,
-                        ),
-                      ),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.deepOrange,
                         shape: RoundedRectangleBorder(
@@ -239,6 +234,13 @@ class _SexualHarassmentScreenState extends State<SexualHarassmentScreen> {
                         padding: const EdgeInsets.symmetric(
                           vertical: 8.0,
                           horizontal: 16.0,
+                        ),
+                      ),
+                      child: const Text(
+                        'Learn More',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),

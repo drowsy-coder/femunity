@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FoodTipsScreen extends StatelessWidget {
+  const FoodTipsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OpportunitiesScreen extends StatefulWidget {
+  const OpportunitiesScreen({super.key});
+
   @override
   _OpportunitiesScreenState createState() => _OpportunitiesScreenState();
 }
@@ -188,15 +190,6 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                               child: ElevatedButton(
                                 onPressed: () =>
                                     launch(scholarship['url'] ?? ''),
-                                child: const Text(
-                                  'Learn More',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Montserrat',
-                                  ),
-                                ),
                                 style: ElevatedButton.styleFrom(
                                   primary: Theme.of(context).accentColor,
                                   shape: RoundedRectangleBorder(
@@ -205,6 +198,15 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 24.0,
                                     vertical: 12.0,
+                                  ),
+                                ),
+                                child: const Text(
+                                  'Learn More',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Montserrat',
                                   ),
                                 ),
                               ),
@@ -225,7 +227,6 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
               children: [
                 ElevatedButton(
                   onPressed: () => filterOpportunities('STEM'),
-                  child: const Text('STEM'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'STEM'
                         ? Colors.indigo
@@ -240,10 +241,10 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                       vertical: 12.0,
                     ),
                   ),
+                  child: const Text('STEM'),
                 ),
                 ElevatedButton(
                   onPressed: () => filterOpportunities('Business'),
-                  child: const Text('Business'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'Business'
                         ? Colors.indigo
@@ -259,10 +260,10 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                       vertical: 12.0,
                     ),
                   ),
+                  child: const Text('Business'),
                 ),
                 ElevatedButton(
                   onPressed: () => filterOpportunities('Law'),
-                  child: const Text('Law'),
                   style: ElevatedButton.styleFrom(
                     primary: selectedField == 'Law'
                         ? Colors.indigo
@@ -277,6 +278,7 @@ class _OpportunitiesScreenState extends State<OpportunitiesScreen> {
                       vertical: 12.0,
                     ),
                   ),
+                  child: const Text('Law'),
                 ),
               ],
             ),
@@ -366,7 +368,7 @@ class OpportunityTile extends StatelessWidget {
   final String url;
   final String logo;
 
-  const OpportunityTile({
+  const OpportunityTile({super.key, 
     required this.company,
     required this.position,
     required this.url,
@@ -411,12 +413,6 @@ class OpportunityTile extends StatelessWidget {
                   const SizedBox(height: 16),
                   OutlinedButton(
                     onPressed: () => launch(url),
-                    child: Text(
-                      'Apply Now',
-                      style: TextStyle(
-                        color: Theme.of(context).accentColor,
-                      ),
-                    ),
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -428,6 +424,12 @@ class OpportunityTile extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                         horizontal: 32.0,
                         vertical: 8.0,
+                      ),
+                    ),
+                    child: Text(
+                      'Apply Now',
+                      style: TextStyle(
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                   ),

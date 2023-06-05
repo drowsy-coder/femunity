@@ -10,7 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FeedScreen extends ConsumerWidget {
-  const FeedScreen({Key? key});
+  const FeedScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,8 +36,8 @@ class FeedScreen extends ConsumerWidget {
                             : const Color(0xFFAEC6CF),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            const Padding(
+                          children: const [
+                            Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 16),
                               child: Text(
@@ -49,22 +49,22 @@ class FeedScreen extends ConsumerWidget {
                                 ),
                               ),
                             ),
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
                                 'To use the Femunity app, follow these simple steps:\n',
                                 style: TextStyle(fontSize: 18),
                               ),
                             ),
-                            const SizedBox(height: 8),
-                            const Padding(
+                            SizedBox(height: 8),
+                            Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
                                 '- Tap the search bar above to search and join communities.\n\n- Press the "+" button on the home screen to add posts.\n\n- Go to the community drawer to access your communities.',
                                 style: TextStyle(fontSize: 18),
                               ),
                             ),
-                            const SizedBox(height: 16),
+                            SizedBox(height: 16),
                           ],
                         ),
                       ),
@@ -143,7 +143,7 @@ class FeedScreen extends ConsumerWidget {
             loading: () => const Loader(),
           );
     }
-    return ref.watch(GuestPostsProvider).when(
+    return ref.watch(guestPostsProvider).when(
           data: (data) {
             return ListView.builder(
               itemCount: data.length,

@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/common/sign_in_button.dart';
 
 class LoginScreen extends ConsumerWidget {
+  // ignore: use_key_in_widget_constructors
   const LoginScreen({Key? key});
 
   void signInAsGuest(WidgetRef ref, BuildContext context) {

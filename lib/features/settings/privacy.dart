@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
+  const PrivacyPolicyScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
             Colors.deepPurple, // Radically changing the app bar color
       ),
       body: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(

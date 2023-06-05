@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:femunity/features/resource_center/Sakhi/secrets.dart';
+import 'package:femunity/features/resource_center/Sakhi/shh.dart';
 import 'package:http/http.dart' as http;
 
 class OpenAIService {
@@ -13,6 +13,7 @@ class OpenAIService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $openAIAPIKey',
+          
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",

@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:routemaster/routemaster.dart';
 
 class PeriodTrackerScreen extends StatefulWidget {
+  const PeriodTrackerScreen({super.key});
+
   @override
   _PeriodTrackerScreenState createState() => _PeriodTrackerScreenState();
 }
@@ -126,13 +128,13 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
+            children: const [
+              Icon(
                 Icons.favorite,
                 color: Colors.red,
               ),
-              const SizedBox(width: 8.0),
-              const Text(
+              SizedBox(width: 8.0),
+              Text(
                 'Health Tips',
                 style: TextStyle(
                   color: Colors.black,
@@ -310,10 +312,6 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                       _calculatePeriod();
                     }
                   },
-                  child: const Text(
-                    'Calculate',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
                   style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.pink),
@@ -325,6 +323,10 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
                         borderRadius: BorderRadius.circular(32),
                       ),
                     ),
+                  ),
+                  child: const Text(
+                    'Calculate',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -349,6 +351,8 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
 }
 
 class HealthTipsScreen extends StatelessWidget {
+  const HealthTipsScreen({super.key});
+
   // void _navigateToScreen(BuildContext context, Widget screen) {
   //   Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
   // }
