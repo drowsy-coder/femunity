@@ -31,15 +31,16 @@ class ModToolsScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? Colors.grey[900]
             : const Color(0xffAEC6CF),
-        // set the background color according to the current theme mode
+        
+        // ignore: deprecated_member_use
         brightness: Theme.of(context).brightness,
-        // set the brightness according to the current theme mode
+     
         iconTheme: IconThemeData(
           color: Theme.of(context).brightness == Brightness.dark
               ? Colors.white
               : Colors.black,
         ),
-        // set the icon color according to the current theme mode
+       
       ),
       body: Column(
         children: [

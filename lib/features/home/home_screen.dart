@@ -46,7 +46,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final user = ref.watch(userProvider)!;
     final isGuest = !user.isAuthenticated;
     final currentTheme = ref.watch(themeNotifierProvider);
-    // Determine the text color based on the current theme's brightness
+
     final textColor = currentTheme.brightness == Brightness.dark
         ? Colors.white
         : Colors.black;
@@ -93,7 +93,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           : CupertinoTabBar(
               activeColor: Colors.amber,
               backgroundColor: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.black // set color for dark mode
+                  ? Colors.black 
                   : const Color(0xFFAEC6CF),
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),

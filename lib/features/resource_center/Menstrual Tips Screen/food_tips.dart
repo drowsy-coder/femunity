@@ -73,7 +73,7 @@ class FoodTipsScreen extends StatelessWidget {
               ),
             ],
           ),
-          // Add more sections as needed
+
         ],
       ),
     );
@@ -139,13 +139,7 @@ class FoodTipsScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        // subtitle: Text(
-        //   description,
-        //   style: TextStyle(
-        //     fontSize: 14.0,
-        //     color: Colors.white,
-        //   ),
-        // ),
+       
         trailing: const Icon(
           Icons.chevron_right,
           color: Colors.white,

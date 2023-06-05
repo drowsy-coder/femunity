@@ -27,14 +27,14 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
             'Identifying Cyber Crimes',
             'Learn how to identify and protect yourself from cyber crimes.',
             'assets/images/cybercrime.jpg',
-            'cyber', // Pass the route name instead of the destination screen
+            'cyber',
           ),
           buildCard(
             context,
             'Preventing Sexual Harassment',
             'Find out how to prevent and respond to sexual harassment online.',
             'assets/images/sexual_harassment.jpg',
-            'sexual', // Pass the route name instead of the destination screen
+            'sexual', 
           ),
         ],
       ),
@@ -46,7 +46,7 @@ class FemaleDigitalSafetyScreen extends StatelessWidget {
     String title,
     String description,
     String image,
-    String routeName, // Updated parameter type
+    String routeName, 
   ) {
     return Card(
       elevation: 4.0,

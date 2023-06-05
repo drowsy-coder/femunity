@@ -87,9 +87,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               backgroundColor: Theme.of(context).brightness == Brightness.dark
                   ? Colors.grey[900]
                   : const Color(0xffAEC6CF),
-              // set the background color according to the current theme mode
+           
               brightness: Theme.of(context).brightness,
-              // set the brightness according to the current theme mode
+     
               iconTheme: IconThemeData(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white
@@ -108,7 +108,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                   ),
                 ),
               ],
-              // set the icon color according to the current theme mode
+
             ),
             body: isLoading
                 ? const Loader()

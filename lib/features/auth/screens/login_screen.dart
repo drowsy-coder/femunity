@@ -73,7 +73,7 @@ class LoginScreen extends ConsumerWidget {
                         'assets/images/logo.png',
                         width: 200,
                         height: 100,
-                        // Adjust the width and height as needed
+                       
                       ),
                       const SizedBox(
                         width: 300,
@@ -187,7 +187,7 @@ class SliderCard extends StatelessWidget {
                 height: 110,
                 width: 110,
               ),
-              // const SizedBox(height: 10),
+         
               Text(
                 title,
                 style: const TextStyle(

@@ -130,7 +130,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
             children: [
               Icon(
                 isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
-                color: Colors.green, // Set the arrow color to green
+                color: Colors.green, 
               ),
               const SizedBox(width: 8.0),
               Text(
@@ -138,7 +138,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                 style: const TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green, // Set the title color to green
+                  color: Colors.green, 
                 ),
               ),
             ],
@@ -146,7 +146,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
         ),
         const SizedBox(height: 16.0),
         AnimatedCrossFade(
-          firstChild: Container(), // Placeholder for collapsed state
+          firstChild: Container(), 
           secondChild: Column(children: steps),
           crossFadeState:
               isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
@@ -169,7 +169,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                 style: const TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green, // Set the title color to green
+                  color: Colors.green,
                 ),
               ),
               content: Text(
@@ -189,7 +189,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green, // Set the button text color to green
+                      color: Colors.green, 
                     ),
                   ),
                 ),
@@ -237,7 +237,7 @@ class _CyberCrimeGuideScreenState extends State<CyberCrimeGuideScreen> {
                     ElevatedButton(
                       onPressed: () => launch(link!),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green, // Set the button color to green
+                        primary: Colors.green, 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),

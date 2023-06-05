@@ -9,7 +9,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Privacy & Security Policy'),
         backgroundColor:
-            Colors.deepPurple, // Radically changing the app bar color
+            Colors.deepPurple, 
       ),
       body: Container(
         decoration: const BoxDecoration(),

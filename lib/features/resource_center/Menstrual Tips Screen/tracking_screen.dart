@@ -108,10 +108,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => HealthTipsScreen()),
-          // );
+         
           navigateToHealthTips(context);
         },
         style: ButtonStyle(
@@ -167,10 +164,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
           IconButton(
             icon: const Icon(Icons.history),
             onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => HistoryScreen()),
-              // );
+              
               navigateToHistory(context);
             },
           ),
@@ -353,9 +347,7 @@ class _PeriodTrackerScreenState extends State<PeriodTrackerScreen> {
 class HealthTipsScreen extends StatelessWidget {
   const HealthTipsScreen({super.key});
 
-  // void _navigateToScreen(BuildContext context, Widget screen) {
-  //   Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
-  // }
+  
 
   void navigateToFood(BuildContext context) {
     Routemaster.of(context).push('/eating');

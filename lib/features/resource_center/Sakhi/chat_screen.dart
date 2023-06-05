@@ -48,17 +48,13 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {});
   }
 
-  /// Manually stop the active speech recognition session
-  /// Note that there are also timeouts that each platform enforces
-  /// and the SpeechToText plugin supports setting timeouts on the
-  /// listen method.
+
   Future<void> stopListening() async {
     await speechToText.stop();
     setState(() {});
   }
 
-  /// This is the callback that the SpeechToText plugin calls when
-  /// the platform returns recognized words.
+
   void onSpeechResult(SpeechRecognitionResult result) {
     setState(() {
       lastWords = result.recognizedWords;
@@ -305,24 +301,6 @@ class _ChatScreenState extends State<ChatScreen> {
           ],
         ),
       ),
-      // floatingActionButton: ZoomIn(
-      //   delay: Duration(milliseconds: start + 3 * delay),
-      //   child: FloatingActionButton(
-      //     backgroundColor: Colors.yellow,
-      //     onPressed: () async {
-      //       if (await speechToText.hasPermission &&
-      //           speechToText.isNotListening) {
-      //         await startListening();
-      //       } else if (speechToText.isListening) {
-      //         await processInput(lastWords);
-      //         await stopListening();
-      //       } else {
-      //         initSpeechToText();
-      //       }
-      //     },
-      //     child: Icon(speechToText.isListening ? Icons.stop : Icons.mic),
-      //   ),
-      // ),
     );
   }
 }

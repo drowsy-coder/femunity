@@ -49,15 +49,15 @@ class ResourceCentrePage extends StatelessWidget {
               ),
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
-            ? Colors.grey[900] // set color for dark mode
+            ? Colors.grey[900] 
             : const Color(0xFFAEC6CF),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            color: Colors.black, // set container color to black
-            child: const SizedBox(height: 1.0), // add spacing
+            color: Colors.black, 
+            child: const SizedBox(height: 1.0), 
           ),
           const Divider(
               height: 1.0, color: Colors.black), // add black divider line
@@ -166,12 +166,12 @@ class ResourceCentrePage extends StatelessWidget {
                             if (snapshot.data == PermissionStatus.granted) {
                               return IconButton(
                                 onPressed: () async {
-                                  // Get the user's current location
+                            
                                   Position position =
                                       await Geolocator.getCurrentPosition(
                                     desiredAccuracy: LocationAccuracy.high,
                                   );
-                                  // Open the SMS app and prefill the message with the user's location
+                                 
                                   String message =
                                       'I am in an Emergency at: https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}&zoom=15&ll=${position.latitude},${position.longitude}&markers=color:blue%7Clabel:S%7C${position.latitude},${position.longitude}';
                                   String encodedMessage =
@@ -194,12 +194,12 @@ class ResourceCentrePage extends StatelessWidget {
                                   var status =
                                       await Permission.location.request();
                                   if (status == PermissionStatus.granted) {
-                                    // Get the user's current location
+                  
                                     Position position =
                                         await Geolocator.getCurrentPosition(
                                       desiredAccuracy: LocationAccuracy.high,
                                     );
-                                    // Open the SMS app and prefill the message with the user's location
+                                   
                                     String message =
                                         'I am in an Emergency at: https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}&zoom=15&ll=${position.latitude},${position.longitude}&markers=color:blue%7Clabel:S%7C${position.latitude},${position.longitude}';
                                     String encodedMessage =
@@ -246,10 +246,7 @@ class ResourceCentrePage extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(16.0),
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => FemaleDigitalSafetyScreen()));
+       
                 navigateToDigital(context);
               },
               child: Container(

@@ -59,7 +59,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        // Wrap the body inside a SingleChildScrollView
+      
         child: ref.watch(getPostByIdProvider(widget.postId)).when(
               data: (data) {
                 return Column(
@@ -100,10 +100,10 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                     ref.watch(getPostCommentsProvider(widget.postId)).when(
                           data: (data) {
                             return ListView.separated(
-                                // Remove the Expanded widget
-                                shrinkWrap: true, // Set shrinkWrap to true
+                                 
+                                shrinkWrap: true, 
                                 physics:
-                                    const NeverScrollableScrollPhysics(), // Disable scrolling of the ListView
+                                    const NeverScrollableScrollPhysics(), 
                                 itemCount: data.length,
                                 separatorBuilder:
                                     (BuildContext context, int index) =>

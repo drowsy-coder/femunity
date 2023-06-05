@@ -62,7 +62,7 @@ class UserProfileScreen extends ConsumerWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 25),
                               backgroundColor: const Color(
-                                  0xFFFEB2B2), // set the background color to #FEB2B2
+                                  0xFFFEB2B2),  
                             ),
                             child: const Text(
                               'Edit Profile',

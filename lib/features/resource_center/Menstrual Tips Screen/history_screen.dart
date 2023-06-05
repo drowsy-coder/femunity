@@ -20,7 +20,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   }
 
   Future<void> getUserInfo() async {
-    // Get the current user id
+
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       setState(() {
@@ -37,12 +37,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
           'Period Tracker History',
           style: TextStyle(
             color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.white // set text color for dark mode
-                : Colors.black, // set text color for light mode
+                ? Colors.white 
+                : Colors.black, 
           ),
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
-            ? Colors.grey[900] // set color for dark mode
+            ? Colors.grey[900] 
             : const Color(0xFFAEC6CF),
       ),
       body: FutureBuilder<QuerySnapshot>(
@@ -101,7 +101,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   child: InkWell(
                     borderRadius: BorderRadius.circular(16.0),
                     onTap: () {
-                      // do something on tap
+                
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),

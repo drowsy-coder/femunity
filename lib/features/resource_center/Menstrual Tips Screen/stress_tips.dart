@@ -69,7 +69,7 @@ class StressTipsScreen extends StatelessWidget {
           ),
         ],
       ),
-      // Add more sections and subsections as needed
+
     );
   }
 

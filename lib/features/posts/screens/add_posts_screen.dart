@@ -11,7 +11,7 @@ class AddPostsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final currentTheme = ref.watch(themeNotifierProvider);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -24,7 +24,7 @@ class AddPostsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.grey[900] // set color for dark mode
+                ? Colors.grey[900] 
                 : const Color(0xFFFAC898),
             elevation: 16,
             child: const SizedBox(
@@ -45,7 +45,7 @@ class AddPostsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.grey[900] // set color for dark mode
+                ? Colors.grey[900] 
                 : const Color.fromARGB(255, 254, 254, 254),
             elevation: 16,
             child: SizedBox(
@@ -54,8 +54,8 @@ class AddPostsScreen extends ConsumerWidget {
                 Icons.text_fields_outlined,
                 size: 40,
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.green // keep the default color for dark mode
-                    : Colors.blue, // set color to blue in light mode
+                    ? Colors.green 
+                    : Colors.blue,
               ),
             ),
           ),
@@ -68,7 +68,7 @@ class AddPostsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.grey[900] // set color for dark mode
+                ? Colors.grey[900] 
                 : const Color(0xFF77DD77),
             elevation: 16,
             child: const SizedBox(

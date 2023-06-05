@@ -110,7 +110,7 @@ class PostCard extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // SizedBox(height: 8),
+                  
                       Text(
                         post.title,
                         style: const TextStyle(
@@ -244,7 +244,7 @@ class PostCard extends ConsumerWidget {
             ),
           ),
         ),
-        const SizedBox(height: 16), // Add a gap between posts
+        const SizedBox(height: 16),
       ],
     );
   }

@@ -49,7 +49,7 @@ class ProfileDrawer extends ConsumerWidget {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center, // add this line
+                mainAxisAlignment: MainAxisAlignment.center, 
                 children: [
                   CircleAvatar(
                     backgroundImage: NetworkImage(user.profilePic),
@@ -57,7 +57,7 @@ class ProfileDrawer extends ConsumerWidget {
                   ),
                   const SizedBox(height: 20),
                   Center(
-                    // add this line
+               
                     child: AnimatedTextKit(
                       isRepeatingAnimation: false,
                       animatedTexts: [
@@ -108,10 +108,7 @@ class ProfileDrawer extends ConsumerWidget {
                 size: 30,
               ),
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => SettingsPage()),
-                // );
+               
                 navigateToSettings(context);
               },
             ),

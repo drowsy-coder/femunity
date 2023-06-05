@@ -8,8 +8,6 @@ final themeNotifierProvider =
 });
 
 class Pallete {
-  // Colors
-  // static const blackColor = Color(0xFF212121); // primary color
   static const blackColor = Color.fromRGBO(1, 1, 1, 1); // primary color
   static const greyColor = Color.fromRGBO(26, 39, 45, 1); // secondary color
   static const drawerColor = Color.fromRGBO(18, 18, 18, 1);
@@ -42,7 +40,7 @@ class Pallete {
     ),
     primaryColor: redColor,
     backgroundColor:
-        drawerColor, // will be used as alternative background color
+        drawerColor,
   );
 
   static var lightModeAppTheme = ThemeData.light().copyWith(

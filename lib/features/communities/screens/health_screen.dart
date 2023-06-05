@@ -48,11 +48,7 @@ class WellnessScreen extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => PeriodTrackerScreen()),
-                      // );
+                    
                       navigateToMenstrualTracker(context);
                     },
                     child: Container(
@@ -83,11 +79,7 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => const ChatScreen()),
-                      // );
+                     
                       navigateToSakhi(context);
                     },
                     child: Container(
@@ -118,12 +110,9 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => OpportunitiesScreen()),
+                      
                       navigateToOpportunities(context);
-                      // );
+                      
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -153,11 +142,7 @@ class WellnessScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => ResourceCentrePage()),
-                      // );
+                      
                       navigateToSafety(context);
                     },
                     child: Container(

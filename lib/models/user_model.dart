@@ -5,7 +5,7 @@ class UserModel {
   final String profilePic;
   final String banner;
   final String uid;
-  final bool isAuthenticated; // if guest or not
+  final bool isAuthenticated;
   final int karma;
   final List<String> awards;
   UserModel({
