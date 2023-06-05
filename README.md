@@ -24,7 +24,7 @@ Watch the product demo on:
 
 ## 📊 Public Opinion
 
-#### 600 students surveyed across 6️⃣ colleges in India
+#### 597 students surveyed across 6️⃣ colleges in India
 
 - The Form was circulated carefully to ensure that the intended demographic received it.
 - Best efforts to ensure that only respondents who identify as female are polled.
