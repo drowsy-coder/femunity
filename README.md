@@ -21,6 +21,24 @@ Watch the product demo on:
 - [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
 - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 
+## ⚠️ Initial Survey and Problem Statement Research
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      <img src="https://imgur.com/MWd2wD7.png" alt="Image 1" style="width: 50%;">
+      <p> </p>
+      <p>😓 We discovered that a lot of our peers were hesitant to go on community based social media apps due to prevalent NSFW content and/or due to facing harrasement and misogynistic atmosphere. </p>
+       <p>📝 We also conducted a survey to get community response for some sought after features listed below.</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <img src="https://imgur.com/RZ4UNBN.gif" alt="Image 2" style="width: 100%;">  
+    </td>
+  </tr>
+</table>
+
 
 ## 📊 Public Opinion
 
@@ -33,6 +51,8 @@ Watch the product demo on:
 
 <table style="width: 100%;">
   <tr>
+    <p>➡️ Along with building a progressive community, we realised that we could also provide a platform to increase awarness about opportunities and scolarships. We came to this conclusion after observing that a lot of our peers were either unaware or confused by things like Google STEP Intern/Generation Scholar, TalentSprint WE, International Research Opportuntiies etc. </p>
+    <p>➡️ After a classmate faced a risky situation online due to limited knowledge about digtal security, we also decided to implement a Safety Section where our users can learn about best methods to be digitally secure and also access SoS features when needed.</p>
     <td>
       <img src="https://imgur.com/BNkYMrh.png" alt="Image 1" style="width: 100%;">
     </td>
@@ -40,7 +60,7 @@ Watch the product demo on:
       <img src="https://imgur.com/UIjobbi.png" alt="Image 8" style="width: 100%;">
     </td>
   </tr>
-  <tr>
+  <tr> 
     <td style="text-align: center;">
       <img src="https://imgur.com/DwjnJrh.png" alt="Image 2" style="width: 100%;">  
     </td>
