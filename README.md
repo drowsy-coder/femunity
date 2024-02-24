@@ -20,7 +20,7 @@ Watch the product demo on:
  ## 💯 Project Achievements
  - [Global Top 100 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-vit-activity-7060683890058809344-eIzN?utm_source=share&utm_medium=member_desktop)
 - [Best Overall Project (1st in 400+ Teams) | IEEE YESIST12 Bangalore Section](https://www.linkedin.com/posts/drowsy-coder_appdevelopment-femaleempowerment-ieee-activity-7060303118273548289-qSXa?utm_source=share&utm_medium=member_desktop)
-- [Global Finalist | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-project-activity-7077547999547060224-lW77?utm_source=share&utm_medium=member_desktop)
+- [Global Top 10 | Google Solution Challenge](https://www.linkedin.com/posts/drowsy-coder_gdsc-solutionchallenge-project-activity-7077547999547060224-lW77?utm_source=share&utm_medium=member_desktop)
 
 ## ⚠️ Initial Survey and Problem Statement Research
 
